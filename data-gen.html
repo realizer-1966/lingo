@@ -101,11 +101,17 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
 <div class="panel" id="p-generate">
   <div class="section">
     <div class="section-title">🤖 AI 구문 생성</div>
-    <label>OpenAI API Key</label>
-    <input type="password" id="apiKey" placeholder="sk-..." onchange="saveApiKey()">
+    <label>Ollama Cloud Base URL</label>
+    <input type="text" id="ollamaUrl" placeholder="https://api.ollama.com 또는 http://localhost:11434" value="https://api.ollama.com" onchange="saveOllamaUrl()">
+
+    <label>Ollama Cloud API Key</label>
+    <input type="password" id="apiKey" placeholder="ollama-..." onchange="saveApiKey()">
     <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:-8px;margin-bottom:12px">
-      키는 localStorage에만 저장됩니다. <a href="https://platform.openai.com/api-keys" target="_blank" style="color:#FF6F61">발급하기 ↗</a>
+      키는 localStorage에만 저장됩니다. <a href="https://ollama.com" target="_blank" style="color:#FF6F61">Ollama Cloud ↗</a>
     </div>
+
+    <label>모델명</label>
+    <input type="text" id="ollamaModel" placeholder="llama3.1, qwen2.5, mistral..." value="llama3.1" onchange="saveOllamaModel()">
 
     <div class="grid-3">
       <div>
@@ -205,6 +211,10 @@ let gen = [];
 function init(){
   const k = localStorage.getItem(API_K);
   if(k) document.getElementById('apiKey').value = k;
+  const u = localStorage.getItem('lingo_ollama_url');
+  if(u) document.getElementById('ollamaUrl').value = u;
+  const m = localStorage.getItem('lingo_ollama_model');
+  if(m) document.getElementById('ollamaModel').value = m;
   updateStatus();
 }
 init();
@@ -312,9 +322,14 @@ function exportChunk(){
 // ===== AI GENERATE =====
 function saveApiKey(){ localStorage.setItem(API_K, document.getElementById('apiKey').value); }
 
+function saveOllamaUrl(){ localStorage.setItem('lingo_ollama_url', document.getElementById('ollamaUrl').value); }
+function saveOllamaModel(){ localStorage.setItem('lingo_ollama_model', document.getElementById('ollamaModel').value); }
+
 async function generatePhrases(){
+  const baseUrl = document.getElementById('ollamaUrl').value.trim().replace(/\/$/, '');
   const key = document.getElementById('apiKey').value.trim();
-  if(!key){ openModal('⚠️ API Key 필요', 'OpenAI API Key를 입력해주세요.'); return; }
+  const model = document.getElementById('ollamaModel').value.trim() || 'llama3.1';
+  if(!key){ openModal('⚠️ API Key 필요', 'Ollama Cloud API Key를 입력해주세요.'); return; }
   const cat = document.getElementById('genCat').value;
   const lvl = document.getElementById('genLvl').value;
   const cnt = parseInt(document.getElementById('genCount').value) || 10;
@@ -326,10 +341,10 @@ async function generatePhrases(){
   btn.disabled = true; st.textContent = '⏳ 생성 중...';
 
   try{
-    const res = await fetch('https://api.openai.com/v1/chat/completions', {
+    const res = await fetch(baseUrl + '/v1/chat/completions', {
       method: 'POST',
       headers: {'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'},
-      body: JSON.stringify({model: 'gpt-3.5-turbo', messages: [{role: 'user', content: prompt}], temperature: 0.7})
+      body: JSON.stringify({model: model, messages: [{role: 'user', content: prompt}], temperature: 0.7})
     });
     if(!res.ok){ const err = await res.text(); throw new Error('API 오류: ' + err); }
     const data = await res.json();
