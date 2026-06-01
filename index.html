@@ -290,6 +290,7 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
   </div>
   <div class="actions">
     <button class="act-btn skip" onclick="clearAllData()">🗑️ 데이터 초기화</button>
+    <button class="act-btn skip" onclick="openPhraseEditor()">✏️ 구문 편집</button>
     <button class="act-btn skip" onclick="goHome()">🏠 홈으로</button>
   </div>
 </div>
@@ -399,20 +400,104 @@ function closeModal() {
   overlay.onclick = closeModal;
 }
 
-// ===== DATA LOADING =====
+// ===== DATA LOADING (Local First) =====
+const PHRASES_KEY = 'lingo_phrases_v1';
+
 async function loadData() {
   const btn = document.getElementById('startBtn');
   try {
     if (btn) { btn.textContent = '⏳ 로딩 중...'; btn.disabled = true; }
+    
+    // 1. Try localStorage first
+    const cached = localStorage.getItem(PHRASES_KEY);
+    if (cached) {
+      PHRASES = JSON.parse(cached);
+      console.log('[Lingo] Loaded phrases from localStorage');
+      if (btn) { btn.textContent = '🚀 ' + (LVL_EMOJI[selectedLevel]||'') + ' ' + (LVL_NAME[selectedLevel]||'') + ' ' + (CAT_NAMES[selected]||'학습') + ' 학습 시작!'; btn.disabled = false; }
+      return;
+    }
+    
+    // 2. If not cached, fetch from server and save
     const res = await fetch('phrases_ollama.json?v=' + Date.now());
     if (!res.ok) throw new Error('HTTP ' + res.status);
     PHRASES = await res.json();
+    localStorage.setItem(PHRASES_KEY, JSON.stringify(PHRASES));
+    console.log('[Lingo] Fetched phrases from server, saved to localStorage');
   } catch (e) {
     console.error('JSON load failed:', e);
     showModal('⚠️','데이터 오류','데이터를 불러올 수 없어요.\n(' + e.message + ')');
   } finally {
     if (btn) { btn.textContent = '🚀 ' + (LVL_EMOJI[selectedLevel]||'') + ' ' + (LVL_NAME[selectedLevel]||'') + ' ' + (CAT_NAMES[selected]||'학습') + ' 학습 시작!'; btn.disabled = false; }
   }
+}
+
+// ===== PHRASE DATA MANAGEMENT =====
+function resetPhrasesFromServer() {
+  localStorage.removeItem(PHRASES_KEY);
+  showModal('🔄','캐시 삭제','다음 로드시 서버에서 새 데이터를 가져옵니다.');
+  loadData();
+}
+
+function openPhraseEditor() {
+  const data = localStorage.getItem(PHRASES_KEY) || JSON.stringify(PHRASES, null, 2) || '{}';
+  const lines = data.split('\n').length;
+  showModal('✏️','구문 편집',
+    '<textarea id="phraseEditor" style="width:100%;height:' + Math.min(400, lines*20) + 'px;background:#1a1a2e;color:#fff;border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:10px;font-family:monospace;font-size:12px">' + data.replace(/</g,'&lt;').replace(/&/g,'&amp;') + '</textarea>' +
+    '<div style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">' +
+    '<button class="modal-btn" onclick="savePhrasesFromEditor()">💾 저장</button>' +
+    '<button class="modal-btn" onclick="importPhrasesFromFile()">📁 파일 가져오기</button>' +
+    '<button class="modal-btn" onclick="exportPhrasesToFile()">📤 파일보내기</button>' +
+    '<button class="modal-btn" style="background:rgba(255,255,255,.15)" onclick="resetPhrasesFromServer()">🔄 원본 복구</button>' +
+    '</div>'
+  );
+}
+
+function savePhrasesFromEditor() {
+  const textarea = document.getElementById('phraseEditor');
+  if (!textarea) return;
+  try {
+    const json = JSON.parse(textarea.value);
+    localStorage.setItem(PHRASES_KEY, JSON.stringify(json));
+    PHRASES = json;
+    showModal('✅','저장 완료','구문 데이터가 업데이트되었어요!');
+  } catch(e) {
+    showModal('❌','JSON 오류','유효하지 않은 JSON 형식입니다:\n' + e.message);
+  }
+}
+
+function importPhrasesFromFile() {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = '.json';
+  input.onchange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    try {
+      const text = await file.text();
+      const json = JSON.parse(text);
+      localStorage.setItem(PHRASES_KEY, JSON.stringify(json));
+      PHRASES = json;
+      showModal('✅','가져오기 완료', file.name + ' 파일을 불러왔어요!');
+    } catch(err) {
+      showModal('❌','파일 오류','JSON 파싱 실패: ' + err.message);
+    }
+  };
+  input.click();
+}
+
+function exportPhrasesToFile() {
+  const data = localStorage.getItem(PHRASES_KEY) || JSON.stringify(PHRASES, null, 2);
+  if (!data) { showModal('⚠️','데이터 없음','보낼 데이터가 없어요.'); return; }
+  const blob = new Blob([data], {type: 'application/json'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'lingo_phrases_' + new Date().toISOString().slice(0,10) + '.json';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  showModal('📤','보내기 완료','구문 데이터를 JSON 파일로 저장했어요!');
 }
 
 // ===== NAVIGATION =====
