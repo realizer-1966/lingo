@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="theme-color" content="#FF6F61">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<title>Lingo 학습</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Noto Sans KR',sans-serif}
+body{background:#121214;color:#fff;min-height:100vh}
+
+.landing{display:flex;flex-direction:column;align-items:center;padding:30px 20px;text-align:center}
+.globe{font-size:60px;margin:20px 0;animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#6B5B95);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:rgba(255,255,255,.6);margin-bottom:25px;font-size:1.05rem}
+
+.level-select{display:flex;gap:10px;margin:15px 0;flex-wrap:wrap;justify-content:center}
+.level-btn{padding:10px 20px;border-radius:50px;border:2px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:rgba(255,255,255,.7);font-size:13px;font-weight:700;cursor:pointer;transition:all .3s}
+.level-btn:hover{border-color:#FF6F61;color:#FF6F61}
+.level-btn.active{border-color:#FF6F61;background:rgba(255,111,97,.2);color:#FF6F61}
+
+.purposes{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:15px;width:100%;max-width:600px}
+.purp-card{background:rgba(255,255,255,.08);border:2px solid transparent;border-radius:18px;padding:20px 10px;cursor:pointer;transition:all .3s}
+.purp-card:hover,.purp-card.active{border-color:#FF6F61;background:rgba(255,111,97,.15);transform:scale(1.03)}
+.purp-emoji{font-size:30px;margin-bottom:8px}
+.purp-title{font-weight:600;font-size:14px}
+
+.lang-select{margin-top:20px;padding:10px 20px;border-radius:50px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-size:14px}
+.start-btn{margin-top:25px;padding:15px 50px;border-radius:50px;border:none;font-size:18px;font-weight:700;background:linear-gradient(135deg,#FF6F61,#6B5B95);color:#fff;cursor:pointer;box-shadow:0 10px 40px rgba(255,111,97,.4);transition:all .3s}
+.start-btn:hover{transform:scale(1.05)}
+.start-btn:disabled{opacity:.5;cursor:not-allowed}
+
+.app-screen{display:none;padding:20px;max-width:700px;margin:0 auto;min-height:100vh}
+.app-screen.active{display:block}
+
+.top-nav{display:flex;justify-content:space-between;align-items:center;padding:10px 0 20px;border-bottom:1px solid rgba(255,255,255,.1)}
+.back-btn{cursor:pointer;font-size:24px}
+.nav-title{font-weight:700;font-size:16px}
+.nav-quiz-btn{padding:8px 18px;border-radius:50px;border:2px solid #FF6F61;background:rgba(255,111,97,.2);color:#FF6F61;font-size:13px;font-weight:700;cursor:pointer;transition:all .3s}
+.nav-quiz-btn:hover{background:#FF6F61;color:#fff}
+
+.progress-track{height:6px;background:rgba(255,255,255,.1);border-radius:3px;margin:15px 0;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#FF6F61,#6B5B95);border-radius:3px;transition:width .5s ease;width:0%}
+
+.study-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:20px 0}
+.stat-box{background:rgba(255,255,255,.08);border-radius:15px;padding:15px 10px;text-align:center}
+.stat-num{font-size:22px;font-weight:800;color:#FF6F61}
+.stat-label{font-size:11px;color:rgba(255,255,255,.6);margin-top:4px}
+
+.flash-stage{perspective:1000px;height:260px;margin:20px 0;position:relative}
+.flash-card{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s;cursor:pointer}
+.flash-card.flipped{transform:rotateY(180deg)}
+.flash-front,.flash-back{position:absolute;width:100%;height:100%;backface-visibility:hidden;border-radius:25px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:30px;background:rgba(255,255,255,.08);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.1)}
+.flash-back{transform:rotateY(180deg);background:rgba(107,91,149,.2)}
+.phrase-en{font-size:20px;font-weight:700;margin-bottom:10px;text-align:center}
+.phrase-ko{font-size:16px;color:rgba(255,255,255,.7);text-align:center}
+.tap-hint{font-size:12px;color:rgba(255,255,255,.4);margin-top:auto}
+
+.actions{display:flex;gap:12px;justify-content:center;margin:20px 0 0;flex-wrap:wrap}
+.act-btn{padding:12px 22px;border-radius:50px;border:2px solid;background:transparent;cursor:pointer;font-size:14px;font-weight:600;transition:all .3s}
+.act-btn.easy{border-color:#4CAF50;color:#4CAF50}.act-btn.easy:hover{background:#4CAF50;color:#fff}
+.act-btn.hard{border-color:#FF9800;color:#FF9800}.act-btn.hard:hover{background:#FF9800;color:#fff}
+.act-btn.skip{border-color:#757575;color:#757575}.act-btn.skip:hover{background:#757575;color:#fff}
+
+.quiz-card{background:rgba(255,255,255,.08);border-radius:20px;padding:25px;margin:15px 0}
+.quiz-q{font-size:18px;font-weight:600;margin-bottom:20px}
+.quiz-opts{display:flex;flex-direction:column;gap:12px}
+.quiz-opt{padding:15px 20px;border-radius:15px;background:rgba(255,255,255,.06);border:2px solid transparent;cursor:pointer;transition:all .2s}
+.quiz-opt:hover{border-color:rgba(255,255,255,.3)}
+.quiz-opt.correct{border-color:#4CAF50;background:rgba(76,175,80,.15)}
+.quiz-opt.wrong{border-color:#FF5252;background:rgba(255,82,82,.15)}
+
+.result-emoji{font-size:60px;text-align:center;margin:20px 0}
+.result-msg{text-align:center;font-size:1.2rem;margin-bottom:10px}
+
+@keyframes slideIn{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+.slide-in{animation:slideIn .5s ease both}
+
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);display:none;align-items:center;justify-content:center;z-index:9999;backdrop-filter:blur(8px)}
+.modal-overlay.show{display:flex}
+.modal-box{background:linear-gradient(135deg,#1a1a2e,#16213e);border-radius:30px;padding:40px 30px;max-width:420px;width:90%;text-align:center;border:1px solid rgba(255,111,97,.3);box-shadow:0 20px 60px rgba(0,0,0,.5);animation:popIn .4s cubic-bezier(.175,.885,.32,1.275)}
+@keyframes popIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+.modal-emoji{font-size:80px;margin-bottom:15px;display:block}
+.modal-title{font-size:22px;font-weight:800;margin-bottom:10px;color:#FF6F61}
+.modal-body{font-size:16px;color:rgba(255,255,255,.8);margin-bottom:25px;line-height:1.6}
+.modal-body b{color:#fff;font-size:18px}
+.modal-btn{padding:14px 35px;border-radius:50px;border:none;background:linear-gradient(135deg,#FF6F61,#6B5B95);color:#fff;font-size:16px;font-weight:700;cursor:pointer;transition:all .3s}
+.modal-btn:hover{transform:scale(1.05)}
+
+/* History screen */
+.history-list{display:flex;flex-direction:column;gap:8px;margin:20px 0}
+.history-item{background:rgba(255,255,255,.08);border-radius:15px;padding:15px;display:flex;justify-content:space-between;align-items:center}
+.history-left{text-align:left}
+.history-title{font-size:15px;font-weight:700}
+.history-meta{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px}
+.history-score{font-size:22px;font-weight:800;color:#FF6F61}
+
+/* Install banner */
+.install-banner{display:none;background:linear-gradient(90deg,#FF6F61,#6B5B95);padding:12px 20px;align-items:center;justify-content:space-between;margin-bottom:15px;border-radius:12px}
+.install-banner.show{display:flex}
+.install-text{font-size:13px;font-weight:600}
+.install-btn{background:#fff;color:#FF6F61;border:none;border-radius:50px;padding:6px 16px;font-size:13px;font-weight:700;cursor:pointer}
+
+.learned-badge{background:rgba(76,175,80,.2);color:#4CAF50;border:1px solid #4CAF50;padding:2px 8px;border-radius:50px;font-size:11px;position:absolute;top:10px;right:10px;display:none}
+.learned-badge.show{display:block}
+</style>
+</head>
+<body>
+
+<!-- INSTALL BANNER -->
+<div class="install-banner" id="installBanner">
+  <span class="install-text">🏠 홈 화면에 설치하면 빠르게 시작할 수 있어요!</span>
+  <button class="install-btn" onclick="installApp()">설치</button>
+</div>
+
+<!-- CUSTOM MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <span class="modal-emoji" id="modalEmoji">🎉</span>
+    <div class="modal-title" id="modalTitle">축하해요!</div>
+    <div class="modal-body" id="modalBody">본문</div>
+    <button class="modal-btn" onclick="closeModal()">확인</button>
+  </div>
+</div>
+
+<!-- LANDING SCREEN -->
+<div class="app-screen active" id="landing">
+  <div class="landing">
+    <div class="globe">🌍⛳</div>
+    <h1>Lingo 학습</h1>
+    <p class="subtitle">여행 30일 전, 반복학습으로 외국어 구문을 완벽하게 익히세요~!</p>
+
+    <div style="color:rgba(255,255,255,.7);margin:15px 0;font-size:1.1rem;font-weight:700">📊 난이도를 선택하세요</div>
+    <div class="level-select" id="levelSelect">
+      <button class="level-btn active" data-l="beginner">🟢 초급</button>
+      <button class="level-btn" data-l="intermediate">🟡 중급</button>
+      <button class="level-btn" data-l="advanced">🔴 고급</button>
+    </div>
+
+    <div style="color:rgba(255,255,255,.7);margin:15px 0;font-size:1.1rem;font-weight:700">✈️ 목적을 선택하세요</div>
+    <div class="purposes" id="purposes">
+      <div class="purp-card active" data-p="etc"><div class="purp-emoji">📌</div><div class="purp-title">기타</div></div>
+      <div class="purp-card" data-p="travel"><div class="purp-emoji">🧳</div><div class="purp-title">여행 회화</div></div>
+      <div class="purp-card" data-p="golf"><div class="purp-emoji">⛳</div><div class="purp-title">골프 용어</div></div>
+      <div class="purp-card" data-p="shop"><div class="purp-emoji">🛍️</div><div class="purp-title">쇼핑</div></div>
+      <div class="purp-card" data-p="restaurant"><div class="purp-emoji">🍽️</div><div class="purp-title">레스토랑</div></div>
+      <div class="purp-card" data-p="direction"><div class="purp-emoji">🗺️</div><div class="purp-title">길 찾기</div></div>
+      <div class="purp-card" data-p="hotel"><div class="purp-emoji">🏨</div><div class="purp-title">호텔</div></div>
+      <div class="purp-card" data-p="airport"><div class="purp-emoji">✈️</div><div class="purp-title">공항</div></div>
+      <div class="purp-card" data-p="emergency"><div class="purp-emoji">🚨</div><div class="purp-title">응급상황</div></div>
+    </div>
+
+    <select class="lang-select" id="langSelect">
+      <option value="en">🇺🇸 English</option>
+      <option value="jp">🇯🇵 日本語</option>
+      <option value="zh">🇨🇳 中文</option>
+    </select>
+
+    <button class="start-btn" id="startBtn">🚀 📌 기타 학습 시작!</button>
+
+    <div style="margin-top:30px;display:flex;gap:10px;justify-content:center">
+      <button class="act-btn skip" onclick="showScreen('historyScreen')" style="font-size:13px">📊 학습 기록</button>
+      <button class="act-btn skip" onclick="showScreen('statsScreen')" style="font-size:13px">🏆 통계</button>
+    </div>
+  </div>
+</div>
+
+<!-- STUDY SCREEN -->
+<div class="app-screen" id="studyScreen">
+  <div class="top-nav">
+    <div class="back-btn" onclick="goHome()">←</div>
+    <div class="nav-title" id="studyTitle">🧳 여행 회화</div>
+    <button class="nav-quiz-btn" onclick="goQuiz()">📝 퀴즈</button>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <div class="study-stats slide-in">
+    <div class="stat-box"><div class="stat-num" id="learnedCount">0</div><div class="stat-label">익힌 구문</div></div>
+    <div class="stat-box"><div class="stat-num" id="sessionCount">0</div><div class="stat-label">이번 세션</div></div>
+    <div class="stat-box"><div class="stat-num" id="streakCount">🔥0</div><div class="stat-label">연속 일일</div></div>
+  </div>
+  <div class="flash-stage slide-in">
+    <div class="flash-card" id="flashCard" onclick="flipCard()">
+      <div class="flash-front" id="cardFront">
+        <span style="font-size:40px;margin-bottom:10px">🗣️</span>
+        <div class="phrase-ko" id="phraseKo">여기까지 가려면 어떻게 가야 하나요?</div>
+        <span class="tap-hint">탭해서 뒤집기</span>
+        <span class="learned-badge" id="learnedBadge">✅ 익힘</span>
+      </div>
+      <div class="flash-back" id="cardBack">
+        <div class="phrase-en" id="phraseEn">How do I get there?</div>
+        <span class="tap-hint">다시 탭해서 앞면</span>
+      </div>
+    </div>
+  </div>
+  <div class="actions slide-in" style="margin-bottom:0">
+    <button class="act-btn" onclick="speak(0.7)" style="border-color:#6B5B95;color:#6B5B95">🗣️ 발음 듣기</button>
+    <button class="act-btn" onclick="speak(0.4)" style="border-color:#9C8BC0;color:#9C8BC0">🐢 천천히</button>
+    <button class="act-btn" onclick="testSTT()" style="border-color:#FF6F61;color:#FF6F61">🎙️ 내 발음 체크</button>
+  </div>
+  <div class="actions slide-in">
+    <button class="act-btn hard" onclick="markHard()">🤔 어려움</button>
+    <button class="act-btn easy" onclick="markEasy()">😊 완료</button>
+    <button class="act-btn skip" onclick="nextCard()">⏭️ 넘기기</button>
+  </div>
+</div>
+
+<!-- QUIZ SCREEN -->
+<div class="app-screen" id="quizScreen">
+  <div class="top-nav">
+    <div class="back-btn" onclick="showScreen('studyScreen')">←</div>
+    <div class="nav-title">📝 테스트</div>
+    <div style="font-size:13px;color:#FF6F61" id="quizScore">0/0</div>
+  </div>
+  <div class="progress-track"><div class="progress-fill" id="quizProgress"></div></div>
+  <div id="quizArea"><div class="quiz-card slide-in">
+    <div class="quiz-q" id="quizQuestion">다음 구문은?</div>
+    <div class="quiz-opts" id="quizOptions"></div>
+  </div></div>
+</div>
+
+<!-- RESULT SCREEN -->
+<div class="app-screen" id="resultScreen">
+  <div class="top-nav">
+    <div class="back-btn" onclick="goHome()">←</div>
+    <div class="nav-title">🎉 테스트 결과</div>
+    <div>완료</div>
+  </div>
+  <div class="result-emoji" id="resultEmoji">🎊</div>
+  <div class="result-msg" id="resultMsg">수고하셨어요!</div>
+  <div class="study-stats slide-in">
+    <div class="stat-box"><div class="stat-num" id="resultScore">0</div><div class="stat-label">정답</div></div>
+    <div class="stat-box"><div class="stat-num" id="resultTotal">0</div><div class="stat-label">전체</div></div>
+    <div class="stat-box"><div class="stat-num" id="resultPercent">0%</div><div class="stat-label">정확도</div></div>
+  </div>
+  <div class="quiz-card slide-in" id="reviewBox" style="display:none">
+    <div class="quiz-q">📝 틀린 문제 복습</div>
+    <div class="quiz-opts" id="reviewOptions"></div>
+  </div>
+  <div class="actions slide-in">
+    <button class="act-btn easy" onclick="goQuiz()">🔄 다시 도전</button>
+    <button class="act-btn skip" onclick="goHome()">🏠 홈으로</button>
+  </div>
+</div>
+
+<!-- HISTORY SCREEN -->
+<div class="app-screen" id="historyScreen">
+  <div class="top-nav">
+    <div class="back-btn" onclick="goHome()">←</div>
+    <div class="nav-title">📊 학습 기록</div>
+    <div></div>
+  </div>
+  <h2 style="margin:20px 0 10px;font-size:1.3rem">📝 최근 퀴즈 점수</h2>
+  <div class="history-list" id="historyList">
+    <div style="text-align:center;padding:40px 20px;color:rgba(255,255,255,.5)">
+      <div style="font-size:50px;margin-bottom:10px">📝</div>
+      <div>아직 기록이 없어요.<br>퀴즈를 풀고 점수를 저장해보세요!</div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="act-btn skip" onclick="goHome()">🏠 홈으로</button>
+  </div>
+</div>
+
+<!-- STATS SCREEN -->
+<div class="app-screen" id="statsScreen">
+  <div class="top-nav">
+    <div class="back-btn" onclick="goHome()">←</div>
+    <div class="nav-title">🏆 학습 통계</div>
+    <div></div>
+  </div>
+  <div id="statsContent" class="slide-in">
+    <div class="study-stats" style="margin-top:20px">
+      <div class="stat-box"><div class="stat-num" id="statTotalLearned">0</div><div class="stat-label">누적 익힘</div></div>
+      <div class="stat-box"><div class="stat-num" id="statMaxStreak">0</div><div class="stat-label">최대 연속</div></div>
+      <div class="stat-box"><div class="stat-num" id="statQuizCount">0</div><div class="stat-label">퀴즈 수</div></div>
+    </div>
+    <div style="text-align:center;margin:30px 0;color:rgba(255,255,255,.5)">
+      <div style="font-size:50px">🌱</div>
+      <div style="margin-top:10px">꾸준한 학습이 실력을 만든답니다!</div>
+    </div>
+  </div>
+  <div class="actions">
+    <button class="act-btn skip" onclick="clearAllData()">🗑️ 데이터 초기화</button>
+    <button class="act-btn skip" onclick="goHome()">🏠 홈으로</button>
+  </div>
+</div>
+
+<script>
+// ===== GLOBALS =====
+let PHRASES = null;
+let selected = 'etc';
+let selectedLevel = 'beginner';
+const API_SERVER = '';  // Static PWA - no backend needed
+
+const CAT_NAMES = {etc:'기타',travel:'여행',golf:'골프',shop:'쇼핑',restaurant:'레스토랑',direction:'길찾기',hotel:'호텔',airport:'공항',emergency:'응급상황'};
+const LVL_EMOJI = {beginner:'🟢',intermediate:'🟡',advanced:'🔴'};
+const LVL_NAME  = {beginner:'초급',intermediate:'중급',advanced:'고급'};
+const TTS_LANG = {en:'en-US',jp:'ja-JP',zh:'zh-CN'};
+
+const state = {
+  purpose: null,
+  lang: 'en',
+  cards: [],
+  idx: 0,
+  learned: [], // in-session
+  streak: 0,
+  level: 'beginner'
+};
+
+let qScore = 0, qSpeechScore = 0, qTotal = 0, qQ = [], qC = 0, qWrong = [];
+let rec = null;
+let installPrompt = null;
+
+// ===== LOCALSTORAGE =====
+const LS = {
+  key: 'lingo_learned_v2',
+  historyKey: 'lingo_history_v2',
+  statsKey: 'lingo_stats_v2',
+  getLearned()  { try { return JSON.parse(localStorage.getItem(this.key)) || []; } catch(e){ return []; } },
+  setLearned(v) { localStorage.setItem(this.key, JSON.stringify(v)); },
+  addLearned(key) {
+    const arr = this.getLearned();
+    if (!arr.includes(key)) { arr.push(key); this.setLearned(arr); }
+  },
+  getHistory()  { try { return JSON.parse(localStorage.getItem(this.historyKey)) || []; } catch(e){ return []; } },
+  addHistory(item) {
+    const arr = this.getHistory();
+    arr.unshift(item);
+    if (arr.length > 50) arr.length = 50;
+    localStorage.setItem(this.historyKey, JSON.stringify(arr));
+  },
+  getStats() {
+    try {
+      const raw = localStorage.getItem(this.statsKey);
+      return raw ? JSON.parse(raw) : {totalLearned:0, streakDays:0, maxStreak:0, lastDate:'', quizCount:0};
+    } catch(e){ return {totalLearned:0, streakDays:0, maxStreak:0, lastDate:'', quizCount:0}; }
+  },
+  setStats(v) { localStorage.setItem(this.statsKey, JSON.stringify(v)); },
+  updateStreak() {
+    const s = this.getStats();
+    const today = new Date().toDateString();
+    const yesterday = new Date(Date.now()-86400000).toDateString();
+    if (s.lastDate === today) return;
+    if (s.lastDate === yesterday) s.streakDays++;
+    else s.streakDays = 1;
+    if (s.streakDays > s.maxStreak) s.maxStreak = s.streakDays;
+    s.lastDate = today;
+    this.setStats(s);
+  },
+  clearAll() {
+    localStorage.removeItem(this.key);
+    localStorage.removeItem(this.historyKey);
+    localStorage.removeItem(this.statsKey);
+  }
+};
+
+// ===== PWA INSTALL =====
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  installPrompt = e;
+  setTimeout(() => document.getElementById('installBanner').classList.add('show'), 800);
+});
+
+function installApp() {
+  if (!installPrompt) return;
+  installPrompt.prompt();
+  installPrompt.userChoice.then(() => {
+    document.getElementById('installBanner').classList.remove('show');
+    installPrompt = null;
+  });
+}
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('sw.js').catch(err => console.warn('SW注册失败', err));
+}
+
+// ===== MODAL =====
+function showModal(emoji, title, body) {
+  const overlay = document.getElementById('modalOverlay');
+  document.getElementById('modalEmoji').textContent = emoji;
+  document.getElementById('modalTitle').textContent = title;
+  document.getElementById('modalBody').innerHTML = body;
+  overlay.onclick = closeModal;
+  overlay.classList.add('show');
+}
+function closeModal() {
+  const overlay = document.getElementById('modalOverlay');
+  overlay.classList.remove('show');
+  overlay.onclick = closeModal;
+}
+
+// ===== DATA LOADING =====
+async function loadData() {
+  const btn = document.getElementById('startBtn');
+  try {
+    if (btn) { btn.textContent = '⏳ 로딩 중...'; btn.disabled = true; }
+    const res = await fetch('phrases_ollama.json?v=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    PHRASES = await res.json();
+  } catch (e) {
+    console.error('JSON load failed:', e);
+    showModal('⚠️','데이터 오류','데이터를 불러올 수 없어요.\n(' + e.message + ')');
+  } finally {
+    if (btn) { btn.textContent = '🚀 ' + (LVL_EMOJI[selectedLevel]||'') + ' ' + (LVL_NAME[selectedLevel]||'') + ' ' + (CAT_NAMES[selected]||'학습') + ' 학습 시작!'; btn.disabled = false; }
+  }
+}
+
+// ===== NAVIGATION =====
+function showScreen(id) {
+  document.querySelectorAll('.app-screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+function goHome() {
+  showScreen('landing');
+  state.cards = []; state.idx = 0; state.learned = []; state.streak = 0;
+  renderHistory(); renderStats();
+}
+function goStudy() { showScreen('studyScreen'); showCard(); }
+
+// ===== LANDING EVENTS =====
+function updateStartBtn() {
+  const btn = document.getElementById('startBtn');
+  if (!btn) return;
+  btn.textContent = '🚀 ' + (LVL_EMOJI[selectedLevel]||'') + ' ' + (LVL_NAME[selectedLevel]||'') + ' ' + (CAT_NAMES[selected]||'학습') + ' 학습 시작!';
+}
+
+document.querySelectorAll('#levelSelect .level-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#levelSelect .level-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    selectedLevel = btn.dataset.l;
+    updateStartBtn();
+  });
+});
+
+document.querySelectorAll('#purposes .purp-card').forEach(card => {
+  card.addEventListener('click', () => {
+    if (!card.dataset.p) return;
+    document.querySelectorAll('#purposes .purp-card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+    selected = card.dataset.p;
+    updateStartBtn();
+  });
+});
+
+document.getElementById('startBtn').addEventListener('click', () => {
+  if (!PHRASES) { showModal('⏳','잠시만요','데이터를 불러오는 중이에요. 잠시만 기다려주세요!'); return; }
+  state.lang = document.getElementById('langSelect').value;
+  LS.updateStreak();
+  startStudy(selected, selectedLevel);
+});
+
+// ===== STUDY =====
+function startStudy(p, l) {
+  state.purpose = p;
+  state.level = l || 'beginner';
+  const rawLevel = PHRASES[p] && PHRASES[p][state.level];
+  state.cards = Array.isArray(rawLevel) ? rawLevel
+    : (rawLevel && rawLevel[state.lang]) || (rawLevel && rawLevel['en']) || (rawLevel && rawLevel['jp']) || [];
+  state.idx = 0;
+  const t = {etc:'📌 기타',travel:'🧳 여행 회화',golf:'⛳ 골프 용어',shop:'🛍️ 쇼핑',restaurant:'🍽️ 레스토랑',direction:'🗺️ 길 찾기',hotel:'🏨 호텔',airport:'✈️ 공항',emergency:'🚨 응급상황'};
+  const lvlName = {beginner:'🟢초급',intermediate:'🟡중급',advanced:'🔴고급'};
+  document.getElementById('studyTitle').textContent = (t[p] || '학습') + ' · ' + (lvlName[state.level] || '');
+  document.getElementById('sessionCount').textContent = state.cards.length;
+  document.getElementById('learnedCount').textContent = LS.getLearned().length;
+  document.getElementById('streakCount').textContent = '🔥' + LS.getStats().streakDays;
+  document.getElementById('progressFill').style.width = '0%';
+  state.learned = [];
+  state.streak = 0;
+  goStudy();
+}
+
+function showCard() {
+  const c = state.cards[state.idx];
+  if (!c) return;
+  document.getElementById('flashCard').classList.remove('flipped');
+  document.getElementById('phraseKo').textContent = c.ko;
+  document.getElementById('phraseEn').textContent = getTargetText(c);
+  // Show learned badge if already mastered
+  const badge = document.getElementById('learnedBadge');
+  const key = getKey(c);
+  if (LS.getLearned().includes(key)) { badge.classList.add('show'); }
+  else { badge.classList.remove('show'); }
+}
+function flipCard() {
+  document.getElementById('flashCard').classList.toggle('flipped');
+}
+
+function getTargetText(item) {
+  if (!item) return '';
+  return item[state.lang] || item['en'] || item['jp'] || item['zh'] || '';
+}
+function getKey(item) {
+  if (!item) return '';
+  return item.ko + '::' + getTargetText(item);
+}
+
+function speak(rate) {
+  const c = state.cards[state.idx];
+  if (!c) return;
+  const u = new SpeechSynthesisUtterance(getTargetText(c));
+  u.lang = TTS_LANG[state.lang] || 'en-US';
+  u.rate = rate;
+  speechSynthesis.speak(u);
+}
+
+// ===== STT =====
+function normalizeForSTT(text, lang) {
+  if (!text) return '';
+  let t = text.replace(/[\uff0c,\u3001\u3002\.\?\!\uff1f\uff01\u3000\uff1b\uff1a;:\s]/g, '');
+  if (lang === 'en') t = t.toLowerCase();
+  if (lang === 'jp' || lang === 'zh') {
+    t = t.replace(/[\uff10-\uff19]/g, m => String.fromCharCode(m.charCodeAt(0) - 0xfee0));
+    t = t.replace(/[\uff21-\uff3a\uff41-\uff5a]/g, m => String.fromCharCode(m.charCodeAt(0) - 0xfee0));
+  }
+  return t;
+}
+
+function testSTT() {
+  const c = state.cards[state.idx];
+  if (!c) return;
+  const target = getTargetText(c);
+  
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) { showModal('⚠️','알림','이 브라우저는 음성인식을 지원하지 않아요. Chrome을 사용해주세요.'); return; }
+  
+  if (rec) { try { rec.stop(); } catch(e){} rec = null; }
+  
+  rec = new SpeechRecognition();
+  rec.lang = TTS_LANG[state.lang] || 'en-US';
+  rec.interimResults = false;
+  rec.maxAlternatives = 1;
+  
+  const btn = document.querySelector('button[onclick="testSTT()"]');
+  if (btn) { btn.textContent = '🔴 녹음 중...'; btn.style.background = 'rgba(255,111,97,.3)'; }
+  
+  let handled = false;
+  
+  rec.onresult = (e) => {
+    if (handled) return; handled = true;
+    const raw = e.results[0][0].transcript.trim();
+    const transcript = normalizeForSTT(raw, state.lang);
+    const targetNorm = normalizeForSTT(target, state.lang);
+    const match = transcript === targetNorm || targetNorm.includes(transcript) || transcript.includes(targetNorm);
+    
+    let extra = '';
+    if (state.lang !== 'en') {
+      extra = state.lang === 'jp'
+        ? '<br><small style="color:rgba(255,255,255,.5)">일본어는 발음 따라 히ラ가나/カタカナ/한자로 인식될 수 있어요</small>'
+        : '<br><small style="color:rgba(255,255,255,.5)">중국어는 발음 따라 한자/병음으로 인식될 수 있어요</small>';
+    }
+    
+    if (match) {
+      showModal('🎊','축하해요!','<b>완벽해요!</b><br><br>✅ ' + target + '<br><br>계속 이어서 가보세요! 🌟');
+    } else {
+      showModal('💪','다시 해보세요!','🎤 내 발음: <b>' + raw + '</b><br><br>✅ 정답: <b>' + target + '</b>' + extra);
+    }
+    if (btn) { btn.textContent = '🎙️ 내 발음 체크'; btn.style.background = 'transparent'; }
+    rec = null;
+  };
+  
+  rec.onerror = (e) => {
+    if (handled) return; handled = true;
+    let msg = e.error || '알 수 없는 오류';
+    let advice = '';
+    if (msg === 'not-allowed') { msg = '마이크 접근이 차단되었어요'; advice = '<br><small>Chrome 설정 > 사이트 > 마이크 권한을 허용해주세요.<br>또는 http://127.0.0.1:8766 로 접속해보세요.</small>'; }
+    else if (msg === 'network') { msg = '네트워크/보안 정책 문제'; advice = '<br><small>안드로이드 Chrome은 http IP 주소에서 음성인식을 차단할 수 있어요.<br>http://127.0.0.1:8766 로 접속해보세요.</small>'; }
+    else if (msg === 'no-speech') { msg = '음성을 인식하지 못했어요'; advice = '<br><small>조금 더 크게 말해보세요.</small>'; }
+    else if (msg === 'audio-capture') { msg = '마이크를 사용할 수 없어요'; }
+    showModal('🎤','음성인식 오류', msg + advice);
+    if (btn) { btn.textContent = '🎙️ 내 발음 체크'; btn.style.background = 'transparent'; }
+    rec = null;
+  };
+  
+  rec.onend = () => {
+    if (!handled) {
+      if (btn) { btn.textContent = '🎙️ 내 발음 체크'; btn.style.background = 'transparent'; }
+      rec = null;
+    }
+  };
+  
+  try {
+    rec.start();
+  } catch (err) {
+    showModal('🎤','시작 실패','음성인식을 시작할 수 없어요: ' + (err.message || err));
+    if (btn) { btn.textContent = '🎙️ 내 발음 체크'; btn.style.background = 'transparent'; }
+    rec = null;
+  }
+}
+
+function markEasy() {
+  const c = state.cards[state.idx];
+  const key = getKey(c);
+  if (!state.learned.includes(key)) state.learned.push(key);
+  LS.addLearned(key);
+  state.streak++;
+  document.getElementById('learnedCount').textContent = LS.getLearned().length;
+  document.getElementById('streakCount').textContent = '🔥' + state.streak;
+  nextCard();
+}
+function markHard() {
+  state.streak = 0;
+  document.getElementById('streakCount').textContent = '🔥0';
+  nextCard();
+}
+function nextCard() {
+  document.getElementById('progressFill').style.width = ((state.idx + 1) / state.cards.length * 100) + '%';
+  state.idx++;
+  if (state.idx >= state.cards.length) {
+    showModal('🎉','세션 완료!','총 ' + state.cards.length + '개 학습했어요~!');
+    goHome();
+  } else { showCard(); }
+}
+
+// ===== QUIZ =====
+function goQuiz() {
+  const pool = state.cards.filter(c => state.learned.includes(getKey(c)) || LS.getLearned().includes(getKey(c)));
+  if (pool.length < 4) {
+    showModal('📚','알림','먼저 카드를 4개 이상 학습해주세요! 현재: ' + pool.length + '개');
+    return;
+  }
+  qScore = 0; qSpeechScore = 0; qTotal = 0; qQ = []; qC = 0; qWrong = [];
+  while (qQ.length < Math.min(5, pool.length)) {
+    const q = pool[Math.floor(Math.random() * pool.length)];
+    if (!qQ.includes(q)) qQ.push(q);
+  }
+  qTotal = qQ.length;
+  showScreen('quizScreen');
+  showQ();
+}
+
+function showQ() {
+  if (qC >= qTotal) { showResult(); return; }
+  const q = qQ[qC];
+  const wp = state.cards.filter(c => c !== q);
+  const opts = [q];
+  while (opts.length < 4 && wp.length > 0) {
+    const r = wp[Math.floor(Math.random() * wp.length)];
+    if (!opts.includes(r)) opts.push(r);
+  }
+  opts.sort(() => Math.random() - 0.5);
+  document.getElementById('quizScore').textContent = (qC + 1) + '/' + qTotal;
+  document.getElementById('quizProgress').style.width = ((qC + 1) / qTotal * 100) + '%';
+  const dir = Math.random() > 0.5 ? 't2k' : 'k2t';
+  document.getElementById('quizQuestion').textContent =
+    dir === 't2k' ? ('"' + getTargetText(q) + '"의 뜻은?') : ('"' + q.ko + '"는?');
+  const el = document.getElementById('quizOptions');
+  el.innerHTML = '';
+  opts.forEach(o => {
+    const d = document.createElement('div');
+    d.className = 'quiz-opt';
+    d.textContent = dir === 't2k' ? o.ko : getTargetText(o);
+    d.onclick = () => markQ(d, o === q, q);
+    el.appendChild(d);
+  });
+}
+
+function markQ(el, correct, qObj) {
+  if (el.classList.contains('correct') || el.classList.contains('wrong')) return;
+  const all = el.parentElement.querySelectorAll('.quiz-opt');
+  all.forEach(opt => opt.onclick = null);
+  if (correct) {
+    el.classList.add('correct');
+    qScore++;
+  } else {
+    el.classList.add('wrong');
+    qWrong.push(qObj);
+    const targetText = getTargetText(qObj);
+    all.forEach(opt => {
+      if (opt.textContent === qObj.ko || opt.textContent === targetText) opt.classList.add('correct');
+    });
+  }
+  if (correct) setTimeout(() => askSpeechCheck(qObj), 500);
+  else setTimeout(showQ, 700);
+}
+
+// ===== QUIZ SPEECH CHECK =====
+function askSpeechCheck(qObj) {
+  const target = getTargetText(qObj);
+  const langName = state.lang === 'en' ? '영어' : state.lang === 'jp' ? '일본어' : '중국어';
+  document.getElementById('modalOverlay').onclick = null;
+  showModal('🎙️','발음 도전!',
+    '<div style="font-size:18px;margin-bottom:15px">"<b>' + target + '</b>"</div>' +
+    '<div style="color:rgba(255,255,255,.6);margin-bottom:20px">' + langName + '로 따라 읽어보세요!</div>' +
+    '<button class="modal-btn" onclick="startQuizSpeechCheck(this, \'' + target.replace(/'/g,"\\'") + '\', \'' + state.lang + '\')" style="font-size:20px;padding:18px 40px">🎤 녹음 시작</button>' +
+    '<br><br><button class="modal-btn" onclick="skipSpeechCheck()" style="background:rgba(255,255,255,.15);color:rgba(255,255,255,.7);font-size:14px;padding:10px 25px">⏭️ 건너뛰기</button>'
+  );
+}
+function skipSpeechCheck() {
+  closeModal();
+  document.getElementById('modalOverlay').onclick = function() { closeModal(); };
+  setTimeout(showQ, 300);
+}
+function startQuizSpeechCheck(btnEl, target, lang) {
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SpeechRecognition) { showModal('⚠️','알림','음성인식을 지원하지 않아요'); return; }
+  const rec = new SpeechRecognition();
+  rec.lang = TTS_LANG[lang] || 'en-US';
+  rec.interimResults = false;
+  rec.maxAlternatives = 1;
+  btnEl.textContent = '🔴 녹음 중...';
+  btnEl.style.background = 'rgba(255,111,97,.3)';
+  rec.onresult = (e) => {
+    const raw = e.results[0][0].transcript.trim();
+    const transcript = normalizeForSTT(raw, lang);
+    const targetNorm = normalizeForSTT(target, lang);
+    const match = transcript === targetNorm || targetNorm.includes(transcript) || transcript.includes(targetNorm);
+    qC++;
+    if (match) {
+      qSpeechScore++;
+      showModal('🎊','발음 완벽!','<b>+1 보너스 점수!</b><br><br>✅ ' + target);
+      setTimeout(() => { closeModal(); document.getElementById('modalOverlay').onclick = function() { closeModal(); }; setTimeout(showQ, 800); }, 1500);
+    } else {
+      showModal('💪','아쉬워요','🎤 내 발음: <b>' + raw + '</b><br><br>✅ 정답: <b>' + target + '</b>');
+      setTimeout(() => { closeModal(); document.getElementById('modalOverlay').onclick = function() { closeModal(); }; setTimeout(showQ, 500); }, 1200);
+    }
+  };
+  rec.onerror = (e) => {
+    qC++;
+    showModal('🎤','오류',e.error);
+    setTimeout(() => { closeModal(); document.getElementById('modalOverlay').onclick = function() { closeModal(); }; setTimeout(showQ, 300); }, 1000);
+  };
+  rec.start();
+}
+
+// ===== RESULT =====
+function showResult() {
+  const totalPoints = qScore + qSpeechScore;
+  const maxPoints = qTotal * 2;
+  const pct = maxPoints > 0 ? Math.round(totalPoints / maxPoints * 100) : 0;
+  const emoji = pct === 100 ? '🏆' : pct >= 80 ? '🎊' : pct >= 60 ? '👍' : '💪';
+  const title = pct === 100 ? '완벽해요!' : pct >= 80 ? '대단해요!' : pct >= 60 ? '잘했어요!' : '계속 연습해요!';
+  let body = '<div style="font-size:48px;margin-bottom:10px">' + emoji + '</div>' +
+    '<div style="font-size:32px;font-weight:800;color:#FF6F61;margin-bottom:5px">' + totalPoints + ' / ' + maxPoints + '점</div>' +
+    '<div style="font-size:18px;color:rgba(255,255,255,.7);margin-bottom:20px">' + pct + '%</div>' +
+    '<div style="display:flex;gap:15px;justify-content:center;margin-bottom:15px">' +
+      '<div style="background:rgba(255,255,255,.1);border-radius:15px;padding:12px 20px">' +
+        '<div style="font-size:12px;color:rgba(255,255,255,.5)">퀴즈 정답</div>' +
+        '<div style="font-size:22px;font-weight:700">' + qScore + '점</div>' +
+      '</div>' +
+      '<div style="background:rgba(255,255,255,.1);border-radius:15px;padding:12px 20px">' +
+        '<div style="font-size:12px;color:rgba(255,255,255,.5)">발음 보너스</div>' +
+        '<div style="font-size:22px;font-weight:700;color:#FF6F61">+' + qSpeechScore + '점</div>' +
+      '</div>' +
+    '</div>';
+  if (qWrong.length > 0) {
+    body += '<div style="margin-top:15px;text-align:left"><div style="font-size:14px;color:rgba(255,255,255,.5);margin-bottom:8px">📚 틀린 문제 복습</div>';
+    qWrong.forEach(w => { body += '<div style="background:rgba(255,255,255,.08);border-radius:10px;padding:10px;margin-bottom:6px"><b>' + getTargetText(w) + '</b> → ' + w.ko + '</div>'; });
+    body += '</div>';
+  }
+  body += '<div style="margin-top:25px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap">' +
+    '<button class="modal-btn" onclick="saveScoreToServer()">📊 점수 저장</button>' +
+    '<button class="modal-btn" onclick="downloadScores()" style="background:rgba(255,255,255,.15);font-size:14px">📥 엑셀 다운로드</button>' +
+    '</div>';
+  showModal(emoji, title, body);
+}
+
+// ===== HISTORY & STATS =====
+function renderHistory() {
+  const list = document.getElementById('historyList');
+  const history = LS.getHistory();
+  if (!history.length) {
+    list.innerHTML = '<div style="text-align:center;padding:40px 20px;color:rgba(255,255,255,.5)">\u003cdiv style="font-size:50px;margin-bottom:10px">📝</div>\u003cdiv>아직 기록이 없어요.<br>퀴즈를 풀고 점수를 저장해보세요!</div></div>';
+    return;
+  }
+  let html = '';
+  history.forEach(h => {
+    const pct = h.pct || 0;
+    const color = pct >= 80 ? '#4CAF50' : pct >= 60 ? '#FF9800' : '#FF5252';
+    html += '<div class="history-item">' +
+      '<div class="history-left">' +
+        '<div class="history-title">' + (CAT_NAMES[h.purpose]||h.purpose) + ' · ' + (LVL_NAME[h.level]||h.level) + '</div>' +
+        '<div class="history-meta">' + (h.date||'') + ' · ' + (h.lang||'en') + '</div>' +
+      '</div>' +
+      `<div class="history-score" style="color:${color}">${h.total_points}/${h.max_points}</div>` +
+    '</div>';
+  });
+  list.innerHTML = html;
+}
+
+function renderStats() {
+  const s = LS.getStats();
+  document.getElementById('statTotalLearned').textContent = s.totalLearned || LS.getLearned().length;
+  document.getElementById('statMaxStreak').textContent = s.maxStreak || 0;
+  document.getElementById('statQuizCount').textContent = s.quizCount || LS.getHistory().length;
+}
+
+function clearAllData() {
+  if (!confirm('모든 학습 데이터를 삭제할까요?\n✅ 익힌 구문, 퀴즈 기록, 통계가 모두 사라집니다.')) return;
+  LS.clearAll();
+  renderStats();
+  showModal('🗑️','초기화 완료','모든 데이터가 삭제되었어요.');
+}
+
+// ===== SCORE SERVER (Static PWA - localStorage only) =====
+function saveScoreToServer() {
+  const totalPoints = qScore + qSpeechScore;
+  const maxPoints = qTotal * 2;
+  const pct = maxPoints > 0 ? Math.round(totalPoints / maxPoints * 100) : 0;
+  const data = {
+    purpose: state.purpose || 'etc',
+    json_file: 'phrases_ollama.json',
+    language: state.lang || 'en',
+    level: state.level || 'beginner',
+    quiz_score: qScore,
+    speech_bonus: qSpeechScore,
+    total_points: totalPoints,
+    max_points: maxPoints,
+    pct: pct
+  };
+  // Save to localStorage history
+  LS.addHistory({...data, date: new Date().toLocaleString('ko-KR')});
+  // Update stats
+  const stats = LS.getStats();
+  stats.quizCount = (stats.quizCount || 0) + 1;
+  stats.totalLearned = LS.getLearned().length;
+  LS.setStats(stats);
+  renderStats();
+  showModal('✅','저장 완료!','📊 점수가 로컬에 저장되었어요!\n(Excel 다운로드 버튼으로 추출 가능)');
+}
+
+function downloadScores() {
+  const history = LS.getHistory();
+  if (history.length === 0) {
+    showModal('⚠️','데이터 없음','저장된 점수 기록이 없어요.\n먼저 퀴즈를 완료하고 점수를 저장해주세요.');
+    return;
+  }
+  
+  // Build CSV from localStorage history
+  const headers = ['날짜','목적','언어','레벨','퀴즈점수','발음점수','총점','만점','퍼센트'];
+  let csv = headers.join(',') + '\n';
+  for (const h of history) {
+    csv += [h.date, h.purpose, h.language, h.level, h.quiz_score || 0, h.speech_bonus || 0, h.total_points, h.max_points, h.pct + '%'].join(',') + '\n';
+  }
+  
+  // Download CSV file
+  const blob = new Blob(['\uFEFF' + csv], {type: 'text/csv;charset=utf-8'});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'lingo_scores_' + new Date().toISOString().slice(0,10) + '.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  
+  showModal('📥','다운로드 완료','점수 CSV 파일을 다운로드했어요!');
+}
+
+// ===== INIT =====
+loadData();
+renderHistory();
+renderStats();
+</script>
+
+</body>
+</html>

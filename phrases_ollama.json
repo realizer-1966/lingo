@@ -1,0 +1,4124 @@
+{
+  "etc": {
+    "beginner": [
+      {
+        "en": "Excuse me",
+        "jp": "すみません",
+        "ko": "실례합니다",
+        "zh": "不好意思"
+      },
+      {
+        "en": "Thank you",
+        "jp": "ありがとうございます",
+        "ko": "감사합니다",
+        "zh": "谢谢"
+      },
+      {
+        "en": "I am sorry",
+        "jp": "ごめんなさい",
+        "ko": "죄송합니다",
+        "zh": "对不起"
+      },
+      {
+        "en": "You're welcome",
+        "jp": "どういたしまして",
+        "ko": "천만에요",
+        "zh": "不客气"
+      },
+      {
+        "en": "Yes",
+        "jp": "はい",
+        "ko": "네",
+        "zh": "是的"
+      },
+      {
+        "en": "No",
+        "jp": "いいえ",
+        "ko": "아니요",
+        "zh": "不是"
+      },
+      {
+        "en": "Please",
+        "jp": "お願いします",
+        "ko": "부탁합니다",
+        "zh": "请"
+      },
+      {
+        "en": "It's okay",
+        "jp": "大丈夫です",
+        "ko": "괜찮아요",
+        "zh": "没关系"
+      },
+      {
+        "en": "Help me, please",
+        "jp": "助けてください",
+        "ko": "도와주세요",
+        "zh": "请帮帮我"
+      },
+      {
+        "en": "I don't know",
+        "jp": "わかりません",
+        "ko": "잘 모르겠어요",
+        "zh": "我不知道"
+      },
+      {
+        "en": "Please say it again",
+        "jp": "もう一度お願いします",
+        "ko": "다시 말씀해 주세요",
+        "zh": "请再说一遍"
+      },
+      {
+        "en": "Please speak slowly",
+        "jp": "ゆっくり話してください",
+        "ko": "천천히 말해 주세요",
+        "zh": "请慢一点说"
+      },
+      {
+        "en": "What is this?",
+        "jp": "これは何ですか？",
+        "ko": "이게 뭐예요?",
+        "zh": "这是什么？"
+      },
+      {
+        "en": "Where is it?",
+        "jp": "どこですか？",
+        "ko": "어디예요?",
+        "zh": "在哪里？"
+      },
+      {
+        "en": "How much is it?",
+        "jp": "いくらですか？",
+        "ko": "얼마예요?",
+        "zh": "多少钱？"
+      },
+      {
+        "en": "What time is it now?",
+        "jp": "今何時ですか？",
+        "ko": "지금 몇 시예요?",
+        "zh": "现在几点？"
+      },
+      {
+        "en": "I'm hungry",
+        "jp": "お腹が空きました",
+        "ko": "배고파요",
+        "zh": "我饿了"
+      },
+      {
+        "en": "I'm thirsty",
+        "jp": "喉が渇きました",
+        "ko": "목말라요",
+        "zh": "我渴了"
+      },
+      {
+        "en": "Where is the bathroom?",
+        "jp": "トイレはどこですか？",
+        "ko": "화장실 어디예요?",
+        "zh": "洗手间在哪里？"
+      },
+      {
+        "en": "I like it / Good",
+        "jp": "いいですね",
+        "ko": "좋아요",
+        "zh": "很好"
+      },
+      {
+        "en": "I don't like it",
+        "jp": "嫌です",
+        "ko": "싫어요",
+        "zh": "我不喜欢"
+      },
+      {
+        "en": "Just a moment",
+        "jp": "ちょっと待ってください",
+        "ko": "잠시만요",
+        "zh": "请稍等"
+      },
+      {
+        "en": "I understand",
+        "jp": "わかりました",
+        "ko": "알겠습니다",
+        "zh": "明白了"
+      },
+      {
+        "en": "Nice to meet you",
+        "jp": "はじめまして",
+        "ko": "반가워요",
+        "zh": "很高兴见到你"
+      },
+      {
+        "en": "Goodbye",
+        "jp": "さようなら",
+        "ko": "잘 가요",
+        "zh": "再见"
+      }
+    ],
+    "intermediate": [
+      {
+        "en": "That shouldn't be the case, it's strange.",
+        "jp": "そんなはずないのに、おかしいな。",
+        "ko": "그럴 리가 없는데 이상하네.",
+        "zh": "不应该这样啊，真奇怪。"
+      },
+      {
+        "en": "Since we're on the subject, let's do this too.",
+        "jp": "話が出たところで、これも一緒にやろう。",
+        "ko": "말 나온 김에 이것도 같이 하자.",
+        "zh": "既然说到这个了，把这个也一起做了吧。"
+      },
+      {
+        "en": "It's taking more time than I thought.",
+        "jp": "思ったより時間がかかりますね。",
+        "ko": "생각보다 시간이 꽤 걸리네요.",
+        "zh": "比想象中要花更多时间啊。"
+      },
+      {
+        "en": "Anyway, as long as the result is good, it's fine.",
+        "jp": "とにかく結果が良ければいいよ。",
+        "ko": "어쨌든 결과가 좋으면 됐지.",
+        "zh": "总之结果好就行了。"
+      },
+      {
+        "en": "Don't worry about others and just speak freely.",
+        "jp": "周りを気にせず、遠慮なく言って。",
+        "ko": "눈치 보지 말고 편하게 말해.",
+        "zh": "不用看别人眼色，尽管说。"
+      },
+      {
+        "en": "Let's talk about that again later.",
+        "jp": "それは後でまた話そう。",
+        "ko": "그건 나중에 다시 이야기하자.",
+        "zh": "那个我们以后再谈吧。"
+      },
+      {
+        "en": "I don't really have anything I want to say.",
+        "jp": "特に言いたいことはありません。",
+        "ko": "딱히 하고 싶은 말이 없어요.",
+        "zh": "没什么特别想说的。"
+      },
+      {
+        "en": "Read the room a bit.",
+        "jp": "空気を読んでよ。",
+        "ko": "분위기 파악 좀 해봐.",
+        "zh": "读读气氛吧。"
+      },
+      {
+        "en": "Do you seriously think that'll happen?",
+        "jp": "まさか本当にそうなると思ってるの？",
+        "ko": "설마 진짜로 그럴 거라고 생각해요?",
+        "zh": "你难道真的认为会那样吗？"
+      },
+      {
+        "en": "I knew something was fishy.",
+        "jp": "どうりで怪しいと思ったよ。",
+        "ko": "어쩐지 좀 수상하다 했어.",
+        "zh": "我就觉得有点可疑。"
+      },
+      {
+        "en": "I think it's better to compromise moderately.",
+        "jp": "適当に妥協するのがいいと思う。",
+        "ko": "적당히 타협하는 게 좋을 것 같아.",
+        "zh": "我觉得适当妥协比较好。"
+      },
+      {
+        "en": "I feel like that could be possible.",
+        "jp": "そうかもしれないと思います。",
+        "ko": "그럴 수도 있겠다 싶어요.",
+        "zh": "我觉得也有可能。"
+      },
+      {
+        "en": "Needless to say, isn't it obvious?",
+        "jp": "言うまでもないよ、当たり前じゃない？",
+        "ko": "말해 뭐해, 당연한 거 아니야?",
+        "zh": "还用说吗，这不是理所当然的吗？"
+      },
+      {
+        "en": "Where is this sudden talk coming from?",
+        "jp": "急にどうしてそんな突飛なことを言うの？",
+        "ko": "갑자기 웬 뜬금없는 소리야?",
+        "zh": "突然说什么风马牛不相及的话？"
+      },
+      {
+        "en": "I was just saying.",
+        "jp": "ただなんとなく言ってみただけです。",
+        "ko": "그냥 한번 해본 소리예요.",
+        "zh": "我就是随口说说。"
+      },
+      {
+        "en": "Sometimes I just want to rest.",
+        "jp": "たまにはただ休みたい時がある。",
+        "ko": "가끔은 그냥 쉬고 싶을 때가 있어.",
+        "zh": "有时候就是想休息一下。"
+      },
+      {
+        "en": "Do you think this is the best way?",
+        "jp": "これが最善だと思いますか？",
+        "ko": "이게 최선이라고 생각하시나요?",
+        "zh": "您认为这是最好的办法吗？"
+      },
+      {
+        "en": "It wasn't going to work out anyway.",
+        "jp": "どうせ無理なことだったよ。",
+        "ko": "어차피 안 될 일이었어.",
+        "zh": "反正本来就没戏。"
+      },
+      {
+        "en": "That's exactly what I'm saying.",
+        "jp": "私の言いたいことはそれだよ。",
+        "ko": "내 말이 그 말이야.",
+        "zh": "我说的就是这个意思。"
+      },
+      {
+        "en": "I think that's a bit too much.",
+        "jp": "それはちょっと無理だと思うけど。",
+        "ko": "그건 좀 무리인 것 같은데.",
+        "zh": "我觉得那样有点勉强。"
+      },
+      {
+        "en": "Let's just let it slide if possible.",
+        "jp": "できれば適当に流しましょう。",
+        "ko": "웬만하면 그냥 넘어갑시다.",
+        "zh": "尽量就这么算了。"
+      },
+      {
+        "en": "Actually, I'm hesitating a bit.",
+        "jp": "実はちょっと迷っています。",
+        "ko": "사실은 좀 망설여져요.",
+        "zh": "其实我有点犹豫。"
+      },
+      {
+        "en": "There must be a reason for that.",
+        "jp": "それなりの理由があるんだろう。",
+        "ko": "그럴 만한 이유가 있겠지.",
+        "zh": "应该是有某种原因的吧。"
+      },
+      {
+        "en": "Just so you know, this is a secret.",
+        "jp": "言っておくけど、これは秘密ね。",
+        "ko": "말해두는데, 이건 비밀이야.",
+        "zh": "先跟你说好，这是秘密。"
+      },
+      {
+        "en": "It'll work out somehow.",
+        "jp": "まあ、なんとかなるでしょ。",
+        "ko": "어떻게든 되겠지 뭐.",
+        "zh": "反正总会有办法的。"
+      }
+    ],
+    "advanced": [
+      {
+        "en": "So, in a manner of speaking, that's how it is.",
+        "jp": "いわばそういうことです。",
+        "ko": "말하자면 그렇다는 거죠.",
+        "zh": "可以说就是这么回事。"
+      },
+      {
+        "en": "Anyway, getting back to the main point,",
+        "jp": "それはさておき、本題に入ると、",
+        "ko": "그건 그렇고, 본론으로 들어가서",
+        "zh": "言归正传，回到正题，"
+      },
+      {
+        "en": "Either way, the result remains the same.",
+        "jp": "どのみち結果は同じです。",
+        "ko": "어찌 됐든 결과는 마찬가지예요.",
+        "zh": "无论如何，结果都一样。"
+      },
+      {
+        "en": "Since we're on the subject,",
+        "jp": "話が出たついでに申し上げますと、",
+        "ko": "말이 나온 김에 말씀드리는데",
+        "zh": "既然说到这个，我就顺便说一下"
+      },
+      {
+        "en": "There may be differing opinions on that point.",
+        "jp": "その点については異論があるかもしれません。",
+        "ko": "그 점에 대해서는 이견이 있을 수 있습니다.",
+        "zh": "关于这一点，可能会有不同意见。"
+      },
+      {
+        "en": "On the whole, it's not bad.",
+        "jp": "概して見れば悪くないです。",
+        "ko": "전반적으로 보면 나쁘지 않아요.",
+        "zh": "总的来看还不错。"
+      },
+      {
+        "en": "Setting that aside for a moment,",
+        "jp": "それはさておき、",
+        "ko": "그건 차치하고라도",
+        "zh": "且不论那个，"
+      },
+      {
+        "en": "Stop talking nonsense.",
+        "jp": "理屈に合わないことを言わないでください。",
+        "ko": "말이 안 되는 소리 하지 마세요.",
+        "zh": "别说那些不合逻辑的话。"
+      },
+      {
+        "en": "The circumstances aren't ideal.",
+        "jp": "状況が許さないので。",
+        "ko": "상황이 여의치 않아서요.",
+        "zh": "情况不太允许。"
+      },
+      {
+        "en": "We cannot rule out the possibility.",
+        "jp": "その可能性を排除できません。",
+        "ko": "그럴 가능성을 배제할 수 없죠.",
+        "zh": "不能排除这种可能性。"
+      },
+      {
+        "en": "That's understandable to some extent.",
+        "jp": "ある程度は納得がいきますね。",
+        "ko": "어느 정도 납득은 가네요.",
+        "zh": "在某种程度上可以理解。"
+      },
+      {
+        "en": "Ultimately, the core issue is this.",
+        "jp": "結局、核心はこれです。",
+        "ko": "결국 핵심은 이것입니다.",
+        "zh": "最终，核心问题在于此。"
+      },
+      {
+        "en": "I hadn't considered that.",
+        "jp": "それは思いもしませんでした。",
+        "ko": "그건 생각지도 못했네요.",
+        "zh": "这一点我没考虑到。"
+      },
+      {
+        "en": "That doesn't necessarily make it right.",
+        "jp": "だからといって、必ずしも正しいとは限りません。",
+        "ko": "그렇다고 해서 무조건 옳은 건 아니죠.",
+        "zh": "即便如此，也不代表绝对正确。"
+      },
+      {
+        "en": "I understand the intent of what you're saying.",
+        "jp": "おっしゃる趣旨は理解しております。",
+        "ko": "말씀하신 취지는 이해합니다.",
+        "zh": "我明白您话里的意思。"
+      },
+      {
+        "en": "That seems like a bit of a stretch.",
+        "jp": "それは少し無理がある設定だと思います。",
+        "ko": "그건 좀 억지스러운 설정 같아요.",
+        "zh": "这设定有点牵强。"
+      },
+      {
+        "en": "It was simply a matter of luck.",
+        "jp": "単に運が良かっただけです。",
+        "ko": "단순히 운이 좋았던 것뿐이에요.",
+        "zh": "纯粹是运气好而已。"
+      },
+      {
+        "en": "I'll need to re-examine that part.",
+        "jp": "その部分は再検討する必要がありますね。",
+        "ko": "그 부분은 다시 검토해봐야겠어요.",
+        "zh": "那部分需要重新审视一下。"
+      },
+      {
+        "en": "If what you're saying is true, it doesn't make sense.",
+        "jp": "おっしゃる通りなら、筋が通りません。",
+        "ko": "말씀하신 대로라면 말이 안 되죠.",
+        "zh": "如果按您说的，那就说不通了。"
+      },
+      {
+        "en": "That's just an excuse.",
+        "jp": "それは単なる言い訳に過ぎません。",
+        "ko": "그건 그냥 핑계일 뿐이에요.",
+        "zh": "那只不过是借口而已。"
+      },
+      {
+        "en": "We need to find some kind of middle ground.",
+        "jp": "ある程度の妥協点を見つける必要があります。",
+        "ko": "어느 정도 타협점을 찾아야 합니다.",
+        "zh": "得找一个折中点。"
+      },
+      {
+        "en": "Even putting that aside,",
+        "jp": "それは論外としておいても、",
+        "ko": "그건 논외로 하더라도",
+        "zh": "即便不谈那个，"
+      },
+      {
+        "en": "I completely agree with what you've said.",
+        "jp": "おっしゃる内容に全面的に同意します。",
+        "ko": "말씀하신 내용에 전적으로 동감합니다.",
+        "zh": "我完全同意您所说的。"
+      },
+      {
+        "en": "We can't say for certain.",
+        "jp": "そう断定して言うことはできません。",
+        "ko": "그렇게 단정 지어 말할 수는 없어요.",
+        "zh": "不能那样下定论。"
+      },
+      {
+        "en": "In the end, it turned out for the best.",
+        "jp": "結果的には幸いだったということです。",
+        "ko": "결과적으로는 다행인 셈이죠.",
+        "zh": "结果倒是挺庆幸的。"
+      }
+    ]
+  },
+  "emergency": {
+    "beginner": [
+      {
+        "en": "Help me!",
+        "jp": "助けてください！",
+        "ko": "도와주세요!",
+        "zh": "救命！"
+      },
+      {
+        "en": "It's an emergency.",
+        "jp": "緊急事態です。",
+        "ko": "긴급 상황이에요.",
+        "zh": "这是紧急情况。"
+      },
+      {
+        "en": "Please call the police.",
+        "jp": "警察を呼んでください。",
+        "ko": "경찰을 불러주세요.",
+        "zh": "请帮我叫警察。"
+      },
+      {
+        "en": "Please call an ambulance.",
+        "jp": "救急車を呼んでください。",
+        "ko": "구급차를 불러주세요.",
+        "zh": "请帮我叫救护车。"
+      },
+      {
+        "en": "Where is a hospital?",
+        "jp": "病院はどこにありますか？",
+        "ko": "어디에 병원이 있나요?",
+        "zh": "医院在哪里？"
+      },
+      {
+        "en": "I'm lost.",
+        "jp": "道に迷いました。",
+        "ko": "길을 잃었어요.",
+        "zh": "我迷路了。"
+      },
+      {
+        "en": "I lost my passport/wallet.",
+        "jp": "パスポート／財布をなくしました。",
+        "ko": "여권/지갑을 잃어버렸어요.",
+        "zh": "我的护照/钱包丢了。"
+      },
+      {
+        "en": "I don't feel well.",
+        "jp": "気分が悪いです。",
+        "ko": "몸이 안 좋아요.",
+        "zh": "我不舒服。"
+      },
+      {
+        "en": "It hurts here.",
+        "jp": "ここがとても痛いです。",
+        "ko": "여기가 너무 아파요.",
+        "zh": "这里很疼。"
+      },
+      {
+        "en": "I have an allergy.",
+        "jp": "アレルギーがあります。",
+        "ko": "알레르기가 있어요.",
+        "zh": "我对...过敏。"
+      },
+      {
+        "en": "Where is the pharmacy?",
+        "jp": "薬局はどこですか？",
+        "ko": "약국이 어디예요?",
+        "zh": "药店在哪里？"
+      },
+      {
+        "en": "There is a fire!",
+        "jp": "火事です！",
+        "ko": "불이 났어요!",
+        "zh": "起火了！"
+      },
+      {
+        "en": "It's dangerous!",
+        "jp": "危ないです！",
+        "ko": "위험해요!",
+        "zh": "危险！"
+      },
+      {
+        "en": "Be careful!",
+        "jp": "気をつけてください！",
+        "ko": "조심하세요!",
+        "zh": "小心！"
+      },
+      {
+        "en": "There is someone here.",
+        "jp": "ここに誰かいます。",
+        "ko": "여기에 누가 있어요.",
+        "zh": "这里有人。"
+      },
+      {
+        "en": "Can I borrow your phone?",
+        "jp": "電話を貸していただけますか？",
+        "ko": "전화 좀 빌릴 수 있을까요?",
+        "zh": "可以借用一下你的电话吗？"
+      },
+      {
+        "en": "Where is the nearest police station?",
+        "jp": "一番近い警察署はどこですか？",
+        "ko": "가까운 경찰서가 어디인가요?",
+        "zh": "最近的警察局在哪里？"
+      },
+      {
+        "en": "There was an accident.",
+        "jp": "事故がありました。",
+        "ko": "사고가 났어요.",
+        "zh": "出事故了。"
+      },
+      {
+        "en": "I'm having trouble breathing.",
+        "jp": "息が苦しいです。",
+        "ko": "숨쉬기가 힘들어요.",
+        "zh": "我呼吸困难。"
+      },
+      {
+        "en": "I'm bleeding.",
+        "jp": "血が出ています。",
+        "ko": "피가 나요.",
+        "zh": "我在流血。"
+      },
+      {
+        "en": "Please come quickly.",
+        "jp": "早く来てください。",
+        "ko": "빨리 와주세요.",
+        "zh": "请快点来。"
+      },
+      {
+        "en": "Please look here.",
+        "jp": "ここを見てください。",
+        "ko": "여기를 봐주세요.",
+        "zh": "请看这里。"
+      },
+      {
+        "en": "I'm scared.",
+        "jp": "怖いです。",
+        "ko": "무서워요.",
+        "zh": "我很害怕。"
+      },
+      {
+        "en": "Are you okay?",
+        "jp": "大丈夫ですか？",
+        "ko": "괜찮으세요?",
+        "zh": "你还好吗？"
+      },
+      {
+        "en": "Stop!",
+        "jp": "止まってください！",
+        "ko": "정지하세요!",
+        "zh": "停下！"
+      }
+    ],
+    "intermediate": [
+      {
+        "en": "Is there anyone here who can help me?",
+        "jp": "誰か助けてくれる方はいますか？",
+        "ko": "여기 좀 도와주실 분 계신가요?",
+        "zh": "这里有人能帮我吗？"
+      },
+      {
+        "en": "Where is the nearest hospital with an emergency room?",
+        "jp": "近くに救急外来のある病院はどこですか？",
+        "ko": "근처에 응급실이 있는 병원이 어디죠?",
+        "zh": "附近有急诊室的医院在哪里？"
+      },
+      {
+        "en": "There's been a serious accident. Please call emergency services!",
+        "jp": "重大な事故がありました。すぐに通報してください！",
+        "ko": "심각한 사고가 났어요. 빨리 신고해 주세요!",
+        "zh": "发生了严重的事故，请快报警！"
+      },
+      {
+        "en": "I think my wallet has been pickpocketed.",
+        "jp": "財布をスリにられたみたいです。",
+        "ko": "지갑을 소매치기당한 것 같아요.",
+        "zh": "我的钱包好像被偷了。"
+      },
+      {
+        "en": "I'm suddenly having a lot of trouble breathing.",
+        "jp": "急に息をするのがとても苦しくなりました。",
+        "ko": "갑자기 숨쉬기가 너무 힘들어요.",
+        "zh": "我突然觉得呼吸很困难。"
+      },
+      {
+        "en": "Someone collapsed here! Please call an ambulance!",
+        "jp": "人が倒れました！救急車を呼んでください！",
+        "ko": "여기 사람이 쓰러졌어요! 구급차 불러주세요!",
+        "zh": "这里有人晕倒了！请叫救护车！"
+      },
+      {
+        "en": "I think I'm having an allergic reaction; do you have any medicine?",
+        "jp": "アレルギー反応が出たみたいですが、薬はありますか？",
+        "ko": "알레르기 반응이 일어난 것 같은데 약이 있을까요?",
+        "zh": "我好像过敏了，请问有药吗？"
+      },
+      {
+        "en": "I lost my passport; where should I report it?",
+        "jp": "パスポートを紛失したのですが、どこで届け出ればいいですか？",
+        "ko": "여권을 분실했는데 어디서 신고해야 하죠?",
+        "zh": "我的护照丢了，请问在哪里申报？"
+      },
+      {
+        "en": "I smell a strong scent of gas; could you please check it?",
+        "jp": "ガスの臭いがひどいので、確認をお願いします。",
+        "ko": "가스 냄새가 심하게 나는데 확인 좀 해주세요.",
+        "zh": "有很浓的煤气味，请帮我检查一下。"
+      },
+      {
+        "en": "There's heavy bleeding and I need to stop it.",
+        "jp": "ひどい出血があるので、止血が必要です。",
+        "ko": "심한 출혈이 있어서 지혈이 필요해요.",
+        "zh": "出血很严重，需要止血。"
+      },
+      {
+        "en": "I'm lost; where is the nearest police station from here?",
+        "jp": "道に迷ったのですが、ここから一番近い警察署はどこですか？",
+        "ko": "길을 잃었는데 여기서 가장 가까운 경찰서가 어디인가요?",
+        "zh": "我迷路了，请问最近的警察局在哪里？"
+      },
+      {
+        "en": "I think a fire started due to an electrical short circuit.",
+        "jp": "漏電で火が出たみたいです。",
+        "ko": "전기 누전 때문에 불이 난 것 같아요.",
+        "zh": "好像是因为漏电起火了。"
+      },
+      {
+        "en": "They are unconscious. I'll check the pulse.",
+        "jp": "意識がありません。脈拍を確認します。",
+        "ko": "의식이 없어요. 맥박을 확인해 볼게요.",
+        "zh": "他失去意识了，我检查一下脉搏。"
+      },
+      {
+        "en": "The fire alarm is going off. Please evacuate quickly!",
+        "jp": "火災報知機が鳴っています。早く避難してください！",
+        "ko": "화재 경보기가 울리고 있어요. 빨리 대피하세요!",
+        "zh": "火警警报响了，快快疏散！"
+      },
+      {
+        "en": "I think my finger is broken; I'd like to get an X-ray.",
+        "jp": "指を折ったみたいなので、レントゲンを撮りたいです。",
+        "ko": "손가락이 부러진 것 같은데 엑스레이를 찍고 싶어요.",
+        "zh": "我的手指好像骨折了，我想拍个X光片。"
+      },
+      {
+        "en": "I've suddenly broken out in hives all over my body.",
+        "jp": "体に急にじんましんが出ました。",
+        "ko": "몸에 갑자기 두드러기가 올라왔어요.",
+        "zh": "我身上突然起荨麻疹了。"
+      },
+      {
+        "en": "There's a leak here and the floor is flooded.",
+        "jp": "ここで水漏れしていて、床が水浸しです。",
+        "ko": "여기 물이 새서 바닥이 한강이 됐어요.",
+        "zh": "这里漏水了，地板都被淹了。"
+      },
+      {
+        "en": "Someone stole my bag!",
+        "jp": "誰かにバッグを盗まれました！",
+        "ko": "누가 제 가방을 훔쳐갔어요!",
+        "zh": "有人偷了我的包！"
+      },
+      {
+        "en": "I'm feeling severe chest pain.",
+        "jp": "ひどい胸の痛みがあります。",
+        "ko": "심한 가슴 통증이 느껴져요.",
+        "zh": "我感到剧烈的胸痛。"
+      },
+      {
+        "en": "I think I ingested something toxic; what should I do?",
+        "jp": "毒性物質を飲んでしまったみたいですが、どうすればいいですか？",
+        "ko": "독성 물질을 마신 것 같은데 어떻게 해야 하죠?",
+        "zh": "我好像喝了有毒的东西，该怎么办？"
+      },
+      {
+        "en": "I'm so dizzy that I can't walk properly.",
+        "jp": "めまいがひどくて、まともに歩けません。",
+        "ko": "어지러움증이 심해서 제대로 걸을 수가 없어요.",
+        "zh": "我头晕得厉害，没法正常走路。"
+      },
+      {
+        "en": "I've lost my child. Please help me!",
+        "jp": "子供をなくしました。助けてください！",
+        "ko": "아이를 잃어버렸어요. 도와주세요!",
+        "zh": "我弄丢孩子了，请帮帮我！"
+      },
+      {
+        "en": "I'm trapped in the elevator. Please open it quickly!",
+        "jp": "エレベーターに閉じ込められました。早く開けてください！",
+        "ko": "엘리베이터에 갇혔어요. 빨리 열어주세요!",
+        "zh": "我被困在电梯里了，请快点开门！"
+      },
+      {
+        "en": "I can't move because of a sudden onset of pain.",
+        "jp": "突然の痛みで動けません。",
+        "ko": "갑작스러운 통증 때문에 움직일 수가 없어요.",
+        "zh": "因为突然剧痛，我无法动弹。"
+      },
+      {
+        "en": "Do you know where the pharmacy is? I need medicine urgently.",
+        "jp": "薬局がどこにあるか分かりますか？急に薬が必要なんです。",
+        "ko": "약국이 어디 있는지 아시나요? 급하게 약이 필요해요.",
+        "zh": "你知道药店在哪里吗？我急需买药。"
+      }
+    ],
+    "advanced": [
+      {
+        "en": "It is paramount that we don't miss the golden hour.",
+        "jp": "ゴールデンタイムを逃さないことが何よりも重要です。",
+        "ko": "골든타임을 놓치지 않는 것이 무엇보다 중요합니다.",
+        "zh": "抓住黄金救援时间比什么都重要。"
+      },
+      {
+        "en": "They're slipping in and out of consciousness; we need to administer first aid immediately.",
+        "jp": "意識が朦朧としています。至急応急処置をしなければなりません。",
+        "ko": "의식이 희미해지는데 빨리 응급처치를 해야 해요.",
+        "zh": "意识在模糊，必须立即进行急救。"
+      },
+      {
+        "en": "There is a risk of going into shock due to excessive blood loss.",
+        "jp": "大量出血により、ショック状態に陥る危険があります。",
+        "ko": "과다출혈로 인해 쇼크 상태에 빠질 위험이 있습니다.",
+        "zh": "由于失血过多，有陷入休克状态的风险。"
+      },
+      {
+        "en": "Secure the airway and continuously monitor their breathing.",
+        "jp": "気道を確保し、呼吸状態を継続的に確認してください。",
+        "ko": "기도를 확보하고 호흡 상태를 지속적으로 확인하세요.",
+        "zh": "确保呼吸道畅通，并持续监测呼吸状态。"
+      },
+      {
+        "en": "Cardiac arrest. Start CPR immediately.",
+        "jp": "心停止状態です。直ちに心肺蘇生術を実施してください。",
+        "ko": "심정지 상태입니다. 즉시 심폐소생술을 실시하세요.",
+        "zh": "心脏骤停。请立即进行心肺复苏术。"
+      },
+      {
+        "en": "Traumatic brain injury is suspected; please do not move at all.",
+        "jp": "外傷性脳損傷が疑われるため、絶対に動かさないでください。",
+        "ko": "외상성 뇌손상이 의심되니 절대 움직이지 마세요.",
+        "zh": "疑似创伤性脑损伤，请绝对不要移动。"
+      },
+      {
+        "en": "I'm concerned about anaphylactic shock due to an acute allergic reaction.",
+        "jp": "急性アレルギー反応によるアナフィラキシーショックが懸念されます。",
+        "ko": "급성 알레르기 반응으로 인한 아나필락시스 쇼크가 우려됩니다.",
+        "zh": "担心因急性过敏反应引发过敏性休克。"
+      },
+      {
+        "en": "Blood pressure is dropping rapidly; a transfusion is urgently needed.",
+        "jp": "血圧が急激に低下しており、至急輸血が必要です。",
+        "ko": "혈압이 급격히 떨어지고 있어 수혈이 시급합니다.",
+        "zh": "血压急剧下降，迫切需要输血。"
+      },
+      {
+        "en": "They are experiencing dyspnea due to the inhalation of toxic fumes from the fire.",
+        "jp": "火災による有毒ガスの吸引で、呼吸困難に陥っています。",
+        "ko": "화재로 인한 유독가스 흡입으로 호흡 곤란을 겪고 있습니다.",
+        "zh": "因吸入火灾产生的有毒气体而导致呼吸困难。"
+      },
+      {
+        "en": "The bleeding won't stop; we need to apply a tourniquet for pressure.",
+        "jp": "止血ができないため、止血帯を使用して圧迫する必要があります。",
+        "ko": "지혈이 되지 않아 지혈대를 사용해 압박해야 합니다.",
+        "zh": "无法止血，需要使用止血带进行加压。"
+      },
+      {
+        "en": "We will expedite the evacuation and transport the patient to a tertiary general hospital.",
+        "jp": "迅速に後送措置を行い、上級総合病院へ搬送します。",
+        "ko": "신속하게 후송 조치하여 상급 종합병원으로 이송하겠습니다.",
+        "zh": "将迅速采取后送措施，将其转运至三甲综合医院。"
+      },
+      {
+        "en": "Given the symptoms of total paralysis, a spinal cord injury is suspected.",
+        "jp": "全身麻痺の症状が出ているため、脊髄損傷が疑われます。",
+        "ko": "전신 마비 증세가 나타나는 것으로 보아 척수 손상이 의심됩니다.",
+        "zh": "出现全身麻痹症状，疑似脊髓损伤。"
+      },
+      {
+        "en": "Body functions are impaired due to hypothermia.",
+        "jp": "低体温症により、身体機能が低下している状態です。",
+        "ko": "저체온증으로 인해 신체 기능이 저하된 상태입니다.",
+        "zh": "由于体温过低，身体机能处于下降状态。"
+      },
+      {
+        "en": "Don't panic; just follow my lead and breathe slowly.",
+        "jp": "パニックにならずに、私の指示に従ってゆっくり呼吸してください。",
+        "ko": "패닉 상태에 빠지지 말고 제 안내에 따라 천천히 숨을 쉬세요.",
+        "zh": "不要恐慌，请按照我的引导缓慢呼吸。"
+      },
+      {
+        "en": "The situation on-site is critical; secure an evacuation route immediately.",
+        "jp": "現場の状況が非常に緊迫しているため、直ちに避難経路を確保してください。",
+        "ko": "현장 상황이 매우 긴박하니 즉시 대피 경로를 확보하십시오.",
+        "zh": "现场情况非常紧急，请立即确保疏散通道。"
+      },
+      {
+        "en": "It appears to be an acute myocardial infarction, and the patient is complaining of chest pain.",
+        "jp": "急性心筋梗塞の症状が見られ、胸痛を訴えています。",
+        "ko": "급성 심근경색 증상으로 보이며 흉통을 호소하고 있습니다.",
+        "zh": "看来是急性心肌梗死，患者主诉胸痛。"
+      },
+      {
+        "en": "It is extremely dangerous to administer liquids to an unconscious patient.",
+        "jp": "意識のない患者に液体を摂取させることは非常に危険です。",
+        "ko": "의식이 없는 환자에게 액체를 섭취하게 하는 것은 매우 위험합니다.",
+        "zh": "给无意识患者喂液体是非常危险的。"
+      },
+      {
+        "en": "I am concerned about post-traumatic stress disorder resulting from the psychological shock.",
+        "jp": "精神的ショックによる心的外傷後ストレス障害（PTSD）が懸念されます。",
+        "ko": "정신적 충격으로 인한 외상 후 스트레스 장애가 우려됩니다.",
+        "zh": "担心因精神冲击而导致创伤后应激障碍。"
+      },
+      {
+        "en": "Hyperventilation syndrome is occurring; calming them down is the priority.",
+        "jp": "過呼吸症候群が現れているため、まずは落ち着かせることが優先です。",
+        "ko": "과호흡 증후군이 나타나고 있으니 진정시키는 것이 우선입니다.",
+        "zh": "出现了过度换气综合征，首要任务是使其冷静。"
+      },
+      {
+        "en": "Decontamination is necessary to prevent secondary damage from chemical exposure.",
+        "jp": "化学物質への曝露による二次被害を防ぐため、除染が必要です。",
+        "ko": "화학 물질 노출로 인한 2차 피해를 막기 위해 제염이 필요합니다.",
+        "zh": "为了防止化学物质接触导致的二次伤害，需要进行除污。"
+      },
+      {
+        "en": "Failure to immobilize the fracture could lead to further nerve damage.",
+        "jp": "骨折部位を固定しないと、さらなる神経損傷を招く恐れがあります。",
+        "ko": "골절 부위를 고정하지 않으면 추가적인 신경 손상이 올 수 있습니다.",
+        "zh": "如果不固定骨折部位，可能会导致进一步的神经损伤。"
+      },
+      {
+        "en": "Acute abdominal pain is present, and signs of peritoneal irritation are observed.",
+        "jp": "急性腹痛とともに、腹膜刺激徴候が観察されます。",
+        "ko": "급성 복통과 함께 복막 자극 징후가 관찰됩니다.",
+        "zh": "出现急性腹痛，并观察到腹膜刺激体征。"
+      },
+      {
+        "en": "Power supply has been cut off; the emergency generator must be started immediately.",
+        "jp": "電力供給が遮断されたため、直ちに非常用発電機を稼働させる必要があります。",
+        "ko": "전력 공급이 중단되어 비상 발전기를 즉시 가동해야 합니다.",
+        "zh": "电力供应中断，必须立即启动应急发电机。"
+      },
+      {
+        "en": "A gas leak is suspected; please cease the use of all electronic devices.",
+        "jp": "ガス漏れが疑われるため、すべての電化製品の使用を中止してください。",
+        "ko": "가스 누출이 의심되니 모든 전자기기 사용을 중단하십시오.",
+        "zh": "怀疑有燃气泄漏，请停止使用所有电子设备。"
+      },
+      {
+        "en": "We are in a situation where we must risk entry to rescue lives.",
+        "jp": "人命救助のため、危険を冒して進入しなければならない状況です。",
+        "ko": "인명 구조를 위해 위험을 무릅쓰고 진입해야 하는 상황입니다.",
+        "zh": "为了救援生命，必须冒险进入。"
+      }
+    ]
+  },
+  "airport": {
+    "beginner": [
+      {
+        "en": "Here is my passport.",
+        "jp": "パスポートはこちらです。",
+        "ko": "여권 여기 있습니다.",
+        "zh": "这是我的护照。"
+      },
+      {
+        "en": "Where do I check in?",
+        "jp": "チェックインはどこですか？",
+        "ko": "체크인 어디서 하나요?",
+        "zh": "在哪里办理登机手续？"
+      },
+      {
+        "en": "Ticket, please.",
+        "jp": "航空券をください。",
+        "ko": "비행기 표 주세요.",
+        "zh": "请给我机票。"
+      },
+      {
+        "en": "I want to check my bags.",
+        "jp": "荷物を預けたいです。",
+        "ko": "짐을 부치고 싶어요.",
+        "zh": "我想托运行李。"
+      },
+      {
+        "en": "Window seat, please.",
+        "jp": "窓側の席をお願いします。",
+        "ko": "창가 자리로 주세요.",
+        "zh": "请给我靠窗的座位。"
+      },
+      {
+        "en": "Aisle seat, please.",
+        "jp": "通路側の席をお願いします。",
+        "ko": "통로 자리로 주세요.",
+        "zh": "请给我靠走道的座位。"
+      },
+      {
+        "en": "Where is the gate?",
+        "jp": "ゲートはどこですか？",
+        "ko": "게이트가 어디예요?",
+        "zh": "登机口在哪里？"
+      },
+      {
+        "en": "Is the flight delayed?",
+        "jp": "飛行機は遅れていますか？",
+        "ko": "비행기가 지연됐나요?",
+        "zh": "航班延误了吗？"
+      },
+      {
+        "en": "Please show your boarding pass.",
+        "jp": "搭乗券を見せてください。",
+        "ko": "보딩 패스 보여주세요.",
+        "zh": "请出示登机牌。"
+      },
+      {
+        "en": "Where is the duty-free shop?",
+        "jp": "免税店はどこですか？",
+        "ko": "면세점이 어디인가요?",
+        "zh": "免税店在哪里？"
+      },
+      {
+        "en": "Where is the restroom?",
+        "jp": "トイレはどこですか？",
+        "ko": "화장실이 어디예요?",
+        "zh": "洗手间在哪里？"
+      },
+      {
+        "en": "Where is the baggage claim?",
+        "jp": "手荷物受取所はどこですか？",
+        "ko": "짐 찾는 곳이 어디죠?",
+        "zh": "行李领取处在哪里？"
+      },
+      {
+        "en": "My luggage hasn't come out.",
+        "jp": "荷物が出てきません。",
+        "ko": "제 짐이 안 나왔어요.",
+        "zh": "我的行李还没出来。"
+      },
+      {
+        "en": "The immigration line is long.",
+        "jp": "入国審査の列が長いです。",
+        "ko": "입국 심사 줄이 길어요.",
+        "zh": "入境审查排队的人很多。"
+      },
+      {
+        "en": "What is the purpose of your visit?",
+        "jp": "訪問の目的は何ですか？",
+        "ko": "방문 목적이 무엇인가요?",
+        "zh": "访问目的是什么？"
+      },
+      {
+        "en": "I'm here for sightseeing.",
+        "jp": "観光で来ました。",
+        "ko": "관광하러 왔어요.",
+        "zh": "我是来旅游的。"
+      },
+      {
+        "en": "How long are you staying?",
+        "jp": "何日間滞在しますか？",
+        "ko": "며칠 동안 머무나요?",
+        "zh": "您要停留几天？"
+      },
+      {
+        "en": "I'm staying for one week.",
+        "jp": "一週間滞在します。",
+        "ko": "일주일 동안 머물러요.",
+        "zh": "我打算住一周。"
+      },
+      {
+        "en": "Where is the currency exchange?",
+        "jp": "両替所はどこにありますか？",
+        "ko": "환전소 어디에 있어요?",
+        "zh": "换钱所在哪里？"
+      },
+      {
+        "en": "What is the Wi-Fi password?",
+        "jp": "Wi-Fiのパスワードは何ですか？",
+        "ko": "와이파이 비밀번호가 뭐예요?",
+        "zh": "Wi-Fi密码是什么？"
+      },
+      {
+        "en": "Where is the taxi stand?",
+        "jp": "タクシー乗り場はどこですか？",
+        "ko": "택시 승강장이 어디예요?",
+        "zh": "出租车乘车点在哪里？"
+      },
+      {
+        "en": "How do I get to downtown?",
+        "jp": "市内へはどうやって行きますか？",
+        "ko": "시내로 어떻게 가나요?",
+        "zh": "怎么去市中心？"
+      },
+      {
+        "en": "Thank you for your help.",
+        "jp": "助けてくれてありがとうございます。",
+        "ko": "도와주셔서 감사합니다.",
+        "zh": "谢谢您的帮助。"
+      },
+      {
+        "en": "Please speak slowly.",
+        "jp": "ゆっくり話してください。",
+        "ko": "천천히 말씀해 주세요.",
+        "zh": "请说慢一点。"
+      },
+      {
+        "en": "Please say it one more time.",
+        "jp": "もう一度言ってください。",
+        "ko": "다시 한번 말씀해 주세요.",
+        "zh": "请再说一遍。"
+      }
+    ],
+    "intermediate": [
+      {
+        "en": "Where is the check-in counter?",
+        "jp": "チェックインカウンターはどこにありますか？",
+        "ko": "체크인 카운터가 어디에 있나요?",
+        "zh": "办理登机手续的柜台在哪里？"
+      },
+      {
+        "en": "I'd like to check my luggage.",
+        "jp": "荷物を預けたいのですが。",
+        "ko": "수하물을 부치고 싶은데요.",
+        "zh": "我想办理行李托运。"
+      },
+      {
+        "en": "窓側の席をお願いします。",
+        "jp": "",
+        "ko": "창가 쪽 좌석으로 부탁드려요.",
+        "zh": "请给我一个靠窗的座位。"
+      },
+      {
+        "en": "Is this bag allowed as a carry-on?",
+        "jp": "これは機内持ち込み可能なバッグですか？",
+        "ko": "기내 반입 가능한 가방인가요?",
+        "zh": "这个包可以带上飞机吗？"
+      },
+      {
+        "en": "Your luggage is overweight.",
+        "jp": "手荷物の重量が制限を超えています。",
+        "ko": "수하물 무게가 초과되었어요.",
+        "zh": "您的行李超重了。"
+      },
+      {
+        "en": "Could you show me your boarding pass?",
+        "jp": "搭乗券を見せていただけますか？",
+        "ko": "탑승권 좀 보여주시겠어요?",
+        "zh": "请出示您的登机牌。"
+      },
+      {
+        "en": "I heard that the flight has been delayed.",
+        "jp": "飛行機が遅延したと聞きました。",
+        "ko": "비행기가 지연되었다고 들었어요.",
+        "zh": "我听说航班延误了。"
+      },
+      {
+        "en": "What is the process for transferring flights?",
+        "jp": "乗り継ぎの手続きはどうすればいいですか？",
+        "ko": "환승 절차는 어떻게 되나요?",
+        "zh": "中转手续怎么办理？"
+      },
+      {
+        "en": "Is there a pharmacy in the duty-free area?",
+        "jp": "免税エリアに薬局はありますか？",
+        "ko": "면세 구역에 약국이 있나요?",
+        "zh": "免税区里有药店吗？"
+      },
+      {
+        "en": "You need to go through the security checkpoint.",
+        "jp": "保安検査場を通過する必要があります。",
+        "ko": "보안 검색대를 통과해야 합니다.",
+        "zh": "需要通过安检口。"
+      },
+      {
+        "en": "Liquids are prohibited from being carried on.",
+        "jp": "液体物の持ち込みは禁止されています。",
+        "ko": "액체류는 반입이 금지되어 있어요.",
+        "zh": "禁止携带液体物品。"
+      },
+      {
+        "en": "Has the gate number changed?",
+        "jp": "ゲート番号が変わりましたか？",
+        "ko": "게이트 번호가 바뀌었나요?",
+        "zh": "登机口号码变了吗？"
+      },
+      {
+        "en": "When is the boarding deadline?",
+        "jp": "搭乗締め切り時間はいつですか？",
+        "ko": "탑승 마감 시간이 언제인가요?",
+        "zh": "登机截止时间是什么时候？"
+      },
+      {
+        "en": "The line for immigration is so long.",
+        "jp": "入国審査の列がとても長いですね。",
+        "ko": "입국 심사 줄이 너무 기네요.",
+        "zh": "入境审查的队伍太长了。"
+      },
+      {
+        "en": "What is the purpose of your visit?",
+        "jp": "訪問の目的は何ですか？",
+        "ko": "방문 목적이 무엇입니까?",
+        "zh": "您访问的目的地是什么？"
+      },
+      {
+        "en": "I am here for sightseeing.",
+        "jp": "観光目的で来ました。",
+        "ko": "관광 목적으로 왔습니다.",
+        "zh": "我是来旅游的。"
+      },
+      {
+        "en": "How long do you plan to stay?",
+        "jp": "何日間滞在する予定ですか？",
+        "ko": "며칠 동안 체류하실 예정인가요?",
+        "zh": "您打算停留几天？"
+      },
+      {
+        "en": "Where is the baggage claim area?",
+        "jp": "手荷物受取所はどこですか？",
+        "ko": "수하물 찾는 곳이 어디인가요?",
+        "zh": "行李提取处在哪里？"
+      },
+      {
+        "en": "My luggage hasn't come out yet.",
+        "jp": "荷物が出てきません。",
+        "ko": "짐이 나오지 않았어요.",
+        "zh": "我的行李还没出来。"
+      },
+      {
+        "en": "Please inquire at the lost and found center.",
+        "jp": "遺失物センターに問い合わせてみてください。",
+        "ko": "분실물 센터에 문의해 보세요.",
+        "zh": "请咨询失物招领处。"
+      },
+      {
+        "en": "Do you have anything to declare to customs?",
+        "jp": "税関に申告するものはありますか？",
+        "ko": "세관에 신고할 물건이 있나요?",
+        "zh": "有需要向海关申报的物品吗？"
+      },
+      {
+        "en": "Where can I take the limousine bus to downtown?",
+        "jp": "市内行きのリムジンバスはどこで乗れますか？",
+        "ko": "시내로 가는 리무진 버스는 어디서 타나요?",
+        "zh": "去市区的机场巴士在哪里坐？"
+      },
+      {
+        "en": "Please show me your rental car reservation.",
+        "jp": "レンタカーの予約確認書を見せてください。",
+        "ko": "렌터카 예약 확인서를 보여주세요.",
+        "zh": "请出示租车预约确认单。"
+      },
+      {
+        "en": "Please switch your device to airplane mode.",
+        "jp": "機内モードに設定してください。",
+        "ko": "비행기 모드로 설정해 주세요.",
+        "zh": "请开启飞行模式。"
+      },
+      {
+        "en": "Please fill out the arrival card.",
+        "jp": "入国申告書を記入してください。",
+        "ko": "입국 신고서를 작성해 주세요.",
+        "zh": "请填写入境申报单。"
+      }
+    ],
+    "advanced": [
+      {
+        "en": "My luggage is overweight, so I'll need to pay an excess baggage fee.",
+        "jp": "荷物が重量オーバーのため、超過料金を支払う必要があります。",
+        "ko": "수하물 무게가 초과되어 추가 요금을 지불해야 합니다.",
+        "zh": "行李超重了，我需要支付超重费。"
+      },
+      {
+        "en": "I'm worried about missing my connecting flight during the layover.",
+        "jp": "乗り継ぎ地で乗り継ぎ便に乗り遅れないか心配です。",
+        "ko": "경유지에서 환승 시간을 놓칠까 봐 걱정돼요.",
+        "zh": "我担心在转机地错过接驳航班。"
+      },
+      {
+        "en": "I've been informed that the flight has been delayed due to adverse weather conditions.",
+        "jp": "悪天候のため、便が遅れているとのことです。",
+        "ko": "비행편이 기상 악화로 인해 지연되었다고 합니다.",
+        "zh": "据说由于天气恶劣，航班延误了。"
+      },
+      {
+        "en": "Could you check if there are any available upgrades to business class?",
+        "jp": "ビジネスクラスへのアップグレードが可能か確認していただけますか？",
+        "ko": "비즈니스석으로 업그레이드 가능한지 확인해 주시겠어요?",
+        "zh": "请帮我确认一下是否可以升级到商务舱？"
+      },
+      {
+        "en": "Are there any specific precautions I should take when filling out the customs declaration form?",
+        "jp": "税関申告書の記入にあたって注意すべき点はありますか？",
+        "ko": "세관 신고서 작성 시 주의해야 할 사항이 있나요?",
+        "zh": "填写海关申报单时有什么需要注意的事项吗？"
+      },
+      {
+        "en": "I'd like to verify if my bag has been turned in to the lost and found office.",
+        "jp": "遺失物センターに私のバッグが届いているか確認したいです。",
+        "ko": "분실물 센터에 제 가방이 접수되었는지 확인하고 싶습니다.",
+        "zh": "我想确认一下我的包是否已交到失物招领处。"
+      },
+      {
+        "en": "I would like to know exactly what items are prohibited from being carried on board.",
+        "jp": "機内持ち込み禁止品について正確に知りたいです。",
+        "ko": "기내 반입 금지 품목에 대해 정확히 알고 싶습니다.",
+        "zh": "我想确切了解哪些物品禁止携带登机。"
+      },
+      {
+        "en": "The immigration officer asked me to be more specific about the purpose of my visit.",
+        "jp": "入国審査官に訪問目的を具体的に聞かれました。",
+        "ko": "입국 심사관이 방문 목적을 구체적으로 물어봤어요.",
+        "zh": "入境审查官详细询问了我访问的目的。"
+      },
+      {
+        "en": "My luggage didn't appear on the carousel, so I contacted the airline.",
+        "jp": "手荷物受取所で荷物が出てこなかったので、航空会社に問い合わせました。",
+        "ko": "수하물 수취대에서 짐이 나오지 않아 항공사에 문의했습니다.",
+        "zh": "行李在转盘上没出现，所以我联系了航空公司。"
+      },
+      {
+        "en": "The boarding gate has been changed suddenly, so I need to hurry over there.",
+        "jp": "搭乗ゲートが急に変更されたため、急いで移動しなければなりません。",
+        "ko": "탑승 게이트가 갑자기 변경되어 서둘러 이동해야 합니다.",
+        "zh": "登机口突然变更了，我得赶紧过去。"
+      },
+      {
+        "en": "How much is the penalty fee for changing a flight reservation?",
+        "jp": "航空便の予約変更に際して、手数料はいくらかかりますか？",
+        "ko": "항공편 예약 변경 시 수수료가 얼마나 부과되나요?",
+        "zh": "更改航班预订需要支付多少手续费？"
+      },
+      {
+        "en": "I've prepared a shopping list for the duty-free stores in advance.",
+        "jp": "免税店でのショッピングリストを事前に作成してきました。",
+        "ko": "면세점 쇼핑 리스트를 미리 작성해 왔어요.",
+        "zh": "我提前列好了免税店购物清单。"
+      },
+      {
+        "en": "The use of electronic devices is restricted during takeoff and landing.",
+        "jp": "離着陸時は電子機器の使用が制限されています。",
+        "ko": "비행기 이착륙 시에는 전자기기 사용이 제한됩니다.",
+        "zh": "飞机起降期间限制使用电子设备。"
+      },
+      {
+        "en": "The legroom is quite limited, so I think this long-haul flight will be a bit grueling.",
+        "jp": "座席の間隔が狭いので、長距離飛行は少し大変そうです。",
+        "ko": "좌석 간격이 좁아서 장거리 비행이 조금 힘들 것 같아요.",
+        "zh": "座位间距太小，长途飞行可能会比较辛苦。"
+      },
+      {
+        "en": "My passport is close to expiring; will that cause any issues at immigration?",
+        "jp": "パスポートの有効期限が近いのですが、入国に問題はないでしょうか？",
+        "ko": "여권 만료일이 얼마 남지 않았는데 입국에 문제가 없을까요?",
+        "zh": "我的护照快到期了，入境会有问题吗？"
+      },
+      {
+        "en": "Are there any vegetarian options among the in-flight meal selections?",
+        "jp": "機内食のメニューにベジタリアンのオプションはありますか？",
+        "ko": "기내식으로 제공되는 메뉴 중에 채식 옵션이 있나요?",
+        "zh": "机餐菜单中有素食选项吗？"
+      },
+      {
+        "en": "I'll use the automated immigration gates for a quicker process.",
+        "jp": "迅速に通過するため、自動出入国審査ゲートを利用します。",
+        "ko": "빠른 통과를 위해 자동 출입국 심사대를 이용하겠습니다.",
+        "zh": "为了快速通过，我将使用自动出入境查验通道。"
+      },
+      {
+        "en": "I am currently going through the check-in process at the airline counter.",
+        "jp": "航空会社のカウンターでチェックイン手続きをしています。",
+        "ko": "항공사 카운터에서 체크인 절차를 밟고 있습니다.",
+        "zh": "我正在航空公司柜台办理登机手续。"
+      },
+      {
+        "en": "The carry-on regulations are so strict that I had to reorganize my luggage.",
+        "jp": "機内持ち込み手荷物の規定が非常に厳しいため、荷物を整理し直しました。",
+        "ko": "기내 수하물 규정이 매우 엄격해서 짐을 다시 정리했어요.",
+        "zh": "随身携带行李的规定非常严格，所以我重新整理了行李。"
+      },
+      {
+        "en": "The plane is idling on the runway, so the departure is being delayed.",
+        "jp": "飛行機が滑走路で待機しているため、出発が遅れています。",
+        "ko": "비행기가 활주로에서 대기 중이라 출발이 지연되고 있습니다.",
+        "zh": "飞机在跑道上等待，所以起飞延迟了。"
+      },
+      {
+        "en": "Could you tell me where the airport limousine bus stop is located?",
+        "jp": "空港リムジンバスの乗り場がどこか教えていただけますか？",
+        "ko": "공항 리무진 버스 정류장이 어디인지 알려주시겠어요?",
+        "zh": "请告诉我想空港巴士乘车点在哪里？"
+      },
+      {
+        "en": "I'm looking for a place with a favorable currency exchange rate; do you have any recommendations?",
+        "jp": "為替レートが良いところを探しているのですが、おすすめはありますか？",
+        "ko": "환전 우대율이 높은 곳을 찾고 있는데 추천해 주실 만한 곳이 있나요?",
+        "zh": "我想找一个汇率比较优惠的兑换点，您有推荐的吗？"
+      },
+      {
+        "en": "Is there a Wi-Fi service available for use during the flight?",
+        "jp": "機内で利用可能なWi-Fiサービスは提供されていますか？",
+        "ko": "비행기 내에서 사용할 수 있는 와이파이 서비스가 제공되나요?",
+        "zh": "航班上提供可以使用无线网络的服务吗？"
+      },
+      {
+        "en": "Since the layover is so long, I plan to spend some time in the airport lounge.",
+        "jp": "乗り継ぎ時間が非常に長いため、空港ラウンジを利用する予定です。",
+        "ko": "경유 시간이 너무 길어서 공항 라운지를 이용할 계획입니다.",
+        "zh": "中转时间太长了，我打算去机场休息室。"
+      },
+      {
+        "en": "I've lost my flight booking reference number and would like to inquire about the re-issuance process.",
+        "jp": "航空券の予約番号を紛失したため、再発行の手続きについて問い合わせたいです。",
+        "ko": "항공권 예약 번호를 분실해서 재발행 절차를 문의하고 싶습니다.",
+        "zh": "我弄丢了机票预订编号，想咨询一下重新办理的流程。"
+      }
+    ]
+  },
+  "hotel": {
+    "beginner": [
+      {
+        "en": "I'd like to check in.",
+        "jp": "チェックインをお願いします。",
+        "ko": "체크인 하고 싶어요.",
+        "zh": "我想办理入住。"
+      },
+      {
+        "en": "I have a reservation.",
+        "jp": "予約しています。",
+        "ko": "예약했습니다.",
+        "zh": "我有预订。"
+      },
+      {
+        "en": "My name is [Name].",
+        "jp": "名前は[名前]です。",
+        "ko": "제 이름은 [이름]입니다.",
+        "zh": "我的名字是[姓名]。"
+      },
+      {
+        "en": "Here is my passport.",
+        "jp": "パスポートはこちらです。",
+        "ko": "여권 여기 있습니다.",
+        "zh": "这是我的护照。"
+      },
+      {
+        "en": "Please give me the room key.",
+        "jp": "部屋の鍵をください。",
+        "ko": "방 키 주세요.",
+        "zh": "请给我房卡。"
+      },
+      {
+        "en": "Where can I have breakfast?",
+        "jp": "朝食はどこで食べられますか？",
+        "ko": "조식은 어디서 먹나요?",
+        "zh": "早餐在哪里吃？"
+      },
+      {
+        "en": "What time is breakfast?",
+        "jp": "朝食は何時ですか？",
+        "ko": "조식 시간은 언제인가요?",
+        "zh": "早餐时间是什么时候？"
+      },
+      {
+        "en": "What is the Wi-Fi password?",
+        "jp": "Wi-Fiのパスワードは何ですか？",
+        "ko": "와이파이 비밀번호가 뭐예요?",
+        "zh": "Wi-Fi密码是多少？"
+      },
+      {
+        "en": "Please show me the room.",
+        "jp": "部屋を見せてください。",
+        "ko": "방을 보여주세요.",
+        "zh": "请给我看看房间。"
+      },
+      {
+        "en": "More towels, please.",
+        "jp": "タオルを追加でください。",
+        "ko": "수건 더 주세요.",
+        "zh": "请再给我一些毛巾。"
+      },
+      {
+        "en": "The room is too cold.",
+        "jp": "部屋がとても寒いです。",
+        "ko": "방이 너무 추워요.",
+        "zh": "房间太冷了。"
+      },
+      {
+        "en": "The room is too hot.",
+        "jp": "部屋がとても暑いです。",
+        "ko": "방이 너무 더워요.",
+        "zh": "房间太热了。"
+      },
+      {
+        "en": "The air conditioner isn't working.",
+        "jp": "エアコンが壊れています。",
+        "ko": "에어컨이 안 돼요.",
+        "zh": "空调坏了。"
+      },
+      {
+        "en": "There is no hot water.",
+        "jp": "お湯が出ません。",
+        "ko": "따뜻한 물이 안 나와요.",
+        "zh": "没有热水。"
+      },
+      {
+        "en": "Please clean my room.",
+        "jp": "部屋の掃除をお願いします。",
+        "ko": "방 청소 부탁드려요.",
+        "zh": "请帮我打扫房间。"
+      },
+      {
+        "en": "Where is the 'Do Not Disturb' sign?",
+        "jp": "「起こさないでください」の札はどこですか？",
+        "ko": "방해금지 팻말 어디 있나요?",
+        "zh": "请勿打扰标志在哪里？"
+      },
+      {
+        "en": "Can I leave my luggage here?",
+        "jp": "荷物を預かってもらえますか？",
+        "ko": "짐을 맡길 수 있을까요?",
+        "zh": "可以寄存行李吗？"
+      },
+      {
+        "en": "What time is check-out?",
+        "jp": "チェックアウトは何時ですか？",
+        "ko": "체크아웃 시간은 언제인가요?",
+        "zh": "退房时间是什么时候？"
+      },
+      {
+        "en": "I'd like to check out.",
+        "jp": "チェックアウトをお願いします。",
+        "ko": "체크아웃 하고 싶어요.",
+        "zh": "我想办理退房。"
+      },
+      {
+        "en": "Please call a taxi for me.",
+        "jp": "タクシーを呼んでください。",
+        "ko": "택시 불러주세요.",
+        "zh": "请帮我叫辆出租车。"
+      },
+      {
+        "en": "Is there a convenience store nearby?",
+        "jp": "近くにコンビニはありますか？",
+        "ko": "근처에 편의점이 있나요?",
+        "zh": "附近有便利店吗？"
+      },
+      {
+        "en": "Where is the elevator?",
+        "jp": "エレベーターはどこにありますか？",
+        "ko": "엘리베이터 어디 있어요?",
+        "zh": "电梯在哪里？"
+      },
+      {
+        "en": "I booked a single room.",
+        "jp": "シングルルームを予約しました。",
+        "ko": "싱글룸 예약했어요.",
+        "zh": "我预订了单人间。"
+      },
+      {
+        "en": "I booked a double room.",
+        "jp": "ダブルルームを予約しました。",
+        "ko": "더블룸 예약했어요.",
+        "zh": "我预订了双人间。"
+      },
+      {
+        "en": "Thank you very much.",
+        "jp": "本当にありがとうございます。",
+        "ko": "정말 감사합니다.",
+        "zh": "非常感谢。"
+      }
+    ],
+    "intermediate": [
+      {
+        "en": "I've arrived earlier than the check-in time; is early check-in available?",
+        "jp": "チェックイン時間より早く着いたのですが、アーリーチェックインは可能ですか？",
+        "ko": "체크인 시간보다 일찍 도착했는데, 얼리 체크인이 가능할까요?",
+        "zh": "我比入住时间早到了，请问可以提前办理入住吗？"
+      },
+      {
+        "en": "Is there a place where I can leave my luggage for a while?",
+        "jp": "荷物を一時的に預けられる場所はありますか？",
+        "ko": "짐을 잠시 맡길 수 있는 곳이 있을까요?",
+        "zh": "请问有可以暂时寄存行李的地方吗？"
+      },
+      {
+        "en": "What are the operating hours for the breakfast buffet?",
+        "jp": "朝食ビュッフェは何時から何時までですか？",
+        "ko": "조식 뷔페는 몇 시부터 몇 시까지 운영하나요?",
+        "zh": "早餐自助餐的供应时间是从几点到几点？"
+      },
+      {
+        "en": "Could I be assigned a room on a higher floor with a good view?",
+        "jp": "眺めの良い高層階のお部屋にしていただけますか？",
+        "ko": "전망이 좋은 높은 층의 방으로 배정받을 수 있을까요?",
+        "zh": "我可以安排一个视野较好的高层房间吗？"
+      },
+      {
+        "en": "There aren't enough towels in the room; could you bring a few more?",
+        "jp": "部屋にタオルが足りないので、数枚追加していただけますか？",
+        "ko": "방에 수건이 부족한데, 몇 장만 더 가져다주시겠어요?",
+        "zh": "房间里的毛巾不够，能再给我拿几条吗？"
+      },
+      {
+        "en": "Could you tell me what the Wi-Fi password is?",
+        "jp": "Wi-Fiのパスワードを教えていただけますか？",
+        "ko": "와이파이 비밀번호가 무엇인지 알려주시겠어요?",
+        "zh": "请问Wi-Fi密码是多少？"
+      },
+      {
+        "en": "I don't think the air conditioner is working properly. Please check it.",
+        "jp": "エアコンがうまく作動していないようです。確認をお願いします。",
+        "ko": "에어컨이 제대로 작동하지 않는 것 같아요. 확인 부탁드립니다.",
+        "zh": "空调好像不太正常，请帮我检查一下。"
+      },
+      {
+        "en": "I left my room key inside the room; what should I do?",
+        "jp": "部屋にカードキーを忘れてしまったのですが、どうすればいいですか？",
+        "ko": "방 키를 방 안에 두고 나왔는데, 어떻게 해야 하나요?",
+        "zh": "我把房卡留在房间里了，请问该怎么办？"
+      },
+      {
+        "en": "Are there any restaurants or tourist spots nearby that you would recommend?",
+        "jp": "周辺でおすすめの飲食店や観光スポットはありますか？",
+        "ko": "주변에 추천해주실 만한 맛집이나 관광지가 있을까요?",
+        "zh": "附近有什么推荐的餐厅或景点吗？"
+      },
+      {
+        "en": "Would it be possible to extend the check-out time slightly?",
+        "jp": "チェックアウト時間を少し延長することは可能ですか？",
+        "ko": "체크아웃 시간을 조금만 연장할 수 있을까요?",
+        "zh": "请问可以稍微延长一下退房时间吗？"
+      },
+      {
+        "en": "Where can I find the room service menu?",
+        "jp": "ルームサービスのメニューはどこで確認できますか？",
+        "ko": "룸서비스 메뉴판은 어디서 확인할 수 있나요?",
+        "zh": "客房服务菜单在哪里可以看到？"
+      },
+      {
+        "en": "I booked a non-smoking room, but it seems to smell like cigarettes.",
+        "jp": "禁煙ルームを予約しましたが、少しタバコの臭いがするようです。",
+        "ko": "금연실로 예약했는데, 혹시 담배 냄새가 조금 나는 것 같아요.",
+        "zh": "我预订的是禁烟房，但感觉有一点烟味。"
+      },
+      {
+        "en": "Do you operate a shuttle bus to the airport?",
+        "jp": "空港行きのシャトルバスは運行していますか？",
+        "ko": "공항까지 가는 셔틀버스가 운행하나요?",
+        "zh": "请问有去机场的接驳车吗？"
+      },
+      {
+        "en": "Is there an additional fee for using the fitness center or swimming pool?",
+        "jp": "フィットネスセンターやプールの利用料金は別途かかりますか？",
+        "ko": "피트니스 센터나 수영장 이용 요금이 따로 있나요?",
+        "zh": "健身房或游泳池需要额外付费吗？"
+      },
+      {
+        "en": "Could you provide an iron and an ironing board in the room?",
+        "jp": "部屋にアイロンとアイロン台を用意していただけますか？",
+        "ko": "방에 다리미와 다림판을 준비해주실 수 있나요?",
+        "zh": "能帮我在房间里准备一个熨斗和熨衣板吗？"
+      },
+      {
+        "en": "How are the drinks in the refrigerator charged?",
+        "jp": "冷蔵庫の中の飲み物の料金はどのように請求されますか？",
+        "ko": "냉장고에 있는 음료수 비용은 어떻게 청구되나요?",
+        "zh": "冰箱里的饮料费用是怎么计算的？"
+      },
+      {
+        "en": "I'd like to request a wake-up call; please call me at [time].",
+        "jp": "モーニングコールをお願いしたいのですが、〇時にしてください。",
+        "ko": "모닝콜 서비스를 신청하고 싶은데, 몇 시에 해주세요.",
+        "zh": "我想预约叫醒服务，请在〇点叫我。"
+      },
+      {
+        "en": "I'd like to change rooms; are there any other available rooms?",
+        "jp": "部屋を変更したいのですが、空いている部屋はありますか？",
+        "ko": "방을 변경하고 싶은데, 가능한 다른 방이 있을까요?",
+        "zh": "我想换个房间，请问还有空房吗？"
+      },
+      {
+        "en": "Please tell me where the nearest convenience store is.",
+        "jp": "近くにコンビニがどこにあるか教えてください。",
+        "ko": "근처에 편의점이 어디에 있는지 알려주세요.",
+        "zh": "请告诉我附近哪里有便利店。"
+      },
+      {
+        "en": "I'd like to use the laundry service; how do I apply for it?",
+        "jp": "クリーニングサービスを利用したいのですが、どうすればいいですか？",
+        "ko": "세탁 서비스를 이용하고 싶은데, 어떻게 신청하나요?",
+        "zh": "我想使用洗衣服务，请问怎么办理？"
+      },
+      {
+        "en": "I'm wondering if there is sufficient parking space.",
+        "jp": "駐車場に十分なスペースがあるか知りたいです。",
+        "ko": "주차 공간이 충분한지 궁금합니다.",
+        "zh": "我想知道停车位是否充足。"
+      },
+      {
+        "en": "I've run out of amenities; can I get some more?",
+        "jp": "アメニティがなくなったので、追加でもらえますか？",
+        "ko": "어메니티가 다 떨어졌는데, 추가로 받을 수 있을까요?",
+        "zh": "洗漱用品用完了，能再给我一些吗？"
+      },
+      {
+        "en": "I'd like to change my payment method; is that possible?",
+        "jp": "支払い方法を変更したいのですが、可能でしょうか？",
+        "ko": "결제 수단을 변경하고 싶은데 가능할까요?",
+        "zh": "我想更改支付方式，请问可以吗？"
+      },
+      {
+        "en": "The lights in the room are too dim; could I borrow another lamp?",
+        "jp": "部屋の照明が暗すぎるので、スタンドをもう一つ借りられますか？",
+        "ko": "방 안의 조명이 너무 어두운데, 스탠드 하나 더 빌릴 수 있을까요?",
+        "zh": "房间里灯光太暗了，能再借一个台灯吗？"
+      },
+      {
+        "en": "Could you store my luggage after I check out?",
+        "jp": "チェックアウト後、荷物を預かっていただけますか？",
+        "ko": "체크아웃 후에 짐을 보관해주실 수 있나요?",
+        "zh": "退房后可以帮我寄存一下行李吗？"
+      }
+    ],
+    "advanced": [
+      {
+        "en": "Would it be possible to store my luggage before check-in or after check-out?",
+        "jp": "チェックイン前かチェックアウト後に、荷物を預かっていただけますか？",
+        "ko": "체크인 전이나 후에 짐을 잠시 맡겨둘 수 있을까요?",
+        "zh": "办理入住前或退房后，可以将行李暂存在这里吗？"
+      },
+      {
+        "en": "Could I be assigned to a quiet room? I'm quite sensitive to noise.",
+        "jp": "静かなお部屋をお願いできますか？音が気になる方なので。",
+        "ko": "조용한 방으로 배정받을 수 있을까요? 소음에 민감한 편이라서요.",
+        "zh": "能帮我安排一个安静的房间吗？我对噪音比较敏感。"
+      },
+      {
+        "en": "Could I have a guide to the in-room amenities?",
+        "jp": "客室内のアメニティの利用案内をいただけますか？",
+        "ko": "객실 내 편의시설 이용 안내서를 받을 수 있을까요?",
+        "zh": "能给我一份客房设施的使用指南吗？"
+      },
+      {
+        "en": "Is it confirmed that I have a room with a high-floor view as requested during booking?",
+        "jp": "予約時にリクエストした、高層階の眺めの良いお部屋で確定していますか？",
+        "ko": "예약 시 요청드린 고층 전망 좋은 방으로 확정된 건가요?",
+        "zh": "预订时要求的那个高层景观房确定了吗？"
+      },
+      {
+        "en": "The air conditioning isn't working properly; I'd like to request a maintenance check or a room change.",
+        "jp": "エアコンの調子が良くないので、点検かお部屋の変更をお願いしたいです。",
+        "ko": "에어컨 작동이 원활하지 않은데, 점검이나 방 교체를 요청하고 싶습니다.",
+        "zh": "空调运行不太正常，我想请求检修或者换房。"
+      },
+      {
+        "en": "Could you double-check the operating hours and location of the breakfast buffet?",
+        "jp": "朝食バイキングの営業時間と場所をもう一度確認していただけますか？",
+        "ko": "조식 뷔페 운영 시간과 장소를 다시 한번 확인해 주시겠어요?",
+        "zh": "能麻烦您再次确认一下自助早餐的时间和地点吗？"
+      },
+      {
+        "en": "I wonder if late check-out is available and, if so, what the additional charge would be.",
+        "jp": "レイトチェックアウトは可能でしょうか。可能な場合、追加料金はいくらになりますか？",
+        "ko": "레이트 체크아웃이 가능한지, 가능하다면 추가 비용이 얼마인지 궁금합니다.",
+        "zh": "请问可以延迟退房吗？如果可以的话，额外费用是多少？"
+      },
+      {
+        "en": "Are there any hidden gems or local favorites nearby that you would recommend?",
+        "jp": "近所に地元の方に人気の穴場店や、おすすめの場所はありますか？",
+        "ko": "주변에 현지인들이 즐겨 찾는 숨은 맛집이나 추천하실 만한 곳이 있나요?",
+        "zh": "附近有没有当地人常去的私藏美食店或推荐的地方？"
+      },
+      {
+        "en": "I'd like to request extra towels and amenities; could you bring them up to my room?",
+        "jp": "タオルとアメニティを追加でお願いしたいのですが、お部屋まで届けていただけますか？",
+        "ko": "수건과 어메니티를 추가로 요청하고 싶은데, 객실로 가져다주실 수 있나요?",
+        "zh": "我想多要几条毛巾和洗漱用品，能送到房间吗？"
+      },
+      {
+        "en": "The Wi-Fi signal in the room is too weak, and the connection keeps dropping.",
+        "jp": "部屋のWi-Fi信号が弱く、接続が頻繁に切れてしまいます。",
+        "ko": "객실 내 와이파이 신호가 너무 약해서 인터넷 연결이 계속 끊깁니다.",
+        "zh": "房间里的Wi-Fi信号太弱了，网络一直掉线。"
+      },
+      {
+        "en": "I'd like to use the airport shuttle; please let me know the booking process and the schedule.",
+        "jp": "空港シャトルバスを利用したいのですが、予約方法と時刻表を教えてください。",
+        "ko": "공항 셔틀버스를 이용하고 싶은데, 예약 방법과 시간표를 알려주세요.",
+        "zh": "我想乘坐机场接驳车，请告知预约方式和时刻表。"
+      },
+      {
+        "en": "I'd like to see the room service menu; is it provided via tablet or booklet?",
+        "jp": "ルームサービスのメニューを拝見したいのですが、タブレットか冊子で提供されていますか？",
+        "ko": "룸서비스 메뉴판을 보고 싶은데, 태블릿이나 책자로 제공되나요?",
+        "zh": "我想看下客房服务菜单，是通过平板电脑还是手册提供？"
+      },
+      {
+        "en": "I think there's a mistake in my reservation details; could you please check again?",
+        "jp": "予約内容に誤りがあるようですので、もう一度ご確認をお願いします。",
+        "ko": "예약 내역에 착오가 있는 것 같은데, 다시 한번 확인 부탁드립니다.",
+        "zh": "预订详情似乎有问题，麻烦您再核对一下。"
+      },
+      {
+        "en": "Is it possible to change the bed type? Could I switch to a single queen-size bed?",
+        "jp": "ベッドタイプの変更は可能ですか？クイーンサイズベッド1台に変更できますか？",
+        "ko": "침대 타입 변경이 가능한지, 퀸 사이즈 베드 하나로 바꿀 수 있을까요?",
+        "zh": "可以更换床型吗？能帮我换成一张大号双人床吗？"
+      },
+      {
+        "en": "Do I need a separate reservation to use the fitness center or the swimming pool?",
+        "jp": "フィットネスセンターやプールを利用する際、別途予約は必要ですか？",
+        "ko": "피트니스 센터나 수영장 이용 시 별도의 예약이 필요한가요?",
+        "zh": "使用健身房或游泳池需要单独预约吗？"
+      },
+      {
+        "en": "I'm not sure how to use the in-room safe; could you explain it to me?",
+        "jp": "客室の金庫の使い方をよく分からないので、教えていただけますか？",
+        "ko": "객실 내 금고 사용법을 잘 모르겠는데, 설명해 주실 수 있나요?",
+        "zh": "我不清楚房间内保险柜怎么用，能给我讲解一下吗？"
+      },
+      {
+        "en": "I'm wondering if there's ample parking and if there's a dedicated lot for guests.",
+        "jp": "駐車場に十分な空きがあるか、また宿泊客専用の駐車場があるか教えてください。",
+        "ko": "주차 공간이 충분한지, 그리고 투숙객 전용 주차장이 따로 있는지 궁금합니다.",
+        "zh": "请问停车位充足吗？是否有住客专用停车场？"
+      },
+      {
+        "en": "Due to a sudden change in my schedule, I would like to adjust my reservation dates.",
+        "jp": "急な予定変更のため、予約日程を調整したいと考えております。",
+        "ko": "갑작스러운 일정 변경으로 인해 예약 날짜를 조정하고 싶습니다.",
+        "zh": "因为行程突然有变，我想调整预订日期。"
+      },
+      {
+        "en": "I just checked out, but I think I left something in the room. Could you please check?",
+        "jp": "先ほどチェックアウトしましたが、部屋に忘れ物をしたようです。確認をお願いします。",
+        "ko": "방금 체크아웃했는데, 객실에 물건을 두고 온 것 같습니다. 확인 부탁드려요.",
+        "zh": "我刚办理完退房，好像把东西落在房间里了，麻烦帮我确认一下。"
+      },
+      {
+        "en": "Where is the nearest 24-hour convenience store or pharmacy?",
+        "jp": "近くに24時間営業のコンビニや薬局はどこにありますか？",
+        "ko": "주변에 24시간 운영하는 편의점이나 약국이 어디에 있나요?",
+        "zh": "附近哪里有24小时营业的便利店或药店？"
+      },
+      {
+        "en": "I'd like to request extra bedding; I want to know if there's an additional charge.",
+        "jp": "追加の寝具をお願いしたいのですが、料金が発生するか教えてください。",
+        "ko": "침구류를 추가로 요청하고 싶은데, 비용이 발생하는지 알고 싶습니다.",
+        "zh": "我想申请额外的床上用品，请问需要付费吗？"
+      },
+      {
+        "en": "I'd like to skip the cleaning service. Should I just put out the 'Do Not Disturb' sign?",
+        "jp": "清掃サービスは不要です。「起こさないでください」の札を出しておけばいいでしょうか？",
+        "ko": "청소 서비스를 건너뛰고 싶습니다. '방해 금지' 팻말을 걸어두면 될까요?",
+        "zh": "我不需要客房清洁服务，挂上“请勿打扰”的牌子就可以吗？"
+      },
+      {
+        "en": "I'd like to change my payment method; can I pay in cash instead of by credit card?",
+        "jp": "支払い方法を変更したいのですが、クレジットカードではなく現金で支払えますか？",
+        "ko": "결제 수단을 변경하고 싶은데, 신용카드 대신 현금으로 계산 가능한가요?",
+        "zh": "我想更改支付方式，可以用现金代替信用卡吗？"
+      },
+      {
+        "en": "What is the fee for the printing services available at the hotel's business center?",
+        "jp": "ホテル内のビジネスセンターで利用できる印刷サービスの料金はいくらですか？",
+        "ko": "호텔 내에서 이용 가능한 비즈니스 센터의 출력 서비스 이용료는 얼마인가요?",
+        "zh": "酒店商务中心提供的打印服务费用是多少？"
+      },
+      {
+        "en": "It looks like I'll be arriving a bit late for check-in; please keep my reservation.",
+        "jp": "チェックインが少し遅くなりそうですが、予約の維持をお願いします。",
+        "ko": "체크인 시간이 조금 늦어질 것 같은데, 예약 유지 부탁드립니다.",
+        "zh": "我办理入住的时间可能会晚一点，请帮我保留预订。"
+      }
+    ]
+  },
+  "direction": {
+    "beginner": [
+      {
+        "en": "Where am I?",
+        "jp": "ここはどこですか？",
+        "ko": "여기가 어디예요?",
+        "zh": "这里是哪里？"
+      },
+      {
+        "en": "Where is the bathroom?",
+        "jp": "トイレはどこですか？",
+        "ko": "화장실이 어디예요?",
+        "zh": "洗手间在哪里？"
+      },
+      {
+        "en": "Where is the station?",
+        "jp": "駅はどこにありますか？",
+        "ko": "역이 어디에 있어요?",
+        "zh": "车站在哪里？"
+      },
+      {
+        "en": "I am lost.",
+        "jp": "道に迷いました。",
+        "ko": "길을 잃었어요.",
+        "zh": "我迷路了。"
+      },
+      {
+        "en": "Please help me.",
+        "jp": "助けてください。",
+        "ko": "도와주세요.",
+        "zh": "请帮帮我。"
+      },
+      {
+        "en": "Go straight.",
+        "jp": "まっすぐ行ってください。",
+        "ko": "똑바로 가세요.",
+        "zh": "直走。"
+      },
+      {
+        "en": "Go right.",
+        "jp": "右に行ってください。",
+        "ko": "오른쪽으로 가세요.",
+        "zh": "向右走。"
+      },
+      {
+        "en": "Go left.",
+        "jp": "左に行ってください。",
+        "ko": "왼쪽으로 가세요.",
+        "zh": "向左走。"
+      },
+      {
+        "en": "Turn left here.",
+        "jp": "ここで左に曲がってください。",
+        "ko": "여기서 왼쪽으로 꺾으세요.",
+        "zh": "在这里左转。"
+      },
+      {
+        "en": "Turn right here.",
+        "jp": "ここで右に曲がってください。",
+        "ko": "여기서 오른쪽으로 꺾으세요.",
+        "zh": "在这里右转。"
+      },
+      {
+        "en": "Keep going straight.",
+        "jp": "そのまま真っ直ぐ行ってください。",
+        "ko": "쭉 가세요.",
+        "zh": "一直走。"
+      },
+      {
+        "en": "Is it far from here?",
+        "jp": "ここから遠いですか？",
+        "ko": "여기서 멀어요?",
+        "zh": "离这里远吗？"
+      },
+      {
+        "en": "Is it close from here?",
+        "jp": "ここから近いですか？",
+        "ko": "여기서 가까워요?",
+        "zh": "离这里近吗？"
+      },
+      {
+        "en": "Can I go on foot?",
+        "jp": "歩いて行けますか？",
+        "ko": "걸어서 갈 수 있어요?",
+        "zh": "可以走路去吗？"
+      },
+      {
+        "en": "Please show me the map.",
+        "jp": "地図を見せてください。",
+        "ko": "지도를 보여주세요.",
+        "zh": "请给我看地图。"
+      },
+      {
+        "en": "Where is the bus stop?",
+        "jp": "バス停はどこですか？",
+        "ko": "버스 정류장이 어디예요?",
+        "zh": "公交车站在哪里？"
+      },
+      {
+        "en": "Where is the subway station?",
+        "jp": "地下鉄の駅はどこですか？",
+        "ko": "지하철역이 어디예요?",
+        "zh": "地铁站在哪里？"
+      },
+      {
+        "en": "Where is the convenience store?",
+        "jp": "コンビニはどこにありますか？",
+        "ko": "편의점이 어디에 있어요?",
+        "zh": "便利店在哪里？"
+      },
+      {
+        "en": "Where is the bank?",
+        "jp": "銀行はどこですか？",
+        "ko": "은행이 어디예요?",
+        "zh": "银行在哪里？"
+      },
+      {
+        "en": "Where is the school?",
+        "jp": "学校はどこですか？",
+        "ko": "학교가 어디예요?",
+        "zh": "学校在哪里？"
+      },
+      {
+        "en": "Go forward.",
+        "jp": "前に行ってください。",
+        "ko": "앞으로 가세요.",
+        "zh": "向前走。"
+      },
+      {
+        "en": "Go backward.",
+        "jp": "後ろに行ってください。",
+        "ko": "뒤로 가세요.",
+        "zh": "向后走。"
+      },
+      {
+        "en": "Please stop here.",
+        "jp": "ここで止まってください。",
+        "ko": "여기서 멈춰주세요.",
+        "zh": "请在这里停。"
+      },
+      {
+        "en": "We have arrived.",
+        "jp": "到着しました。",
+        "ko": "다 왔어요.",
+        "zh": "到了。"
+      },
+      {
+        "en": "Thank you.",
+        "jp": "ありがとうございます。",
+        "ko": "감사합니다.",
+        "zh": "谢谢。"
+      }
+    ],
+    "intermediate": [
+      {
+        "en": "Where is the nearest subway station from here?",
+        "jp": "ここから一番近い地下鉄の駅はどこですか？",
+        "ko": "여기서 가장 가까운 지하철역이 어디인가요?",
+        "zh": "这里最近的地铁站在哪里？"
+      },
+      {
+        "en": "Go straight and then turn right at the first alley.",
+        "jp": "真っ直ぐ行って、最初の路地を右に曲がってください。",
+        "ko": "쭉 가시다가 첫 번째 골목에서 오른쪽으로 꺾으세요.",
+        "zh": "一直走，在第一个小巷子右转。"
+      },
+      {
+        "en": "Is this the right way to City Hall?",
+        "jp": "この道が市役所に行く道で合っていますか？",
+        "ko": "이 길이 시청으로 가는 길이 맞나요?",
+        "zh": "这条路是去市政厅的吗？"
+      },
+      {
+        "en": "It's right across from the convenience store.",
+        "jp": "コンビニのすぐ向かい側にあります。",
+        "ko": "편의점 바로 맞은편에 있어요.",
+        "zh": "就在便利店对面。"
+      },
+      {
+        "en": "You'll see it right away if you turn left at the intersection.",
+        "jp": "交差点を左に曲がればすぐに見えます。",
+        "ko": "사거리에서 왼쪽으로 가시면 바로 보여요.",
+        "zh": "在十字路口左转就看到了。"
+      },
+      {
+        "en": "How much further do I have to go from here?",
+        "jp": "ここからあとどれくらい行けばいいですか？",
+        "ko": "여기서 얼마나 더 가야 하나요?",
+        "zh": "从这里还需要走多久？"
+      },
+      {
+        "en": "Cross the traffic light and go straight a bit more.",
+        "jp": "信号機を渡って、もう少し直進してください。",
+        "ko": "신호등을 건너서 조금만 더 직진하세요.",
+        "zh": "过马路红绿灯后再直走一点。"
+      },
+      {
+        "en": "I think I'm lost, could you help me?",
+        "jp": "道に迷ってしまったようなのですが、助けていただけますか？",
+        "ko": "길을 잃어버린 것 같은데 도와주실 수 있나요?",
+        "zh": "我好像迷路了，能帮帮我吗？"
+      },
+      {
+        "en": "It's located behind the landmark building.",
+        "jp": "ランドマークの建物の裏側にあります。",
+        "ko": "랜드마크 건물 뒤쪽에 위치해 있어요.",
+        "zh": "在地标建筑的后面。"
+      },
+      {
+        "en": "I can't really tell even with the map app open.",
+        "jp": "地図アプリを開いてもよく分かりません。",
+        "ko": "지도 앱을 켜도 잘 모르겠어요.",
+        "zh": "开了地图软件还是没搞清楚。"
+      },
+      {
+        "en": "It's about a 10-minute walk.",
+        "jp": "歩いて10分ほどの距離です。",
+        "ko": "걸어서 10분 정도 걸리는 거리예요.",
+        "zh": "走路大概需要10分钟。"
+      },
+      {
+        "en": "Get off at the bus stop and go left.",
+        "jp": "バス停で降りて左に行ってください。",
+        "ko": "버스 정류장에서 내려서 왼쪽으로 가세요.",
+        "zh": "在公交车站下车后向左走。"
+      },
+      {
+        "en": "It'll be faster to take a taxi from here to there.",
+        "jp": "ここからそこまでならタクシーに乗ったほうが早いでしょう。",
+        "ko": "여기서 거기까지 택시 타는 게 빠를 거예요.",
+        "zh": "从这里到那里打车会快很多。"
+      },
+      {
+        "en": "Go straight down along the main road.",
+        "jp": "大通りに沿って真っ直ぐ下りてください。",
+        "ko": "큰길을 따라서 쭉 내려가세요.",
+        "zh": "沿着大路一直走下去。"
+      },
+      {
+        "en": "There's a bank right next to the pharmacy.",
+        "jp": "薬局のすぐ隣に銀行があります。",
+        "ko": "약국 바로 옆에 은행이 있어요.",
+        "zh": "药店旁边就是银行。"
+      },
+      {
+        "en": "Could you tell me which direction I should go?",
+        "jp": "どちらの方向に進めばいいか教えていただけますか？",
+        "ko": "어느 방향으로 가야 하는지 알려주시겠어요?",
+        "zh": "能告诉我应该往哪个方向走吗？"
+      },
+      {
+        "en": "There are so many alleys that it's confusing.",
+        "jp": "路地が多すぎて混乱しています。",
+        "ko": "골목이 너무 많아서 헷갈리네요.",
+        "zh": "小巷太多了，有点晕。"
+      },
+      {
+        "en": "It'll be right there once you cross the crosswalk.",
+        "jp": "横断歩道を渡ればすぐに出ます。",
+        "ko": "횡단보도를 건너면 바로 나옵니다.",
+        "zh": "过马路就到了。"
+      },
+      {
+        "en": "Is there a public parking lot nearby?",
+        "jp": "この近くに公共駐車場はありますか？",
+        "ko": "이 근처에 공영 주차장이 있나요?",
+        "zh": "这附近有公共停车场吗？"
+      },
+      {
+        "en": "Go up the stairs and head down the left hallway.",
+        "jp": "階段を上がって左の廊下へ行ってください。",
+        "ko": "계단을 올라가서 왼쪽 복도로 가세요.",
+        "zh": "走楼梯上去，然后往左边的走廊走。"
+      },
+      {
+        "en": "If you turn right here, you'll see it right away.",
+        "jp": "ここで右に曲がればすぐに見えます。",
+        "ko": "여기서 오른쪽으로 꺾으면 바로 보여요.",
+        "zh": "在这里右转就能看到。"
+      },
+      {
+        "en": "Go straight ahead and then stop.",
+        "jp": "正面に真っ直ぐ行って、止まってください。",
+        "ko": "정면으로 쭉 가시다가 멈추세요.",
+        "zh": "正对着一直走，然后停下来。"
+      },
+      {
+        "en": "The entrance is hidden at the back of the building.",
+        "jp": "入り口は建物の裏側に隠れています。",
+        "ko": "입구가 건물 뒤편에 숨어 있어요.",
+        "zh": "入口隐藏在建筑物的后面。"
+      },
+      {
+        "en": "Please guide me via the fastest route.",
+        "jp": "一番早い道で案内してください。",
+        "ko": "가장 빠른 길로 안내해 주세요.",
+        "zh": "请带我走最快的那条路。"
+      },
+      {
+        "en": "How much further from here until it appears?",
+        "jp": "ここからあとどれくらい行けば出ますか？",
+        "ko": "여기서 얼마나 더 가야 나오나요?",
+        "zh": "从这里还要走多久才能到？"
+      }
+    ],
+    "advanced": [
+      {
+        "en": "Follow this road straight and take a right at the first intersection.",
+        "jp": "この道を真っ直ぐ行って、最初の交差点を右に曲がってください。",
+        "ko": "이 길을 따라 쭉 가시다가 첫 번째 교차로에서 우회전하세요.",
+        "zh": "沿着这条路直走，在第一个十字路口右转。"
+      },
+      {
+        "en": "If you look at the map, your current location should be accurately marked.",
+        "jp": "地図をご覧になれば、現在地が正確に表示されているはずです。",
+        "ko": "지도를 보시면 현재 위치가 정확히 표시되어 있을 겁니다.",
+        "zh": "你看地图的话，当前位置应该标得很清楚。"
+      },
+      {
+        "en": "The alleys are so complex that it's better to follow the signposts than the navigation.",
+        "jp": "路地が非常に複雑なので、ナビよりも標識を見たほうがいいですよ。",
+        "ko": "골목이 워낙 복잡해서 내비게이션보다는 이정표를 보시는 게 나아요.",
+        "zh": "小巷太复杂了，看路标比看导航更好。"
+      },
+      {
+        "en": "If you go around to the back of the building, you'll find a passage leading to the main entrance.",
+        "jp": "建物の裏手に回れば、正門につながる通路があります。",
+        "ko": "건물 뒤편으로 돌아가시면 정문으로 연결되는 통로가 나옵니다.",
+        "zh": "绕到建筑后面，就能找到通往正门的通道。"
+      },
+      {
+        "en": "If you go straight just a bit further, it'll be right there on your right.",
+        "jp": "ここからもう少し直進すれば、すぐ右側に見えますよ。",
+        "ko": "여기서 조금만 더 직진하시면 바로 오른편에 보일 거예요.",
+        "zh": "再往前走一点，就在你的右手边。"
+      },
+      {
+        "en": "Go for about 500 meters and then cross the crosswalk.",
+        "jp": "500メートルほど直進して、横断歩道を渡ってください。",
+        "ko": "약 500미터 정도 가시다가 횡단보도를 건너세요.",
+        "zh": "走大约500米，然后穿过人行道。"
+      },
+      {
+        "en": "Use the City Hall building as a landmark and head to the left.",
+        "jp": "ランドマークである市役所庁舎を目印に、左方向へ進んでください。",
+        "ko": "랜드마크인 시청 건물을 기준으로 왼쪽 방향으로 잡으세요.",
+        "zh": "以市役所大楼为地标，向左走。"
+      },
+      {
+        "en": "This area is a one-way street, so you must not enter from the opposite direction.",
+        "jp": "この区域は一方通行なので、逆方向から進入しないでください。",
+        "ko": "이 구역은 일방통행이라 반대 방향으로 진입하시면 안 됩니다.",
+        "zh": "这一区域是单行道，不能逆向行驶。"
+      },
+      {
+        "en": "Go up the stairs and use the elevator at the end of the hallway.",
+        "jp": "階段を上がり、廊下の突き当たりにあるエレベーターをご利用ください。",
+        "ko": "계단을 올라가서 복도 끝에 있는 엘리베이터를 이용하세요.",
+        "zh": "上楼后，使用走廊尽头的电梯。"
+      },
+      {
+        "en": "I think you've gone completely in the opposite direction.",
+        "jp": "完全に逆方向に進んでしまったようですね。",
+        "ko": "여기서 완전히 반대 방향으로 가신 것 같은데요.",
+        "zh": "我觉得你完全走反方向了。"
+      },
+      {
+        "en": "Just cross diagonally at the intersection.",
+        "jp": "交差点を斜めに渡ってください。",
+        "ko": "사거리에서 대각선 방향으로 건너가시면 됩니다.",
+        "zh": "在十字路口对角线方向穿过去就行。"
+      },
+      {
+        "en": "Go down the main road and turn when you reach the bakery.",
+        "jp": "大通りを降りていき、パン屋が見えたところで曲がってください。",
+        "ko": "큰길을 따라 내려가다가 빵집이 나오면 거기서 꺾으세요.",
+        "zh": "沿着大路走，看到面包店就转弯。"
+      },
+      {
+        "en": "Come out of Exit 3 of the subway station and turn into the alley on the left.",
+        "jp": "地下鉄駅の3番出口から出て、左の路地に入ってください。",
+        "ko": "지하철역 3번 출구로 나오셔서 왼쪽 골목으로 들어오세요.",
+        "zh": "从地铁站3号出口出来，走进左边的巷子。"
+      },
+      {
+        "en": "The road narrows from here, so please drive slowly.",
+        "jp": "ここからは道が狭くなりますので、徐行してください。",
+        "ko": "여기서부터는 길이 좁으니 서행하시기 바랍니다.",
+        "zh": "从这里开始路比较窄，请慢行。"
+      },
+      {
+        "en": "The parking lot is located on the second basement level of the building.",
+        "jp": "駐車場は建物の地下2階にございます。",
+        "ko": "주차장은 건물 지하 2층에 마련되어 있습니다.",
+        "zh": "停车场在建筑的地下二层。"
+      },
+      {
+        "en": "Read the guidance text on the signpost carefully.",
+        "jp": "標識に書かれた案内文を注意深く読んでください。",
+        "ko": "이정표에 적힌 안내 문구를 주의 깊게 읽어보세요.",
+        "zh": "请仔细阅读路标上的指示文字。"
+      },
+      {
+        "en": "If you go a bit further from here, you'll hit a dead end.",
+        "jp": "ここからもう少し行けば、行き止まりが出ます。",
+        "ko": "여기서 조금만 더 가면 막다른 길이 나올 거예요.",
+        "zh": "再走一点就到死胡同了。"
+      },
+      {
+        "en": "Keep to the right as it is the general rule for traffic.",
+        "jp": "右側通行が原則ですので、右側に寄って移動してください。",
+        "ko": "우측 통행이 원칙이니 오른쪽으로 붙어서 이동해 주세요.",
+        "zh": "原则上请靠右通行。"
+      },
+      {
+        "en": "Walk northeast for about 10 minutes based on the compass.",
+        "jp": "コンパスを基準に、北東方向へ10分ほど歩いてください。",
+        "ko": "나침반을 기준으로 북동쪽 방향으로 10분 정도 걸으세요.",
+        "zh": "以指南针为准，向东北方向走10分钟左右。"
+      },
+      {
+        "en": "To make a U-turn from here, you'll need to go a bit further and turn at the traffic light.",
+        "jp": "ここでUターンするには、もう少し先にある信号で回る必要があります。",
+        "ko": "여기서 유턴하시려면 조금 더 가서 신호등에서 돌으셔야 해요.",
+        "zh": "如果要掉头，得再往前走一点在红绿灯那里转。"
+      },
+      {
+        "en": "There's a shortcut, so there's no need to go all the way around via the main road.",
+        "jp": "近道がありますので、わざわざ大通りを回る必要はありません。",
+        "ko": "지름길이 있으니 굳이 큰길로 돌아가실 필요 없습니다.",
+        "zh": "有近路，没必要绕道大路。"
+      },
+      {
+        "en": "This road is under construction, so please use the detour.",
+        "jp": "この道は工事中のため、迂回道路をご利用ください。",
+        "ko": "이 길은 공사 중이라 우회 도로를 이용해 주시기 바랍니다.",
+        "zh": "这条路在施工，请使用绕行道路。"
+      },
+      {
+        "en": "Ask about the location at the information desk in the first-floor lobby.",
+        "jp": "1階ロビーの案内デスクで場所を尋ねてください。",
+        "ko": "건물 1층 로비에서 안내 데스크에 위치를 물어보세요.",
+        "zh": "在一楼大堂的咨询台询问位置。"
+      },
+      {
+        "en": "If you follow the riverbank down, you'll reach your desired destination.",
+        "jp": "川沿いを真っ直ぐ下れば、目的地に到着します。",
+        "ko": "강변을 따라 쭉 내려가시면 원하는 목적지가 나옵니다.",
+        "zh": "沿着河边一直走，就能到达目的地。"
+      },
+      {
+        "en": "Double-check if this is the correct road to turn into.",
+        "jp": "ここで曲がる道で合っているか、もう一度確認してください。",
+        "ko": "여기서 꺾어 들어가는 길이 맞는지 다시 한번 확인해 보세요.",
+        "zh": "请再确认一下这里是不是转弯进入的路。"
+      }
+    ]
+  },
+  "restaurant": {
+    "beginner": [
+      {
+        "en": "Can I have the menu, please?",
+        "jp": "メニューをください。",
+        "ko": "메뉴판 주세요.",
+        "zh": "请给我菜单。"
+      },
+      {
+        "en": "Excuse me!",
+        "jp": "すみません！",
+        "ko": "여기요!",
+        "zh": "服务员！"
+      },
+      {
+        "en": "How many people?",
+        "jp": "何名様ですか？",
+        "ko": "몇 분이세요?",
+        "zh": "请问几位？"
+      },
+      {
+        "en": "Two people.",
+        "jp": "二人です。",
+        "ko": "두 명이에요.",
+        "zh": "两位。"
+      },
+      {
+        "en": "I have a reservation.",
+        "jp": "予約しました。",
+        "ko": "예약했어요.",
+        "zh": "我预约了。"
+      },
+      {
+        "en": "What do you recommend?",
+        "jp": "おすすめは何ですか？",
+        "ko": "추천 메뉴가 뭐예요?",
+        "zh": "有什么推荐菜？"
+      },
+      {
+        "en": "I'll have this, please.",
+        "jp": "これをください。",
+        "ko": "이거 주세요.",
+        "zh": "我要这个。"
+      },
+      {
+        "en": "Water, please.",
+        "jp": "お水をください。",
+        "ko": "물 좀 주세요.",
+        "zh": "请给我水。"
+      },
+      {
+        "en": "Please make it not spicy.",
+        "jp": "辛くしないでください。",
+        "ko": "맵지 않게 해주세요.",
+        "zh": "请不要太辣。"
+      },
+      {
+        "en": "I have an allergy.",
+        "jp": "アレルギーがあります。",
+        "ko": "알레르기가 있어요.",
+        "zh": "我过敏。"
+      },
+      {
+        "en": "No cilantro, please.",
+        "jp": "パクチーを抜いてください。",
+        "ko": "고수 빼주세요.",
+        "zh": "不要香菜。"
+      },
+      {
+        "en": "How much is it?",
+        "jp": "いくらですか？",
+        "ko": "얼마예요?",
+        "zh": "多少钱？"
+      },
+      {
+        "en": "I'll eat here.",
+        "jp": "ここで食べます。",
+        "ko": "여기서 먹을게요.",
+        "zh": "在这里吃。"
+      },
+      {
+        "en": "To go, please.",
+        "jp": "テイクアウトでお願いします。",
+        "ko": "포장해 주세요.",
+        "zh": "打包。"
+      },
+      {
+        "en": "Where is the restroom?",
+        "jp": "お手洗いはどこですか？",
+        "ko": "화장실 어디예요?",
+        "zh": "洗手间在哪里？"
+      },
+      {
+        "en": "It's delicious!",
+        "jp": "美味しいです！",
+        "ko": "맛있어요!",
+        "zh": "很好吃！"
+      },
+      {
+        "en": "It's too salty.",
+        "jp": "しょっぱすぎます。",
+        "ko": "너무 짜요.",
+        "zh": "太咸了。"
+      },
+      {
+        "en": "Check, please.",
+        "jp": "お会計をお願いします。",
+        "ko": "계산서 주세요.",
+        "zh": "请给我账单。"
+      },
+      {
+        "en": "I'll pay by card.",
+        "jp": "カードで払います。",
+        "ko": "카드로 결제할게요.",
+        "zh": "用卡支付。"
+      },
+      {
+        "en": "I'll pay in cash.",
+        "jp": "現金で払います。",
+        "ko": "현금으로 낼게요.",
+        "zh": "用现金支付。"
+      },
+      {
+        "en": "Thank you for the meal.",
+        "jp": "ごちそうさまでした。",
+        "ko": "잘 먹었습니다.",
+        "zh": "我吃好了。"
+      },
+      {
+        "en": "Can I have chopsticks, please?",
+        "jp": "お箸をください。",
+        "ko": "젓가락 주세요.",
+        "zh": "请给我筷子。"
+      },
+      {
+        "en": "Can I have some napkins, please?",
+        "jp": "ナプキンをください。",
+        "ko": "냅킨 좀 주세요.",
+        "zh": "请给我餐巾纸。"
+      },
+      {
+        "en": "I'm ready to order.",
+        "jp": "注文お願いします。",
+        "ko": "주문할게요.",
+        "zh": "我要点餐。"
+      },
+      {
+        "en": "Please wait a little longer.",
+        "jp": "少々お待ちください。",
+        "ko": "조금만 더 기다려주세요.",
+        "zh": "请稍等一下。"
+      }
+    ],
+    "intermediate": [
+      {
+        "en": "Do you have a reservation?",
+        "jp": "予約はされていますか？",
+        "ko": "예약하셨나요?",
+        "zh": "您预约了吗？"
+      },
+      {
+        "en": "I'd like a window seat, please.",
+        "jp": "窓側の席をお願いします。",
+        "ko": "창가 자리로 부탁드릴게요.",
+        "zh": "我想坐窗边的位置。"
+      },
+      {
+        "en": "How many people are in your party?",
+        "jp": "何名様でしょうか？",
+        "ko": "몇 분이신가요?",
+        "zh": "请问一共几位？"
+      },
+      {
+        "en": "What do you recommend?",
+        "jp": "おすすめのメニューは何ですか？",
+        "ko": "추천 메뉴가 뭔가요?",
+        "zh": "有什么推荐的菜吗？"
+      },
+      {
+        "en": "What is the most popular dish here?",
+        "jp": "ここで一番人気の料理は何ですか？",
+        "ko": "여기서 가장 인기 있는 음식이 뭐예요?",
+        "zh": "这里最受欢迎的菜是什么？"
+      },
+      {
+        "en": "I have an allergy, so please leave out the nuts.",
+        "jp": "アレルギーがあるので、ナッツを抜いてください。",
+        "ko": "알레르기가 있어서 그런데, 견과류는 빼주세요.",
+        "zh": "我对坚果过敏，请不要放坚果。"
+      },
+      {
+        "en": "Could you make it less spicy?",
+        "jp": "辛さを控えめにできますか？",
+        "ko": "덜 맵게 해주실 수 있나요?",
+        "zh": "能做成不那么辣的吗？"
+      },
+      {
+        "en": "I'd like my steak medium, please.",
+        "jp": "ステーキの焼き加減はミディアムでお願いします。",
+        "ko": "스테이크 굽기는 미디엄으로 해주세요.",
+        "zh": "牛排请做成五分熟。"
+      },
+      {
+        "en": "Please put the dressing on the side.",
+        "jp": "ドレッシングは別添えにしてください。",
+        "ko": "드레싱은 따로 담아주세요.",
+        "zh": "酱汁请分开装。"
+      },
+      {
+        "en": "Are you ready to order?",
+        "jp": "ご注文はお決まりですか？",
+        "ko": "여기 주문 도와드릴까요?",
+        "zh": "请问现在可以点餐了吗？"
+      },
+      {
+        "en": "Just a moment, I need a little more time.",
+        "jp": "すみません、もう少し時間をください。",
+        "ko": "잠시만요, 조금 더 볼게요.",
+        "zh": "请等一下，我再看看。"
+      },
+      {
+        "en": "What would you like to drink?",
+        "jp": "お飲み物は何にいたしますか？",
+        "ko": "음료는 뭘로 하시겠어요?",
+        "zh": "您想喝点什么？"
+      },
+      {
+        "en": "Is the water self-service?",
+        "jp": "お水はセルフサービスですか？",
+        "ko": "물은 셀프인가요?",
+        "zh": "水需要自己去拿吗？"
+      },
+      {
+        "en": "How does this dish taste?",
+        "jp": "この料理の味はどうですか？",
+        "ko": "이 음식은 맛이 어떤가요?",
+        "zh": "这道菜味道怎么样？"
+      },
+      {
+        "en": "The food we ordered hasn't come out yet.",
+        "jp": "注文した料理がまだ来ていません。",
+        "ko": "여기 주문한 음식이 아직 안 나왔어요.",
+        "zh": "我们点的菜还没上来。"
+      },
+      {
+        "en": "I received a different dish than what I ordered.",
+        "jp": "注文したものと違う料理が来ました。",
+        "ko": "주문한 거랑 다른 메뉴가 나왔어요.",
+        "zh": "上来的菜和点的不一样。"
+      },
+      {
+        "en": "Could we get a few more small plates?",
+        "jp": "取り皿をもう少しいただけますか？",
+        "ko": "앞접시 좀 더 주시겠어요?",
+        "zh": "能多给我们几个小盘子吗？"
+      },
+      {
+        "en": "Could I have some more napkins?",
+        "jp": "ナプキンをもう少しください。",
+        "ko": "냅킨 좀 더 주세요.",
+        "zh": "请再给我一些纸巾。"
+      },
+      {
+        "en": "Could you wrap up the leftovers for me?",
+        "jp": "残った料理を包んでもらえますか？",
+        "ko": "남은 음식 포장해 주시겠어요?",
+        "zh": "剩下的菜能帮我打包吗？"
+      },
+      {
+        "en": "Could you bring me the bill, please?",
+        "jp": "お会計をお願いします。",
+        "ko": "계산서 좀 가져다주세요.",
+        "zh": "请给我账单。"
+      },
+      {
+        "en": "Can we pay separately?",
+        "jp": "別々に会計できますか？",
+        "ko": "따로 계산할 수 있을까요?",
+        "zh": "可以分开付账吗？"
+      },
+      {
+        "en": "I'll pay by card.",
+        "jp": "カードで支払います。",
+        "ko": "카드로 결제할게요.",
+        "zh": "我用卡支付。"
+      },
+      {
+        "en": "Everything was delicious, thank you.",
+        "jp": "とても美味しかったです。ごちそうさまでした。",
+        "ko": "정말 맛있게 잘 먹었습니다.",
+        "zh": "非常好吃，谢谢。"
+      },
+      {
+        "en": "Where can I get a parking ticket?",
+        "jp": "駐車券はどこでもらえますか？",
+        "ko": "주차권 어디서 받나요?",
+        "zh": "停车券在哪里领？"
+      },
+      {
+        "en": "Where is the restroom located here?",
+        "jp": "お手洗いはどこにありますか？",
+        "ko": "여기 화장실 어디에 있어요?",
+        "zh": "请问洗手间在哪里？"
+      }
+    ],
+    "advanced": [
+      {
+        "en": "I'd prefer a quiet table by the window, please.",
+        "jp": "窓側の静かな席でお願いします。",
+        "ko": "창가 쪽 조용한 자리로 부탁드려요.",
+        "zh": "请给我安排一个窗边安静的位子。"
+      },
+      {
+        "en": "What is the key flavor profile of this dish?",
+        "jp": "この料理の決め手となる風味は何ですか？",
+        "ko": "이 요리의 핵심 풍미가 무엇인가요?",
+        "zh": "这道菜的核心风味是什么？"
+      },
+      {
+        "en": "I have allergies, so please double-check the ingredients carefully.",
+        "jp": "アレルギーがあるので、食材を慎重に確認してください。",
+        "ko": "알레르기가 있으니 성분을 세심하게 확인해 주세요.",
+        "zh": "我有过敏症，请仔细确认一下成分。"
+      },
+      {
+        "en": "Could you recommend a wine from the list that pairs best with this dish?",
+        "jp": "ワインリストの中で、この料理に一番合うものを勧めていただけますか？",
+        "ko": "와인 리스트 중에서 이 요리와 가장 잘 어울리는 것을 추천해 주시겠어요?",
+        "zh": "请在酒单中推荐一款最配这道菜的酒。"
+      },
+      {
+        "en": "I have a reservation, but is there any way to minimize the wait time?",
+        "jp": "予約しているのですが、待ち時間を短縮する方法はありますか？",
+        "ko": "예약을 했는데, 혹시 대기 시간을 줄일 방법이 있을까요?",
+        "zh": "我已经预约了，请问有没有办法缩短等待时间？"
+      },
+      {
+        "en": "The sauce is a bit strong; could you make it a bit more subtle?",
+        "jp": "ソースが少し濃い気がしますが、もう少しあっさりめにできますか？",
+        "ko": "소스가 약간 강한 편인데, 조금 더 담백하게 가능할까요?",
+        "zh": "酱汁味道有点重，能做得清淡一点吗？"
+      },
+      {
+        "en": "What is the signature dish of this restaurant?",
+        "jp": "このお店の看板メニューは何ですか？",
+        "ko": "이 식당의 시그니처 메뉴는 무엇인가요?",
+        "zh": "这家餐厅的招牌菜是什么？"
+      },
+      {
+        "en": "The freshness of the ingredients is remarkably well-preserved.",
+        "jp": "素材の新鮮さがそのまま活きていて、本当に印象的です。",
+        "ko": "재료의 신선함이 그대로 살아있어 정말 인상적이네요.",
+        "zh": "食材的新鲜度保持得非常好，令人印象深刻。"
+      },
+      {
+        "en": "The pace of the course meal is a bit too fast; could you slow down the service?",
+        "jp": "コースのテンポが速すぎるので、もう少しゆっくり出してください。",
+        "ko": "코스 요리의 템포가 너무 빠른데, 조금만 천천히 서빙해 주세요.",
+        "zh": "套餐上菜速度太快了，请稍微慢一点。"
+      },
+      {
+        "en": "Do you have any alternative menu options for vegetarians?",
+        "jp": "ベジタリアン向けの代替メニューはありますか？",
+        "ko": "채식주의자를 위한 대체 메뉴가 준비되어 있나요?",
+        "zh": "请问有提供素食替代方案吗？"
+      },
+      {
+        "en": "The plating of the food is truly artistic.",
+        "jp": "盛り付けが本当に芸術的ですね。",
+        "ko": "음식의 플레이팅이 정말 예술적이네요.",
+        "zh": "这道菜的摆盘简直像艺术品一样。"
+      },
+      {
+        "en": "The overall balance of flavors is excellent.",
+        "jp": "全体的な味のバランスがとても素晴らしいです。",
+        "ko": "전반적인 맛의 밸런스가 아주 훌륭합니다.",
+        "zh": "整体口味的平衡感非常好。"
+      },
+      {
+        "en": "I have a special request for the kitchen; could you please pass it along?",
+        "jp": "厨房に特別なリクエストがあるのですが、伝えていただけますか？",
+        "ko": "주방에 특별히 요청할 사항이 있는데 전달 부탁드립니다.",
+        "zh": "我对厨房有个特殊要求，麻烦转达一下。"
+      },
+      {
+        "en": "The texture of this dish is very unique and intriguing.",
+        "jp": "この料理は食感がとても独特で興味深いです。",
+        "ko": "이 요리는 텍스처가 아주 독특해서 흥미로워요.",
+        "zh": "这道菜的口感非常独特，很有意思。"
+      },
+      {
+        "en": "I believe there's an item on the bill that I didn't order.",
+        "jp": "請求書に注文していない項目が入っているようです。",
+        "ko": "계산서에 제가 주문하지 않은 항목이 포함된 것 같습니다.",
+        "zh": "账单里好像包含了我没点的一项。"
+      },
+      {
+        "en": "The atmosphere is so cozy; it's the perfect place for an important conversation.",
+        "jp": "雰囲気が心地よくて、重要な話し合いをするのに最適な場所ですね。",
+        "ko": "분위기가 아늑해서 중요한 대화를 나누기에 최적의 장소네요.",
+        "zh": "氛围很温馨，非常适合进行重要的谈话。"
+      },
+      {
+        "en": "The wine has a balanced body, pairing beautifully with the meat dish.",
+        "jp": "ワインのボディ感が適度で、肉料理との調和が良いです。",
+        "ko": "와인의 바디감이 적당해서 육류 요리와 조화가 좋습니다.",
+        "zh": "这款酒的酒体适中，与肉类料理非常协调。"
+      },
+      {
+        "en": "The service is so attentive that I feel truly pampered.",
+        "jp": "サービスがとても細やかで、もてなされていると感じます。",
+        "ko": "서비스가 매우 세심해서 대접받는 기분이 듭니다.",
+        "zh": "服务非常周到，让人感觉受到了极大的款待。"
+      },
+      {
+        "en": "The dessert provided a perfect conclusion to the meal.",
+        "jp": "デザートまで完璧な締めくくりでした。",
+        "ko": "디저트까지 완벽한 마무리였습니다.",
+        "zh": "直到甜点，整个收尾都非常完美。"
+      },
+      {
+        "en": "The garnish complements the main ingredient perfectly.",
+        "jp": "付け合わせがメインの食材の味をよく引き立てていますね。",
+        "ko": "가니쉬가 메인 재료의 맛을 잘 살려주네요.",
+        "zh": "配菜很好地提升了主料的风味。"
+      },
+      {
+        "en": "It's surprising to enjoy food of this quality at such a price.",
+        "jp": "このクオリティの料理をこの価格で楽しめるとは驚きです。",
+        "ko": "이 정도 퀄리티의 요리를 이 가격에 즐길 수 있다니 놀랍습니다.",
+        "zh": "这种品质的料理能以这个价格享用，真是令人惊讶。"
+      },
+      {
+        "en": "Could you tell me more about the origin or variety of the ingredients?",
+        "jp": "食材の産地や品種について詳しく教えていただけますか？",
+        "ko": "식재료의 산지나 품종에 대해 더 알 수 있을까요?",
+        "zh": "能详细介绍一下食材的产地或品种吗？"
+      },
+      {
+        "en": "Overall, it's a dish with deep flavor and a long-lasting aftertaste.",
+        "jp": "全体的に風味が深く、余韻が長く残る料理です。",
+        "ko": "전반적으로 풍미가 깊고 여운이 길게 남는 요리입니다.",
+        "zh": "整体风味深厚，余味悠长。"
+      },
+      {
+        "en": "I've arrived slightly earlier than my reservation time; is it possible to be seated?",
+        "jp": "予約時間より少し早く着いたのですが、入店可能でしょうか？",
+        "ko": "예약 시간보다 조금 일찍 도착했는데, 입장이 가능할까요?",
+        "zh": "我比预约时间早到了一会儿，现在可以入座吗？"
+      },
+      {
+        "en": "I'll definitely try the menu you recommended on my next visit.",
+        "jp": "次回伺った際に、おすすめしていただいたメニューをぜひ試してみます。",
+        "ko": "다음에 방문할 때 추천해주신 메뉴를 꼭 시도해 보겠습니다.",
+        "zh": "下次光临时，我一定会尝试您推荐的菜单。"
+      }
+    ]
+  },
+  "shop": {
+    "beginner": [
+      {
+        "en": "Hello.",
+        "jp": "こんにちは。",
+        "ko": "안녕하세요.",
+        "zh": "你好。"
+      },
+      {
+        "en": "How much is this?",
+        "jp": "これはいくらですか？",
+        "ko": "이거 얼마예요?",
+        "zh": "这个多少钱？"
+      },
+      {
+        "en": "I'll take this, please.",
+        "jp": "これをください。",
+        "ko": "이거 주세요.",
+        "zh": "我要这个。"
+      },
+      {
+        "en": "Can I help you?",
+        "jp": "お手伝いしましょうか？",
+        "ko": "도와드릴까요?",
+        "zh": "需要帮忙吗？"
+      },
+      {
+        "en": "I'm just looking.",
+        "jp": "見ているだけです。",
+        "ko": "그냥 구경하는 거예요.",
+        "zh": "我随便看看。"
+      },
+      {
+        "en": "Please give me a recommendation.",
+        "jp": "おすすめを教えてください。",
+        "ko": "추천해 주세요.",
+        "zh": "请推荐一下。"
+      },
+      {
+        "en": "Do you have anything cheaper?",
+        "jp": "もっと安いものはありますか？",
+        "ko": "더 싼 거 있어요?",
+        "zh": "有更便宜的吗？"
+      },
+      {
+        "en": "Can I try this on?",
+        "jp": "試着してもいいですか？",
+        "ko": "입어봐도 될까요?",
+        "zh": "可以试穿吗？"
+      },
+      {
+        "en": "Do you have other colors?",
+        "jp": "他の色はありますか？",
+        "ko": "다른 색깔 있어요?",
+        "zh": "有其他颜色吗？"
+      },
+      {
+        "en": "Do you have other sizes?",
+        "jp": "他のサイズはありますか？",
+        "ko": "다른 사이즈 있어요?",
+        "zh": "有其他尺寸吗？"
+      },
+      {
+        "en": "It's too big.",
+        "jp": "大きすぎます。",
+        "ko": "너무 커요.",
+        "zh": "太大了。"
+      },
+      {
+        "en": "It's too small.",
+        "jp": "小さすぎます。",
+        "ko": "너무 작아요.",
+        "zh": "太小了。"
+      },
+      {
+        "en": "Do you need a bag?",
+        "jp": "袋は必要ですか？",
+        "ko": "봉투 필요하세요?",
+        "zh": "需要袋子吗？"
+      },
+      {
+        "en": "Please give me a bag.",
+        "jp": "袋をください。",
+        "ko": "봉투 주세요.",
+        "zh": "请给我个袋子。"
+      },
+      {
+        "en": "I'll pay by card.",
+        "jp": "カードで払います。",
+        "ko": "카드로 계산할게요.",
+        "zh": "用卡支付。"
+      },
+      {
+        "en": "I'll pay in cash.",
+        "jp": "現金で払います。",
+        "ko": "현금으로 할게요.",
+        "zh": "用现金支付。"
+      },
+      {
+        "en": "Receipt, please.",
+        "jp": "領収書をください。",
+        "ko": "영수증 주세요.",
+        "zh": "请给我发票。"
+      },
+      {
+        "en": "Is there a discount?",
+        "jp": "割引になりますか？",
+        "ko": "할인 돼요?",
+        "zh": "打折吗？"
+      },
+      {
+        "en": "Where is it?",
+        "jp": "どこにありますか？",
+        "ko": "어디에 있어요?",
+        "zh": "在哪里？"
+      },
+      {
+        "en": "Where is the restroom?",
+        "jp": "トイレはどこですか？",
+        "ko": "화장실 어디예요?",
+        "zh": "洗手间在哪里？"
+      },
+      {
+        "en": "I'm looking for this.",
+        "jp": "これを探しています。",
+        "ko": "이거 찾고 있어요.",
+        "zh": "我在找这个。"
+      },
+      {
+        "en": "That's all.",
+        "jp": "以上です。",
+        "ko": "다 됐습니다.",
+        "zh": "就这些。"
+      },
+      {
+        "en": "Please wait a moment.",
+        "jp": "少々お待ちください。",
+        "ko": "잠시만 기다려 주세요.",
+        "zh": "请稍等。"
+      },
+      {
+        "en": "Thank you.",
+        "jp": "ありがとうございます。",
+        "ko": "감사합니다.",
+        "zh": "谢谢。"
+      },
+      {
+        "en": "Goodbye.",
+        "jp": "さようなら。",
+        "ko": "안녕히 계세요.",
+        "zh": "再见。"
+      }
+    ],
+    "intermediate": [
+      {
+        "en": "Do you still have this item in stock?",
+        "jp": "この商品の在庫はまだありますか？",
+        "ko": "이 제품 재고가 아직 남아 있나요?",
+        "zh": "这款产品还有货吗？"
+      },
+      {
+        "en": "Could I exchange this for a different color or size?",
+        "jp": "別の色やサイズに交換できますか？",
+        "ko": "다른 색상이나 사이즈로 교환할 수 있을까요?",
+        "zh": "可以换个颜色或尺寸吗？"
+      },
+      {
+        "en": "Where are the fitting rooms?",
+        "jp": "試着室はどこにありますか？",
+        "ko": "피팅룸은 어디에 있나요?",
+        "zh": "试衣间在哪里？"
+      },
+      {
+        "en": "May I try this on?",
+        "jp": "これを試着してもいいですか？",
+        "ko": "이거 입어봐도 될까요?",
+        "zh": "我可以试穿这个吗？"
+      },
+      {
+        "en": "I think it's a bit larger than I expected.",
+        "jp": "思ったより少し大きい気がします。",
+        "ko": "생각보다 조금 큰 것 같아요.",
+        "zh": "我觉得比想象中大了一点。"
+      },
+      {
+        "en": "Is there anything a bit more affordable?",
+        "jp": "もう少し安い商品はありますか？",
+        "ko": "좀 더 저렴한 제품은 없을까요?",
+        "zh": "有没有便宜一点的？"
+      },
+      {
+        "en": "Is this on sale right now?",
+        "jp": "これは今セール中ですか？",
+        "ko": "이거 지금 세일 중인가요?",
+        "zh": "这个现在在打折吗？"
+      },
+      {
+        "en": "I'll pay by card.",
+        "jp": "支払いはカードでお願いします。",
+        "ko": "결제는 카드로 할게요.",
+        "zh": "我用卡支付。"
+      },
+      {
+        "en": "You can throw away the receipt.",
+        "jp": "レシートは捨ててください。",
+        "ko": "영수증은 버려주세요.",
+        "zh": "发票不用了。"
+      },
+      {
+        "en": "It's a gift; could you wrap it for me?",
+        "jp": "プレゼント用なので、ラッピングできますか？",
+        "ko": "선물용인데 포장 가능할까요?",
+        "zh": "这是送礼用的，可以包装一下吗？"
+      },
+      {
+        "en": "What is your refund policy?",
+        "jp": "返品規定はどうなっていますか？",
+        "ko": "환불 규정이 어떻게 되나요?",
+        "zh": "退款规定是什么？"
+      },
+      {
+        "en": "When will it be back in stock if it's sold out?",
+        "jp": "売り切れた場合、いつ頃再入荷しますか？",
+        "ko": "품절되면 언제쯤 다시 들어오나요?",
+        "zh": "如果没货了，什么时候会补货？"
+      },
+      {
+        "en": "Do you have any recommendations?",
+        "jp": "おすすめの商品はありますか？",
+        "ko": "추천해주실 만한 제품이 있을까요?",
+        "zh": "有什么推荐的产品吗？"
+      },
+      {
+        "en": "I'm looking for something that goes well with this.",
+        "jp": "これに合う服を探しています。",
+        "ko": "이거랑 잘 어울리는 옷을 찾고 있어요.",
+        "zh": "我想找一件和这个很搭的衣服。"
+      },
+      {
+        "en": "I need a shopping bag.",
+        "jp": "袋を一枚ください。",
+        "ko": "봉투 하나 필요해요.",
+        "zh": "我需要一个购物袋。"
+      },
+      {
+        "en": "Please issue a cash receipt.",
+        "jp": "現金領収書をお願いします。",
+        "ko": "현금 영수증 발행해 주세요.",
+        "zh": "请给我开一张现金发票。"
+      },
+      {
+        "en": "I'm just looking around.",
+        "jp": "ちょっと見て回ります。",
+        "ko": "잠시만 둘러볼게요.",
+        "zh": "我先随便看看。"
+      },
+      {
+        "en": "What are the features of this product?",
+        "jp": "この商品の特徴は何ですか？",
+        "ko": "이 제품의 특징이 뭔가요?",
+        "zh": "这个产品的特点是什么？"
+      },
+      {
+        "en": "It's so expensive that I'm hesitating.",
+        "jp": "高すぎて迷いますね。",
+        "ko": "너무 비싸서 고민되네요.",
+        "zh": "太贵了，我有点犹豫。"
+      },
+      {
+        "en": "Can I earn reward points?",
+        "jp": "ポイントを貯めることはできますか？",
+        "ko": "포인트 적립 가능한가요?",
+        "zh": "可以积点吗？"
+      },
+      {
+        "en": "Is this the latest model?",
+        "jp": "これは最新モデルですか？",
+        "ko": "이거 최신 모델인가요?",
+        "zh": "这是最新款吗？"
+      },
+      {
+        "en": "How long is the warranty period?",
+        "jp": "保証期間はどのくらいですか？",
+        "ko": "품질 보증 기간이 어떻게 되죠?",
+        "zh": "保修期是多久？"
+      },
+      {
+        "en": "Do other stores have this product as well?",
+        "jp": "他の店舗にもこの商品はありますか？",
+        "ko": "다른 매장에도 이 제품이 있나요?",
+        "zh": "其他门店也有这款产品吗？"
+      },
+      {
+        "en": "Can I use a discount coupon?",
+        "jp": "割引クーポンは使えますか？",
+        "ko": "할인 쿠폰을 사용할 수 있을까요?",
+        "zh": "可以使用折扣券吗？"
+      },
+      {
+        "en": "What is the most popular item?",
+        "jp": "一番人気の商品は何ですか？",
+        "ko": "가장 인기 있는 상품이 뭐예요?",
+        "zh": "最受欢迎的产品是什么？"
+      }
+    ],
+    "advanced": [
+      {
+        "en": "The price-performance ratio is exceptional.",
+        "jp": "コスパが本当にいいですね。",
+        "ko": "가성비가 정말 뛰어나네요.",
+        "zh": "性价比真的很高。"
+      },
+      {
+        "en": "This item is almost sold out, so you might want to hurry.",
+        "jp": "売り切れ間近の商品ですので、お急ぎください。",
+        "ko": "품절 임박 상품이니 서두르시는 게 좋겠어요.",
+        "zh": "这款商品快抢光了，建议您尽快决定。"
+      },
+      {
+        "en": "The material is quite sophisticated, making it perfect for a gift.",
+        "jp": "素材に高級感があるので、贈り物に最適です。",
+        "ko": "재질이 상당히 고급스러워서 선물용으로 제격이에요.",
+        "zh": "材质非常高级，很适合作为礼物。"
+      },
+      {
+        "en": "The design is sleek, but I feel it lacks some practicality.",
+        "jp": "デザインは洗練されていますが、実用性に欠ける気がします。",
+        "ko": "디자인이 세련됐지만 실용성은 조금 떨어지는 것 같아요.",
+        "zh": "设计很时尚，但感觉实用性稍差。"
+      },
+      {
+        "en": "Since this is a limited edition, it's definitely worth collecting.",
+        "jp": "限定品なので、コレクションとしての価値が十分にあります。",
+        "ko": "이 제품은 한정판이라 소장 가치가 충분합니다.",
+        "zh": "这是限量版，非常有收藏价值。"
+      },
+      {
+        "en": "I'd like to change my payment method; would that be possible?",
+        "jp": "支払い方法を変更したいのですが、可能でしょうか。",
+        "ko": "결제 수단을 변경하고 싶은데 가능할까요?",
+        "zh": "我想更改支付方式，请问可以吗？"
+      },
+      {
+        "en": "The price point is higher than I expected, so I'm hesitating a bit.",
+        "jp": "思ったより価格帯が高くて、少し迷っています。",
+        "ko": "생각보다 가격대가 높아서 조금 망설여지네요.",
+        "zh": "价格比想象中高，让我有点犹豫。"
+      },
+      {
+        "en": "This outfit has a perfect fit that complements the body shape.",
+        "jp": "この服はシルエットが綺麗で、体型をカバーしてくれます。",
+        "ko": "이 옷은 핏이 딱 떨어져서 체형 보완에 좋아요.",
+        "zh": "这件衣服版型很好，很修身。"
+      },
+      {
+        "en": "Refunds due to a simple change of mind are not permitted under our policy.",
+        "jp": "自己都合による返品・返金は規定により承っておりません。",
+        "ko": "단순 변심으로 인한 환불은 규정상 어렵습니다.",
+        "zh": "根据规定，个人主观原因不能退款。"
+      },
+      {
+        "en": "The overall atmosphere is cozy, making it a pleasant shopping experience.",
+        "jp": "全体的に落ち着いた雰囲気で、買い物がしやすいです。",
+        "ko": "전반적인 분위기가 아늑해서 쇼핑하기 편해요.",
+        "zh": "整体氛围很温馨，逛起来很舒服。"
+      },
+      {
+        "en": "The biggest strength of this product is its exceptional durability.",
+        "jp": "この商品の最大の強みは、耐久性に優れている点です。",
+        "ko": "이 제품의 최대 강점은 내구성이 뛰어나다는 점입니다.",
+        "zh": "这款产品最大的优势在于耐用性极强。"
+      },
+      {
+        "en": "The detailed finishing is very meticulous.",
+        "jp": "細部の仕上げが非常に丁寧ですね。",
+        "ko": "디테일한 마감 처리가 아주 꼼꼼하네요.",
+        "zh": "细节处理得非常精致。"
+      },
+      {
+        "en": "Many new arrivals reflecting recent trends have come in.",
+        "jp": "最近のトレンドを反映した新商品がたくさん入荷しました。",
+        "ko": "최근 트렌드를 반영한 신상품이 많이 들어왔어요.",
+        "zh": "进了很多符合近期流行趋势的新品。"
+      },
+      {
+        "en": "The sizing is ambiguous, so I'd like to try it on before deciding.",
+        "jp": "サイズ感が微妙なので、試着して決めたいです。",
+        "ko": "사이즈가 애매해서 직접 입어보고 결정하고 싶어요.",
+        "zh": "尺寸有点尴尬，我想试穿后再决定。"
+      },
+      {
+        "en": "The packaging is thorough, so I don't have to worry about damage.",
+        "jp": "梱包が丁寧なので、破損の心配はなさそうです。",
+        "ko": "포장 상태가 꼼꼼해서 파손 걱정은 안 해도 되겠어요.",
+        "zh": "包装很严实，不用担心损坏。"
+      },
+      {
+        "en": "I love this brand because its minimalist aesthetic really stands out.",
+        "jp": "このブランドはミニマルな感性が際立っていて好きです。",
+        "ko": "이 브랜드는 미니멀한 감성이 돋보여서 좋아요.",
+        "zh": "我喜欢这个品牌，极简主义风格很突出。"
+      },
+      {
+        "en": "The fabric is so thin that it might be a bit sheer.",
+        "jp": "生地が薄すぎるので、少し透けるかもしれません。",
+        "ko": "원단이 너무 얇아서 비침이 좀 있을 것 같아요.",
+        "zh": "面料太薄了，可能会有点透。"
+      },
+      {
+        "en": "This is a perfect item to use as a statement piece.",
+        "jp": "アクセントアイテムとして活用するのに最適な商品です。",
+        "ko": "포인트 아이템으로 활용하기에 딱 좋은 제품이에요.",
+        "zh": "作为点睛之笔的单品非常合适。"
+      },
+      {
+        "en": "It would be convenient to sign up for a restock notification.",
+        "jp": "再入荷通知の設定をしておくと便利ですよ。",
+        "ko": "재입고 알림 신청을 해두면 편할 거예요.",
+        "zh": "申请到货通知会比较方便。"
+      },
+      {
+        "en": "I'm satisfied because the quality is better than expected for the price.",
+        "jp": "価格の割に品質が期待以上で、満足しています。",
+        "ko": "가격 대비 품질이 기대 이상이라 만족스럽습니다.",
+        "zh": "性价比超出预期，非常满意。"
+      },
+      {
+        "en": "The product you recommended fits my taste perfectly.",
+        "jp": "おすすめしていただいた商品が、まさに好みです。",
+        "ko": "추천해주신 제품이 제 취향에 딱 맞네요.",
+        "zh": "您推荐的产品完全符合我的口味。"
+      },
+      {
+        "en": "This product requires demanding care, so caution is needed during washing.",
+        "jp": "この商品は手入れが大変なので、洗濯時に注意が必要です。",
+        "ko": "이 제품은 관리가 까다로워서 세탁 시 주의가 필요해요.",
+        "zh": "这款产品打理起来比较麻烦，洗涤时需要注意。"
+      },
+      {
+        "en": "The store display is so artistic that it's fun just to look around.",
+        "jp": "ディスプレイがセンス良く、見て回るのが楽しいです。",
+        "ko": "매장 디스플레이가 감각적이라 구경하는 재미가 있네요.",
+        "zh": "店铺陈列很有感觉，逛起来很有趣。"
+      },
+      {
+        "en": "You can receive an additional discount by applying membership benefits.",
+        "jp": "メンバーシップ特典を適用すると、さらに割引が受けられます。",
+        "ko": "멤버십 혜택을 적용하면 추가 할인을 받을 수 있습니다.",
+        "zh": "使用会员权益可以享受额外折扣。"
+      },
+      {
+        "en": "The variety of items is great, so it's convenient to get everything in one place.",
+        "jp": "品揃えが豊富なので、一箇所で全て揃えられて便利です。",
+        "ko": "품목이 다양해서 한곳에서 다 해결할 수 있어 편리해요.",
+        "zh": "品类齐全，可以在一个地方全部买齐，很方便。"
+      }
+    ]
+  },
+  "golf": {
+    "beginner": [
+      {
+        "en": "Let's go play golf.",
+        "jp": "ゴルフに行きましょう。",
+        "ko": "골프 치러 가요.",
+        "zh": "我们去打高尔夫吧。"
+      },
+      {
+        "en": "Where is the golf course?",
+        "jp": "ゴルフ場はどこですか。",
+        "ko": "여기 골프장 어디예요?",
+        "zh": "高尔夫球场在哪里？"
+      },
+      {
+        "en": "Can I borrow some golf clubs?",
+        "jp": "ゴルフクラブを借りられますか。",
+        "ko": "골프채 좀 빌릴 수 있을까요?",
+        "zh": "能借我几把高尔夫球杆吗？"
+      },
+      {
+        "en": "Where is the ball?",
+        "jp": "ボールはどこにありますか。",
+        "ko": "공 어디에 있어요?",
+        "zh": "球在哪里？"
+      },
+      {
+        "en": "Nice shot!",
+        "jp": "ナイスショット！",
+        "ko": "나이스 샷!",
+        "zh": "好球！"
+      },
+      {
+        "en": "Take your time.",
+        "jp": "ゆっくりしてください。",
+        "ko": "천천히 하세요.",
+        "zh": "慢慢来。"
+      },
+      {
+        "en": "Is it my turn?",
+        "jp": "私の番ですか。",
+        "ko": "제 차례인가요?",
+        "zh": "轮到我了吗？"
+      },
+      {
+        "en": "Can I hit it from here?",
+        "jp": "ここで打ってもいいですか。",
+        "ko": "여기서 쳐도 돼요?",
+        "zh": "可以在这里击球吗？"
+      },
+      {
+        "en": "The ball went too far.",
+        "jp": "ボールが遠くに行きすぎました。",
+        "ko": "공이 너무 멀리 갔어요.",
+        "zh": "球飞得太远了。"
+      },
+      {
+        "en": "How far is it to the hole?",
+        "jp": "カップまであとどれくらいですか。",
+        "ko": "홀컵까지 얼마나 남았어요?",
+        "zh": "距离球洞还有多远？"
+      },
+      {
+        "en": "Hit it a little harder.",
+        "jp": "もう少し強く打ってください。",
+        "ko": "조금만 더 세게 치세요.",
+        "zh": "请再用力打一点。"
+      },
+      {
+        "en": "It went to the left.",
+        "jp": "左に行きました。",
+        "ko": "왼쪽으로 갔어요.",
+        "zh": "往左边飞了。"
+      },
+      {
+        "en": "It went to the right.",
+        "jp": "右に行きました。",
+        "ko": "오른쪽으로 갔어요.",
+        "zh": "往右边飞了。"
+      },
+      {
+        "en": "Please give me the putter.",
+        "jp": "パターをください。",
+        "ko": "퍼터 주세요.",
+        "zh": "请给我推杆。"
+      },
+      {
+        "en": "You play really well!",
+        "jp": "本当に上手ですね！",
+        "ko": "정말 잘 치시네요!",
+        "zh": "你打得真好！"
+      },
+      {
+        "en": "Where is the driving range?",
+        "jp": "練習場はどこにありますか。",
+        "ko": "연습장 어디에 있어요?",
+        "zh": "练习场在哪里？"
+      },
+      {
+        "en": "Where are the gloves?",
+        "jp": "グローブはどこですか。",
+        "ko": "장갑 어디 있어요?",
+        "zh": "手套在哪里？"
+      },
+      {
+        "en": "I'll try it one more time.",
+        "jp": "もう一度やってみます。",
+        "ko": "다시 한번 해볼게요.",
+        "zh": "我再试一次。"
+      },
+      {
+        "en": "It's very windy.",
+        "jp": "風が強いです。",
+        "ko": "바람이 많이 불어요.",
+        "zh": "风很大。"
+      },
+      {
+        "en": "Be careful.",
+        "jp": "気をつけてください。",
+        "ko": "조심하세요.",
+        "zh": "小心。"
+      },
+      {
+        "en": "It's on the green.",
+        "jp": "グリーン上にあります。",
+        "ko": "그린 위에 있어요.",
+        "zh": "在果岭上。"
+      },
+      {
+        "en": "It fell into the bunker.",
+        "jp": "バンカーに入りました。",
+        "ko": "벙커에 빠졌어요.",
+        "zh": "掉进沙坑了。"
+      },
+      {
+        "en": "Good shot!",
+        "jp": "グッドショット！",
+        "ko": "굿 샷!",
+        "zh": "打得好！"
+      },
+      {
+        "en": "The weather is nice today.",
+        "jp": "今日はいい天気ですね。",
+        "ko": "오늘 날씨가 좋네요.",
+        "zh": "今天天气很好。"
+      },
+      {
+        "en": "Good game.",
+        "jp": "お疲れ様でした。",
+        "ko": "수고하셨습니다.",
+        "zh": "辛苦了。"
+      }
+    ],
+    "intermediate": [
+      {
+        "en": "You're in great form today. Your shots are really precise.",
+        "jp": "今日の調子いいですね。ショットが本当に正確です。",
+        "ko": "오늘 컨디션 좋으신데요? 샷이 정말 정확해요.",
+        "zh": "你今天状态很好，击球非常精准。"
+      },
+      {
+        "en": "It's so hard to read the putting line on the green.",
+        "jp": "グリーンのラインを読むのが本当に難しいですね。",
+        "ko": "그린 위에서 퍼팅 라인 읽기가 너무 어렵네요.",
+        "zh": "果岭上的推杆线路太难判断了。"
+      },
+      {
+        "en": "I'm slicing it too much, so it keeps curving to the right.",
+        "jp": "スライスがひどくて、ずっと右に曲がってしまいます。",
+        "ko": "슬라이스가 너무 심해서 계속 오른쪽으로 휘어요.",
+        "zh": "我的右曲球太严重了，球一直向右偏。"
+      },
+      {
+        "en": "There are many hazards on this hole, so play carefully.",
+        "jp": "このホールはハザードが多いので、慎重に打ってください。",
+        "ko": "이번 홀은 해저드가 많으니까 조심해서 치세요.",
+        "zh": "这个洞水障碍很多，打球请小心。"
+      },
+      {
+        "en": "Getting out of the bunker isn't as easy as I thought.",
+        "jp": "バンカーから脱出するのは、思ったより簡単ではありませんね。",
+        "ko": "벙커에서 탈출하는 게 생각보다 쉽지 않네요.",
+        "zh": "从沙坑里打出来比想象中难。"
+      },
+      {
+        "en": "I think I need to adjust my swing path to increase my distance.",
+        "jp": "飛距離を伸ばすには、スイング軌道を修正する必要がありそうです。",
+        "ko": "비거리를 늘리려면 스윙 궤도를 수정해야 할 것 같아요.",
+        "zh": "为了增加飞行距离，我觉得需要调整挥杆轨迹。"
+      },
+      {
+        "en": "My approach shot was too short and didn't reach the pin.",
+        "jp": "アプローチショットが短すぎて、ピンに届きませんでした。",
+        "ko": "어프로치 샷이 너무 짧아서 핀에 못 미쳤어요.",
+        "zh": "我的近接球打短了，没到旗杆。"
+      },
+      {
+        "en": "The wind is so strong today that it's hard to control the distance.",
+        "jp": "今日は風が強すぎて、距離感が掴みにくいです。",
+        "ko": "오늘 바람이 너무 강해서 거리 조절이 힘들어요.",
+        "zh": "今天风太大，很难控制距离。"
+      },
+      {
+        "en": "Nice shot! That really soared through the air.",
+        "jp": "ナイスショット！本当に気持ちよく飛びましたね。",
+        "ko": "나이스 샷! 정말 시원하게 뻗어 나갔네요.",
+        "zh": "好球！飞得非常漂亮。"
+      },
+      {
+        "en": "Focus more on etiquette than your score for this round.",
+        "jp": "今回のラウンドはスコアよりもマナーに気を付けてください。",
+        "ko": "이번 라운딩은 스코어보다는 매너에 더 신경 쓰세요.",
+        "zh": "这次打球比起分数，更要注意礼仪。"
+      },
+      {
+        "en": "I think it's better to keep the chip shot low around the green.",
+        "jp": "グリーンの周りはチップショットを低く転がした方がいいと思います。",
+        "ko": "그린 주변에서 칩샷을 낮게 굴리는 게 좋을 것 같아요.",
+        "zh": "果岭周围建议打低球，让球滚动过去。"
+      },
+      {
+        "en": "My driver shot went out of bounds.",
+        "jp": "ドライバーショットがOBになりました。",
+        "ko": "드라이버 샷이 런웨이 밖으로 나갔어요.",
+        "zh": "开球球直接出界了。"
+      },
+      {
+        "en": "Pause a bit more at the top of your backswing before coming down.",
+        "jp": "バックスイングのトップでもう少し止まってから打ち下ろしてください。",
+        "ko": "백스윙 톱에서 조금 더 멈췄다가 내려치세요.",
+        "zh": "在上杆顶点稍微停顿一下再击球。"
+      },
+      {
+        "en": "This club has a high loft, so the ball goes up high.",
+        "jp": "このクラブはロフト角が高いので、ボールが高く上がります。",
+        "ko": "이 클럽은 로프트 각도가 높아서 공이 높게 떠요.",
+        "zh": "这支球杆的仰角较高，球会飞得很高。"
+      },
+      {
+        "en": "If I get one more par, I'll be at my average score.",
+        "jp": "あと一つパーを取れば、平均スコアになります。",
+        "ko": "오늘 파(Par) 하나만 더 잡으면 평균 스코어네요.",
+        "zh": "如果再拿一个标准杆，就能达到我的平均成绩了。"
+      },
+      {
+        "en": "The green speed is faster than I thought, so I should hit it shorter.",
+        "jp": "グリーンのスピードが思ったより速いので、短めに打つ必要があります。",
+        "ko": "그린 스피드가 생각보다 빨라서 짧게 쳐야겠어요.",
+        "zh": "果岭速度比想象中快，得打短一点。"
+      },
+      {
+        "en": "Be careful not to break your wrist at the moment of impact.",
+        "jp": "インパクトの瞬間に手首が折れないように注意してください。",
+        "ko": "임팩트 순간에 손목이 꺾이지 않게 주의하세요.",
+        "zh": "击球瞬间注意手腕不要折叠。"
+      },
+      {
+        "en": "This is a par 5, so try to go for the green in two shots.",
+        "jp": "このホールはパー5なので、思い切ってツーオンを狙ってみてください。",
+        "ko": "이번 홀은 파 5니까 과감하게 투온을 노려보세요.",
+        "zh": "这个洞是5杆洞，大胆尝试两杆上果岭吧。"
+      },
+      {
+        "en": "If you put too much power into the tee shot, your accuracy will drop.",
+        "jp": "ティーショットの時に力を入れすぎると、逆に方向性が悪くなります。",
+        "ko": "티샷 때 너무 힘을 주면 오히려 방향성이 떨어져요.",
+        "zh": "开球时用力过猛反而会影响方向。"
+      },
+      {
+        "en": "Caddie, which iron would you recommend for the next shot?",
+        "jp": "キャディさん、次のショットは何番アイアンがおすすめですか？",
+        "ko": "캐디님, 다음 샷은 몇 번 아이언을 추천하시나요?",
+        "zh": "球童，下一杆你推荐用几号铁杆？"
+      },
+      {
+        "en": "The ball went into the woods; do you think we can find it?",
+        "jp": "ボールが森に入りましたが、見つかるでしょうか。",
+        "ko": "공이 숲속으로 들어갔는데 찾을 수 있을까요?",
+        "zh": "球进树林里了，能找回来吗？"
+      },
+      {
+        "en": "It felt good when I practiced at the range yesterday, so this is strange.",
+        "jp": "昨日練習場で打った時は感触が良かったのですが、不思議ですね。",
+        "ko": "어제 연습장에서 쳤을 때는 느낌이 좋았는데 이상하네요.",
+        "zh": "昨天在练习场打的时候感觉很好，真奇怪。"
+      },
+      {
+        "en": "If you grip the club too tightly, your swing becomes unnatural.",
+        "jp": "グリップを強く握りすぎると、スイングが不自然になります。",
+        "ko": "그립을 너무 꽉 잡으면 스윙이 부자연스러워져요.",
+        "zh": "握杆太紧的话，挥杆会变得不自然。"
+      },
+      {
+        "en": "When taking a bunker shot, you need to take enough sand.",
+        "jp": "バンカーショットの時は、十分に砂を打たなければなりません。",
+        "ko": "벙커 샷을 할 때는 모래를 충분히 쳐내야 해요.",
+        "zh": "打沙坑球时，必须充分击中沙子。"
+      },
+      {
+        "en": "I finished on a high note by getting a birdie on the last hole.",
+        "jp": "最終ホールでバーディーを取ったので、気持ちよく締めくくれました。",
+        "ko": "마지막 홀에서 버디를 잡아서 기분 좋게 마무리했네요.",
+        "zh": "在最后一洞抓了个小鸟球，收尾很完美。"
+      }
+    ],
+    "advanced": [
+      {
+        "en": "That shot was incredibly well-executed and precise.",
+        "jp": "あのショットは本当に精巧にコントロールされていました。",
+        "ko": "그 샷은 정말 정교하게 설계된 샷이었어요.",
+        "zh": "那一球打得非常精准，设计得很好。"
+      },
+      {
+        "en": "The read on this green is incredibly tricky.",
+        "jp": "このグリーンの読みは本当に難しいですね。",
+        "ko": "그린 위에서 읽기가 정말 까다롭네요.",
+        "zh": "这个果岭的路线非常难读。"
+      },
+      {
+        "en": "Mental fortitude is the deciding factor in winning or losing.",
+        "jp": "メンタル管理が勝敗を分ける決定的な要因になります。",
+        "ko": "멘탈 관리가 승패를 가르는 결정적인 요인이 됩니다.",
+        "zh": "心态管理是决定胜负的关键因素。"
+      },
+      {
+        "en": "Your backswing tempo seems to have quickened slightly.",
+        "jp": "バックスイングのテンポが少し早くなったようです。",
+        "ko": "백스윙 템포가 약간 빨라진 것 같아요.",
+        "zh": "你的上杆节奏似乎稍微快了一点。"
+      },
+      {
+        "en": "The clubface was slightly open at the moment of impact.",
+        "jp": "インパクトの瞬間にフェースが少し開いていました。",
+        "ko": "임팩트 순간에 헤드 페이스가 약간 열렸어요.",
+        "zh": "击球瞬间杆面稍微打开了。"
+      },
+      {
+        "en": "The slice was severe, causing the ball to push far to the right.",
+        "jp": "スライスがひどく、右に大きく曲がってしまいました。",
+        "ko": "슬라이스가 심해서 오른쪽으로 많이 밀렸네요.",
+        "zh": "右曲球太严重了，球偏右很多。"
+      },
+      {
+        "en": "It's prudent to strategically aim for a par 4 on this hole.",
+        "jp": "このホールは戦略的にパー4を狙うのが賢明です。",
+        "ko": "이 홀은 전략적으로 파 4를 노리는 게 현명합니다.",
+        "zh": "这个洞从策略上来说，争取4杆完赛比较明智。"
+      },
+      {
+        "en": "Your driver's carry distance is quite impressive.",
+        "jp": "ドライバーショットの飛距離が相当ですね。",
+        "ko": "드라이버 샷의 비거리가 상당하시네요.",
+        "zh": "你的开球距离相当惊人。"
+      },
+      {
+        "en": "The approach shot landed right next to the pin.",
+        "jp": "アプローチショットがピンにぴったり寄りました。",
+        "ko": "어프로치 샷이 핀에 바짝 붙었습니다.",
+        "zh": "近接球打得很近，直接贴在旗杆边。"
+      },
+      {
+        "en": "Chip shot control around the green is the key.",
+        "jp": "グリーン周りのチップショットのコントロールが鍵となります。",
+        "ko": "그린 주변에서 칩샷 컨트롤이 관건입니다.",
+        "zh": "果岭周围的切球控制是关键。"
+      },
+      {
+        "en": "The putting line breaks much more than I anticipated.",
+        "jp": "パッティングのラインが予想以上に曲がっていますね。",
+        "ko": "퍼팅 라인이 생각보다 훨씬 더 꺾이네요.",
+        "zh": "推球路线比想象中要曲得多。"
+      },
+      {
+        "en": "The swing path is too steep, resulting in a high trajectory.",
+        "jp": "スイング軌道が急すぎるため、弾道が高くなっています。",
+        "ko": "스윙 궤도가 너무 가팔라서 탄도가 높아요.",
+        "zh": "挥杆轨迹太陡了，导致球道很高。"
+      },
+      {
+        "en": "The turf condition is poor, making the lie unstable.",
+        "jp": "芝の状態が悪く、ライが不安定です。",
+        "ko": "잔디 상태가 좋지 않아 라이가 불안정합니다.",
+        "zh": "草况不好，球位很不稳定。"
+      },
+      {
+        "en": "It's crucial to relax and release the club smoothly.",
+        "jp": "力を抜いてスムーズにリリースすることが重要です。",
+        "ko": "힘을 빼고 부드럽게 릴리스하는 것이 중요합니다.",
+        "zh": "放松身体，顺畅地释放杆头至关重要。"
+      },
+      {
+        "en": "Just getting out of the bunker would be a success.",
+        "jp": "バンカーから脱出できるだけで成功です。",
+        "ko": "벙커에서 탈출하는 것만으로도 성공입니다.",
+        "zh": "能从沙坑里打出来就算成功了。"
+      },
+      {
+        "en": "Gripping too tightly restricts wrist rotation.",
+        "jp": "グリップを強く握りすぎると、手首の回転が制限されます。",
+        "ko": "그립을 너무 꽉 잡으면 손목 회전이 제한됩니다.",
+        "zh": "握杆太紧会限制手腕的转动。"
+      },
+      {
+        "en": "Play a low stinger to account for the wind conditions.",
+        "jp": "風の影響を考慮して、低く打ち出してください。",
+        "ko": "바람의 영향을 고려해 낮게 깔아 치세요.",
+        "zh": "考虑到风向，请打一个低平球。"
+      },
+      {
+        "en": "The weight transfer wasn't executed properly.",
+        "jp": "体重移動が適切に行われていませんでした。",
+        "ko": "체중 이동이 제대로 이루어지지 않았어요.",
+        "zh": "重心转移没有到位。"
+      },
+      {
+        "en": "The placement of hazards on this course is very challenging.",
+        "jp": "このコースはハザードの配置が非常に厄介です。",
+        "ko": "이 코스는 해저드 배치가 매우 까다롭습니다.",
+        "zh": "这个球场的障碍物布置非常刁钻。"
+      },
+      {
+        "en": "That was a perfect strike; the feel was incredible.",
+        "jp": "完璧に芯に当たって、打感最高でした。",
+        "ko": "완벽한 정타가 맞아서 손맛이 정말 좋네요.",
+        "zh": "正中甜点，击球感太棒了。"
+      },
+      {
+        "en": "Maintain consistency with your shots throughout the round.",
+        "jp": "ラウンドの間、一貫したショットを維持してください。",
+        "ko": "라운드 내내 일관성 있는 샷을 유지하세요.",
+        "zh": "在整个回合中保持击球的稳定性。"
+      },
+      {
+        "en": "A slight pause at the top of the backswing is necessary.",
+        "jp": "バックスイングのトップで少しの間が必要です。",
+        "ko": "백스윙 탑에서 약간의 멈춤이 필요합니다.",
+        "zh": "上杆顶点需要稍微停顿一下。"
+      },
+      {
+        "en": "The green speed is fast, making distance control difficult.",
+        "jp": "グリーンスピードが速く、距離感が掴みにくいですね。",
+        "ko": "그린 스피드가 빨라서 거리 조절이 쉽지 않네요.",
+        "zh": "果岭速度很快，距离控制很难。"
+      },
+      {
+        "en": "Develop the habit of holding your finish position until the end.",
+        "jp": "フィニッシュの姿勢を最後まで維持する習慣をつけてください。",
+        "ko": "피니시 자세를 끝까지 유지하는 습관을 들이세요.",
+        "zh": "养成保持收杆姿势直到最后的习惯。"
+      },
+      {
+        "en": "To lower your handicap, improving your short game is urgent.",
+        "jp": "ハンディキャップを減らすには、ショートゲームの改善が急務です。",
+        "ko": "핸디캡을 줄이려면 숏게임 보완이 시급합니다.",
+        "zh": "为了降低差点，迫切需要加强短杆练习。"
+      }
+    ]
+  },
+  "travel": {
+    "beginner": [
+      {
+        "en": "Hello",
+        "jp": "こんにちは",
+        "ko": "안녕하세요",
+        "zh": "你好"
+      },
+      {
+        "en": "Thank you",
+        "jp": "ありがとうございます",
+        "ko": "감사합니다",
+        "zh": "谢谢"
+      },
+      {
+        "en": "Excuse me",
+        "jp": "すみません",
+        "ko": "실례합니다",
+        "zh": "请问"
+      },
+      {
+        "en": "I am sorry",
+        "jp": "ごめんなさい",
+        "ko": "죄송합니다",
+        "zh": "对不起"
+      },
+      {
+        "en": "Please help me",
+        "jp": "助けてください",
+        "ko": "도와주세요",
+        "zh": "请帮帮我"
+      },
+      {
+        "en": "Where is the bathroom?",
+        "jp": "トイレはどこですか？",
+        "ko": "화장실 어디예요?",
+        "zh": "洗手间在哪里？"
+      },
+      {
+        "en": "How much is it?",
+        "jp": "いくらですか？",
+        "ko": "얼마예요?",
+        "zh": "多少钱？"
+      },
+      {
+        "en": "I'll take this, please",
+        "jp": "これをください",
+        "ko": "이거 주세요",
+        "zh": "我要这个"
+      },
+      {
+        "en": "Please speak in English",
+        "jp": "英語でお願いします",
+        "ko": "영어로 말씀해 주세요",
+        "zh": "请说英语"
+      },
+      {
+        "en": "Please speak slowly",
+        "jp": "ゆっくり話してください",
+        "ko": "천천히 말씀해 주세요",
+        "zh": "请说慢一点"
+      },
+      {
+        "en": "Where am I?",
+        "jp": "ここはどこですか？",
+        "ko": "여기가 어디예요?",
+        "zh": "这里是哪里？"
+      },
+      {
+        "en": "Where is the station?",
+        "jp": "駅はどこですか？",
+        "ko": "역이 어디예요?",
+        "zh": "车站在哪里？"
+      },
+      {
+        "en": "Please take me to the airport",
+        "jp": "空港までお願いします",
+        "ko": "공항으로 가주세요",
+        "zh": "请带我去机场"
+      },
+      {
+        "en": "One ticket, please",
+        "jp": "チケットを一枚ください",
+        "ko": "표 한 장 주세요",
+        "zh": "请给我一张票"
+      },
+      {
+        "en": "Menu, please",
+        "jp": "メニューをください",
+        "ko": "메뉴판 주세요",
+        "zh": "请给我菜单"
+      },
+      {
+        "en": "Water, please",
+        "jp": "お水をください",
+        "ko": "물 주세요",
+        "zh": "请给我水"
+      },
+      {
+        "en": "It is delicious",
+        "jp": "美味しいです",
+        "ko": "맛있어요",
+        "zh": "很好吃"
+      },
+      {
+        "en": "I would like to check in",
+        "jp": "チェックインしたいです",
+        "ko": "체크인 하고 싶어요",
+        "zh": "我想办理入住"
+      },
+      {
+        "en": "I reserved a room",
+        "jp": "部屋を予約しました",
+        "ko": "방 하나 예약했어요",
+        "zh": "我预订了一个房间"
+      },
+      {
+        "en": "What is the Wi-Fi password?",
+        "jp": "Wi-Fiのパスワードは何ですか？",
+        "ko": "와이파이 비밀번호가 뭐예요?",
+        "zh": "Wi-Fi密码是多少？"
+      },
+      {
+        "en": "Please show me the map",
+        "jp": "地図を見せてください",
+        "ko": "지도를 보여주세요",
+        "zh": "请给我看地图"
+      },
+      {
+        "en": "Please let me off here",
+        "jp": "ここで降ろしてください",
+        "ko": "여기서 내려주세요",
+        "zh": "请在这里让我下车"
+      },
+      {
+        "en": "What time is it?",
+        "jp": "何時ですか？",
+        "ko": "몇 시예요?",
+        "zh": "现在几点？"
+      },
+      {
+        "en": "Please say it again",
+        "jp": "もう一度お願いします",
+        "ko": "다시 말씀해 주세요",
+        "zh": "请再说一遍"
+      },
+      {
+        "en": "Have a nice day",
+        "jp": "良い一日を",
+        "ko": "좋은 하루 되세요",
+        "zh": "祝你今天愉快"
+      }
+    ],
+    "intermediate": [
+      {
+        "en": "I arrived earlier than the check-in time; can I leave my luggage here?",
+        "jp": "チェックイン時間より早く着いたのですが、荷物を預かってもらえますか？",
+        "ko": "체크인 시간보다 일찍 도착했는데, 짐을 좀 맡길 수 있을까요?",
+        "zh": "我比办理入住时间早到，请问可以先把行李寄存在这里吗？"
+      },
+      {
+        "en": "What is the fastest way to get to the city center?",
+        "jp": "市街地まで行く一番早い方法は何ですか？",
+        "ko": "시내 중심가까지 가는 가장 빠른 방법이 뭔가요?",
+        "zh": "去市中心最快的方式是什么？"
+      },
+      {
+        "en": "Could you recommend a local restaurant that's popular with residents?",
+        "jp": "近くに地元の人に人気のおすすめのお店はありますか？",
+        "ko": "근처에 현지인들이 자주 가는 맛집 추천해 주실 수 있나요?",
+        "zh": "能推荐一家当地人经常去的餐厅吗？"
+      },
+      {
+        "en": "I'll show you my booking confirmation. It should be under my name.",
+        "jp": "予約確認書をお見せします。私の名前で予約されているはずです。",
+        "ko": "예약 확인서를 보여드릴게요. 제 이름으로 예약되어 있을 거예요.",
+        "zh": "我给您看预订确认单，应该是用我的名字预订的。"
+      },
+      {
+        "en": "Would it be possible to change to a window seat? Is there an extra charge?",
+        "jp": "窓側の席に変更できますか？追加料金はかかりますか？",
+        "ko": "창가 쪽 좌석으로 변경할 수 있을까요? 추가 비용이 드나요?",
+        "zh": "可以换到靠窗的座位吗？需要额外付费吗？"
+      },
+      {
+        "en": "Would it be better to take the airport railroad or a taxi?",
+        "jp": "空港鉄道に乗ったほうがいいですか、それともタクシーがいいですか？",
+        "ko": "공항철도를 타는 게 나을까요, 아니면 택시를 타는 게 나을까요?",
+        "zh": "坐机场快线好还是打车好？"
+      },
+      {
+        "en": "Since it's near a tourist attraction, are the prices a bit high?",
+        "jp": "観光地の近くなので、物価は少し高めですか？",
+        "ko": "관광지 주변이라 물가가 좀 비싼 편인가요?",
+        "zh": "因为在景区附近，物价是不是比较高？"
+      },
+      {
+        "en": "Is there a cafe nearby where I can use free Wi-Fi?",
+        "jp": "この近くに無料Wi-Fiが使えるカフェはありますか？",
+        "ko": "이 근처에 무료 와이파이를 사용할 수 있는 카페가 있을까요?",
+        "zh": "这附近有可以用免费Wi-Fi的咖啡馆吗？"
+      },
+      {
+        "en": "I'm lost; where should I transfer to get to this address?",
+        "jp": "道に迷ったのですが、この住所に行くにはどこで乗り換えればいいですか？",
+        "ko": "길을 잃었는데, 이 주소로 가려면 어디서 갈아타야 하죠?",
+        "zh": "我迷路了，去这个地址需要在哪里换乘？"
+      },
+      {
+        "en": "Is it cheaper to book the admission tickets online in advance?",
+        "jp": "入場券はオンラインで事前予約したほうが安いですか？",
+        "ko": "입장권은 온라인으로 미리 예매하는 게 저렴한가요?",
+        "zh": "门票提前在网上预订会更便宜吗？"
+      },
+      {
+        "en": "I'm looking for a place with a good atmosphere that isn't too crowded.",
+        "jp": "あまり混んでいなくて、雰囲気の良い場所を探しています。",
+        "ko": "너무 붐비지 않으면서 분위기 좋은 장소를 찾고 있어요.",
+        "zh": "我想找一个氛围好且不过于拥挤的地方。"
+      },
+      {
+        "en": "Is this bus heading in the direction of City Hall?",
+        "jp": "このバスは市役所方面行きで合っていますか？",
+        "ko": "이 버스가 시청 방향으로 가는 게 맞나요?",
+        "zh": "这辆车是开往市中心方向的吗？"
+      },
+      {
+        "en": "Do you know where the exchange fees are the lowest?",
+        "jp": "両替手数料が一番安いところをご存知ですか？",
+        "ko": "환전 수수료가 가장 낮은 곳이 어디인지 아세요?",
+        "zh": "你知道哪里换汇的手续费最低吗？"
+      },
+      {
+        "en": "Please tell me where I should report my lost passport.",
+        "jp": "パスポートの紛失届はどこで出せばいいか教えてください。",
+        "ko": "여권 분실 신고는 어디서 해야 하는지 알려주세요.",
+        "zh": "请告诉我护照丢失应该在哪里申报。"
+      },
+      {
+        "en": "How long does it take to walk to the nearest subway station from here?",
+        "jp": "ここから一番近い地下鉄の駅まで歩いてどのくらいかかりますか？",
+        "ko": "여기서 가장 가까운 지하철역까지 도보로 얼마나 걸리나요?",
+        "zh": "从这里走到最近的地铁站需要多长时间？"
+      },
+      {
+        "en": "Are there any specific etiquette rules I should be mindful of in the local culture?",
+        "jp": "現地の文化で特に注意すべきエチケットはありますか？",
+        "ko": "현지 문화에서 특히 주의해야 할 에티켓이 있을까요?",
+        "zh": "当地文化中有什么特别需要注意的礼仪吗？"
+      },
+      {
+        "en": "I think I'm going to miss my connecting flight due to the flight delay.",
+        "jp": "飛行機の遅延で乗り継ぎ便に間に合わないと思います。",
+        "ko": "비행기 연착 때문에 연결편을 놓칠 것 같아요.",
+        "zh": "因为航班延误，我担心会错过转机航班。"
+      },
+      {
+        "en": "Please recommend the safest accommodation in this area.",
+        "jp": "この地域で一番安全な宿泊施設を教えてください。",
+        "ko": "이 지역에서 가장 안전한 숙박 시설을 추천해 주세요.",
+        "zh": "请推荐这个区域最安全的住宿设施。"
+      },
+      {
+        "en": "My ordered food hasn't come out yet; could you please check on it?",
+        "jp": "注文した料理がまだ来ないのですが、確認していただけますか？",
+        "ko": "주문한 음식이 아직 안 나왔는데, 확인 좀 부탁드려도 될까요?",
+        "zh": "我点的菜还没上来，能帮我确认一下吗？"
+      },
+      {
+        "en": "I'd like to sign up for a guided tour; is there anyone who speaks English?",
+        "jp": "ガイドツアーを申し込みたいのですが、英語ができる方はいますか？",
+        "ko": "가이드 투어를 신청하고 싶은데, 영어 가능하신 분이 계신가요?",
+        "zh": "我想申请导游服务，请问有会说英语的导游吗？"
+      },
+      {
+        "en": "Is it okay to take photos here, or is it prohibited?",
+        "jp": "ここで写真を撮ってもいいですか？それとも禁止されていますか？",
+        "ko": "여기서 사진 찍어도 괜찮은가요, 아니면 금지되어 있나요?",
+        "zh": "这里可以拍照吗，还是禁止拍照？"
+      },
+      {
+        "en": "I'd like to add some more luggage; how much is the extra charge?",
+        "jp": "荷物を追加したいのですが、追加料金はいくらですか？",
+        "ko": "짐을 좀 더 추가하고 싶은데, 추가 비용이 얼마인가요?",
+        "zh": "我想增加一些行李，额外费用是多少？"
+      },
+      {
+        "en": "Is there a 24-hour pharmacy nearby?",
+        "jp": "この近くに24時間営業の薬局はありますか？",
+        "ko": "이 근처에 24시간 운영하는 약국이 있을까요?",
+        "zh": "这附近有24小时营业的药店吗？"
+      },
+      {
+        "en": "Where can I top up my public transportation card?",
+        "jp": "交通系ICカードのチャージはどこでできますか？",
+        "ko": "대중교통 카드 충전은 어디서 할 수 있나요?",
+        "zh": "交通卡在哪里可以充值？"
+      },
+      {
+        "en": "Overall it was satisfying, but the soundproofing was a bit disappointing.",
+        "jp": "全体的に満足でしたが、防音面が少し残念でした。",
+        "ko": "전반적으로 만족스러웠지만, 방음이 조금 아쉬웠어요.",
+        "zh": "总体来说很满意，但隔音效果稍微有点差。"
+      }
+    ],
+    "advanced": [
+      {
+        "en": "I want to fully immerse myself in the local culture.",
+        "jp": "現地文化にどっぷりと浸りたいです。",
+        "ko": "현지 문화에 완전히 녹아들고 싶어요.",
+        "zh": "我想完全融入当地文化。"
+      },
+      {
+        "en": "I'm looking for hidden gems that aren't well-known to tourists.",
+        "jp": "観光客にあまり知られていない穴場スポットを探しています。",
+        "ko": "관광객들이 잘 모르는 숨은 명소를 찾고 있어요.",
+        "zh": "我在寻找游客不怎么知道的隐藏景点。"
+      },
+      {
+        "en": "I booked a spa to unwind and recover from the fatigue of the journey.",
+        "jp": "旅の疲れを癒やすためにスパを予約しました。",
+        "ko": "여정의 피로를 풀기 위해 스파를 예약했어요.",
+        "zh": "为了缓解旅途疲劳，我预约了水疗。"
+      },
+      {
+        "en": "My travel style is to wander aimlessly without a set plan.",
+        "jp": "計画を立てずに、気の向くままに歩き回るのが私の旅のスタイルです。",
+        "ko": "계획 없이 발길 닿는 대로 다니는 게 제 여행 스타일이에요.",
+        "zh": "我的旅行风格是不设计划，随心所欲地走。"
+      },
+      {
+        "en": "The quiet and serene atmosphere of this city is truly charming.",
+        "jp": "この街の静寂で趣のある雰囲気が本当に魅力的ですね。",
+        "ko": "이 도시의 고즈넉한 분위기가 정말 매력적이네요.",
+        "zh": "这座城市宁静古朴的氛围真的很迷人。"
+      },
+      {
+        "en": "Unexpected variables cropped up, but that's all part of the charm of traveling.",
+        "jp": "予想外の出来事もありましたが、それこそが旅の醍醐味です。",
+        "ko": "예상치 못한 변수가 생겼지만 그것 또한 여행의 묘미죠.",
+        "zh": "虽然出现了意外，但这正是旅行的乐趣所在。"
+      },
+      {
+        "en": "I've slightly exceeded my budget due to the rising cost of living.",
+        "jp": "物価上昇の影響で、予算を少しオーバーしてしまいました。",
+        "ko": "물가 상승으로 인해 예산을 조금 초과했어요.",
+        "zh": "由于物价上涨，预算稍微超了一点。"
+      },
+      {
+        "en": "Could you recommend an authentic eatery known only to locals?",
+        "jp": "地元の人だけが知っている本場の名店を教えていただけますか。",
+        "ko": "현지인들만 아는 정통 맛집을 추천해 주시겠어요?",
+        "zh": "能推荐一家只有当地人才知道的正宗美食店吗？"
+      },
+      {
+        "en": "I'm still feeling groggy due to jet lag.",
+        "jp": "時差ぼけのせいで、まだ頭がぼーっとしています。",
+        "ko": "시차 적응 때문에 아직 정신이 멍해요.",
+        "zh": "因为时差还没倒过来，意识还很模糊。"
+      },
+      {
+        "en": "I want to escape the hustle and bustle of the city and head to a secluded countryside.",
+        "jp": "都会の喧騒を離れて、静かな田舎へ行きたいです。",
+        "ko": "번잡한 도심을 벗어나 한적한 시골로 떠나고 싶어요.",
+        "zh": "我想远离城市的喧嚣，去安静的乡村。"
+      },
+      {
+        "en": "The architectural style here is an exquisite blend of tradition and modernity.",
+        "jp": "ここの建築様式は、伝統と現代が見事に調和していますね。",
+        "ko": "이곳의 건축 양식은 전통과 현대가 절묘하게 조화를 이루고 있네요.",
+        "zh": "这里的建筑风格将传统与现代完美融合。"
+      },
+      {
+        "en": "I'm worried I might miss my connecting flight because of the delay.",
+        "jp": "便が遅れているので、乗り継ぎ便に間に合わないか不安です。",
+        "ko": "항공편이 지연되어 연결편을 놓칠까 봐 걱정돼요.",
+        "zh": "航班延误，我担心会错过转机航班。"
+      },
+      {
+        "en": "I feel like traveling has given me a fresh perspective on things.",
+        "jp": "旅を通じて、新しい視点を得られた気がします。",
+        "ko": "여행을 통해 새로운 관점을 갖게 된 것 같아요.",
+        "zh": "通过这次旅行，我觉得自己有了新的视角。"
+      },
+      {
+        "en": "The accommodation was very convenient to get around due to its great accessibility.",
+        "jp": "宿泊施設のアクセスが良く、移動がとても便利でした。",
+        "ko": "숙소의 접근성이 좋아서 이동하기 매우 편리했어요.",
+        "zh": "住宿的地理位置很好，出行非常方便。"
+      },
+      {
+        "en": "The immigration process turned out to be more rigorous than I expected.",
+        "jp": "入国審査の手続きが思ったより厳しかったです。",
+        "ko": "입국 심사 과정이 생각보다 까다롭더라고요.",
+        "zh": "入境审查过程比想象中要严格。"
+      },
+      {
+        "en": "Thanks to the local guide, I was able to learn about the profound historical background.",
+        "jp": "現地ガイドさんのおかげで、深い歴史的背景を知ることができました。",
+        "ko": "현지 가이드 덕분에 깊이 있는 역사적 배경을 알 수 있었어요.",
+        "zh": "多亏了当地导游，我了解到了深厚的历史背景。"
+      },
+      {
+        "en": "I prefer independent travel over package tours.",
+        "jp": "パッケージツアーよりも、自由旅行の方が私の好みに合っています。",
+        "ko": "패키지 여행보다는 자유 여행이 제 취향에 더 맞아요.",
+        "zh": "比起跟团游，我更喜欢自由行。"
+      },
+      {
+        "en": "I'm planning to pack light and keep my luggage to a minimum.",
+        "jp": "荷物をできるだけ最小限にまとめて、身軽に出発しようと思います。",
+        "ko": "짐을 최대한 간소하게 줄여서 가볍게 떠나려고 해요.",
+        "zh": "我打算尽可能精简行李，轻装上阵。"
+      },
+      {
+        "en": "The night view of this city is absolutely breathtaking.",
+        "jp": "この街の夜景は本当に圧巻ですね。",
+        "ko": "이 도시의 야경은 정말 압권이네요.",
+        "zh": "这座城市的夜景真是绝美。"
+      },
+      {
+        "en": "I feel a mixture of excitement and apprehension about being in an unfamiliar place.",
+        "jp": "見知らぬ土地への期待と不安が入り混じった気分です。",
+        "ko": "낯선 곳에서의 설렘과 두려움이 공존하는 기분이에요.",
+        "zh": "身处陌生之地，心中既兴奋又忐忑。"
+      },
+      {
+        "en": "I used a travel card to save on currency exchange fees.",
+        "jp": "両替手数料を節約するために、トラベルカードを利用しました。",
+        "ko": "환전 수수료를 아끼기 위해 트래블 카드를 이용했어요.",
+        "zh": "为了节省换汇手续费，我使用了旅行卡。"
+      },
+      {
+        "en": "The market tour, which offered a glimpse into the lives of the locals, was impressive.",
+        "jp": "地元の人々の生活が垣間見える市場ツアーが印象的でした。",
+        "ko": "현지인들의 삶의 궤적을 엿볼 수 있는 시장 투어가 인상적이었어요.",
+        "zh": "能窥见当地人生活轨迹的市场之旅令人印象深刻。"
+      },
+      {
+        "en": "I was disappointed because the service quality of the hotel I booked was below expectations.",
+        "jp": "予約したホテルのサービスの質が期待以下で、がっかりしました。",
+        "ko": "예약한 호텔의 서비스 품질이 기대 이하라서 실망했어요.",
+        "zh": "预订的酒店服务质量低于预期，挺失望的。"
+      },
+      {
+        "en": "You should familiarize yourself with the procedures in case your passport is lost.",
+        "jp": "パスポートを紛失した際の対処法をあらかじめ把握しておく必要があります。",
+        "ko": "여권 분실 사고가 발생했을 때 대처 방법을 미리 숙지해야 합니다.",
+        "zh": "应提前了解护照丢失时的处理方法。"
+      },
+      {
+        "en": "My body feels stiff after such a long flight.",
+        "jp": "長時間飛行機に乗っていたので、体が凝っていますね。",
+        "ko": "오랜 시간 비행기를 탔더니 몸이 찌뿌둥하네요.",
+        "zh": "坐了这么长时间的飞机，身体感觉很僵硬。"
+      }
+    ]
+  }
+}
