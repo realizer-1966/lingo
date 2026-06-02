@@ -217,8 +217,8 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
     <button class="start-btn" id="startBtn">🚀 📌 기타 학습 시작!</button>
 
     <div style="margin-top:30px;display:flex;gap:10px;justify-content:center">
-      <button class="act-btn skip" onclick="showScreen('historyScreen')" style="font-size:13px">📊 학습 기록</button>
-      <button class="act-btn skip" onclick="showScreen('statsScreen')" style="font-size:13px">🏆 통계</button>
+      <button class="act-btn skip" data-i18n="history" onclick="showScreen('historyScreen')" style="font-size:13px">📊 학습 기록</button>
+      <button class="act-btn skip" data-i18n="stats" onclick="showScreen('statsScreen')" style="font-size:13px">🏆 통계</button>
     </div>
   </div>
 </div>
@@ -308,12 +308,12 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
 <div class="app-screen" id="historyScreen">
   <div class="top-nav">
     <div class="back-btn" onclick="goHome()">←</div>
-    <div class="nav-title">📊 학습 기록</div>
+    <div class="nav-title" id="historyTitle">📊 학습 기록</div>
     <div></div>
   </div>
-  <h2 style="margin:20px 0 10px;font-size:1.3rem">📝 최근 퀴즈 점수</h2>
+  <h2 style="margin:20px 0 10px;font-size:1.3rem" id="historySubtitle">📝 최근 퀴즈 점수</h2>
   <div class="history-list" id="historyList">
-    <div style="text-align:center;padding:40px 20px;color:rgba(255,255,255,.5)">
+    <div id="noHistoryMsg" style="text-align:center;padding:40px 20px;color:rgba(255,255,255,.5)">
       <div style="font-size:50px;margin-bottom:10px">📝</div>
       <div>아직 기록이 없어요.<br>퀴즈를 풀고 점수를 저장해보세요!</div>
     </div>
@@ -327,14 +327,14 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
 <div class="app-screen" id="statsScreen">
   <div class="top-nav">
     <div class="back-btn" onclick="goHome()">←</div>
-    <div class="nav-title">🏆 학습 통계</div>
+    <div class="nav-title" id="statsTitle">🏆 학습 통계</div>
     <div></div>
   </div>
   <div id="statsContent" class="slide-in">
     <div class="study-stats" style="margin-top:20px">
-      <div class="stat-box"><div class="stat-num" id="statTotalLearned">0</div><div class="stat-label">누적 익힘</div></div>
-      <div class="stat-box"><div class="stat-num" id="statMaxStreak">0</div><div class="stat-label">최대 연속</div></div>
-      <div class="stat-box"><div class="stat-num" id="statQuizCount">0</div><div class="stat-label">퀴즈 수</div></div>
+      <div class="stat-box"><div class="stat-num" id="statTotalLearned">0</div><div class="stat-label" id="lblTotalLearned">누적 익힘</div></div>
+      <div class="stat-box"><div class="stat-num" id="statMaxStreak">0</div><div class="stat-label" id="lblMaxStreak">최대 연속</div></div>
+      <div class="stat-box"><div class="stat-num" id="statQuizCount">0</div><div class="stat-label" id="lblQuizCount">퀴즈 수</div></div>
     </div>
     <div style="text-align:center;margin:30px 0;color:rgba(255,255,255,.5)">
       <div style="font-size:50px">🌱</div>
@@ -683,6 +683,11 @@ const I18N = {
       more: '많음',
       learned: '익힌 구문',
       thisSession: '이번 세션',
+      historySubtitle: '📝 최근 퀴즈 점수',
+      totalLearned: '누적 익힘',
+      maxStreak: '최대 연속',
+      quizCount: '퀴즈 수',
+      noHistory: '아직 기록이 없어요.<br>퀴즈를 풀고 점수를 저장해보세요!',
       streak1: '연속 일일',
       tapToFlip: '탭해서 뒤집기',
       tapToFront: '다시 탭해서 앞면',
@@ -733,6 +738,11 @@ const I18N = {
       more: 'More',
       learned: 'Learned',
       thisSession: 'This Session',
+      historySubtitle: '📝 Recent Quiz Scores',
+      totalLearned: 'Total Learned',
+      maxStreak: 'Max Streak',
+      quizCount: 'Quizzes',
+      noHistory: 'No history yet.<br>Take a quiz to save your score!',
       streak1: 'Daily Streak',
       tapToFlip: 'Tap to flip',
       tapToFront: 'Tap to see front',
@@ -781,6 +791,11 @@ const I18N = {
       more: '多',
       learned: '学習済',
       thisSession: '今回',
+      historySubtitle: '📝 最近のクイズ成績',
+      totalLearned: '累計学習',
+      maxStreak: '最大連続',
+      quizCount: 'クイズ数',
+      noHistory: 'まだ記録がありません。<br>クイズを解いてスコアを保存しましょう!',
       streak1: '連続日数',
       tapToFlip: 'タップで裏返す',
       tapToFront: 'タップで表面',
@@ -845,6 +860,18 @@ const I18N = {
     if (streakLblEl) streakLblEl.textContent = this.t('streak1');
     const tapHintEl = document.getElementById('tapHint');
     if (tapHintEl) tapHintEl.textContent = this.t('tapToFlip');
+    // 4-1) 학습기록 화면
+    const histSubEl = document.getElementById('historySubtitle');
+    if (histSubEl) histSubEl.textContent = this.t('historySubtitle');
+    const noHistEl = document.getElementById('noHistoryMsg');
+    if (noHistEl) noHistEl.innerHTML = this.t('noHistory');
+    // 4-2) 통계 화면
+    const totalLblEl = document.getElementById('lblTotalLearned');
+    if (totalLblEl) totalLblEl.textContent = this.t('totalLearned');
+    const maxLblEl = document.getElementById('lblMaxStreak');
+    if (maxLblEl) maxLblEl.textContent = this.t('maxStreak');
+    const quizLblEl = document.getElementById('lblQuizCount');
+    if (quizLblEl) quizLblEl.textContent = this.t('quizCount');
     // 5) 시작 버튼 - updateStartBtn()이 현재 선택된 카테고리/레벨로 동적 생성
     if (typeof updateStartBtn === 'function') updateStartBtn();
   }
