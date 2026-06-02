@@ -247,10 +247,6 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
     <button class="act-btn easy" onclick="markEasy()">😊 완료</button>
     <button class="act-btn skip" onclick="nextCard()">⏭️ 넘기기</button>
   </div>
-  <div class="actions slide-in" style="margin-top:8px">
-    <button class="act-btn skip" id="favBtn" onclick="toggleFav()" style="border-color:#FFD700;color:#FFD700">⭐ 즐겨찾기</button>
-    <button class="act-btn skip" onclick="goFavorites()" style="border-color:#FFC0CB;color:#FFC0CB">📚 즐겨찾기 목록</button>
-  </div>
 </div>
 
 <!-- QUIZ SCREEN -->
@@ -387,23 +383,11 @@ const LS = {
   historyKey: 'lingo_history_v2',
   statsKey: 'lingo_stats_v2',
   activityKey: 'lingo_activity_v1',
-  favKey: 'lingo_favorites_v1',
   getLearned()  { try { return JSON.parse(localStorage.getItem(this.key)) || []; } catch(e){ return []; } },
   setLearned(v) { localStorage.setItem(this.key, JSON.stringify(v)); },
   addLearned(key) {
     const arr = this.getLearned();
     if (!arr.includes(key)) { arr.push(key); this.setLearned(arr); }
-  },
-  getFavorites()  { try { return JSON.parse(localStorage.getItem(this.favKey)) || []; } catch(e){ return []; } },
-  setFavorites(v) { localStorage.setItem(this.favKey, JSON.stringify(v)); },
-  isFavorite(key) { return this.getFavorites().includes(key); },
-  toggleFavorite(key) {
-    const arr = this.getFavorites();
-    const idx = arr.indexOf(key);
-    if (idx >= 0) arr.splice(idx, 1);
-    else arr.push(key);
-    this.setFavorites(arr);
-    return idx < 0; // true if added, false if removed
   },
   getHistory()  { try { return JSON.parse(localStorage.getItem(this.historyKey)) || []; } catch(e){ return []; } },
   addHistory(item) {
@@ -614,60 +598,9 @@ function showCard() {
   const key = getKey(c);
   if (LS.getLearned().includes(key)) { badge.classList.add('show'); }
   else { badge.classList.remove('show'); }
-  // Update fav button
-  updateFavBtn();
 }
 function flipCard() {
   document.getElementById('flashCard').classList.toggle('flipped');
-}
-
-function updateFavBtn() {
-  const c = state.cards[state.idx];
-  const btn = document.getElementById('favBtn');
-  if (!c || !btn) return;
-  const isFav = LS.isFavorite(getKey(c));
-  btn.textContent = isFav ? '★ 즐겨찾기' : '☆ 즐겨찾기';
-  btn.style.color = isFav ? '#FFD700' : 'rgba(255,255,255,.5)';
-  btn.style.borderColor = isFav ? '#FFD700' : 'rgba(255,255,255,.2)';
-}
-function toggleFav() {
-  const c = state.cards[state.idx];
-  if (!c) return;
-  const added = LS.toggleFavorite(getKey(c));
-  updateFavBtn();
-  showToast(added ? '⭐ 즐겨찾기에 추가' : '☆ 즐겨찾기에서 제거', 1500);
-}
-function goFavorites() {
-  const favs = LS.getFavorites();
-  if (favs.length === 0) {
-    showToast('즐겨찾기한 구문이 없어요 ⭐', 2000);
-    return;
-  }
-  // Build cards from favorites
-  const all = [];
-  const purpose = state.purpose || 'etc';
-  if (state.data && state.data[purpose]) {
-    Object.values(state.data[purpose]).forEach(arr => arr.forEach(p => {
-      if (favs.includes(getKey(p))) all.push(p);
-    }));
-  }
-  if (all.length === 0) {
-    showToast('즐겨찾기 구문을 찾을 수 없어요', 2000);
-    return;
-  }
-  state.cards = all;
-  state.idx = 0;
-  state.streak = 0;
-  showScreen('studyScreen');
-  showCard();
-  showToast('⭐ 즐겨찾기 ' + all.length + '개 학습 시작!', 2000);
-}
-function showToast(msg, ms) {
-  const t = document.createElement('div');
-  t.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.85);color:#fff;padding:10px 20px;border-radius:50px;font-size:13px;z-index:99999;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,.3)';
-  t.textContent = msg;
-  document.body.appendChild(t);
-  setTimeout(() => { if(t.parentNode) t.remove(); }, ms || 1500);
 }
 
 function getTargetText(item) {
