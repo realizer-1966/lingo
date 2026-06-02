@@ -15,7 +15,15 @@
 <title>Lingo 학습</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Noto Sans KR',sans-serif}
-body{background:#121214;color:#fff;min-height:100vh}
+body{background:#121214;color:#fff;min-height:100vh;transition:background .3s,color .3s}
+body.light{background:#f5f5f7;color:#1a1a1a}
+body.light .flash-front, body.light .flash-back, body.light .quiz-card, body.light .history-item, body.light .stat-box, body.light .purp-card, body.light .level-btn, body.light .study-stats{background:rgba(0,0,0,.05);border-color:rgba(0,0,0,.1);color:#1a1a1a}
+body.light .phrase-ko, body.light .history-meta{color:rgba(0,0,0,.6)}
+body.light .subtitle, body.light .tap-hint, body.light .top-nav{color:rgba(0,0,0,.7)}
+body.light h1{background:linear-gradient(135deg,#FF6F61,#6B5B95);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+body.light .act-btn{background:rgba(0,0,0,.04)}
+body.light .streak-section{background:rgba(0,0,0,.04)}
+body.light .modal-box{background:linear-gradient(135deg,#ffffff,#f0f0f5);border-color:rgba(111,97,255,.3);color:#1a1a1a}
 
 .landing{display:flex;flex-direction:column;align-items:center;padding:30px 20px;text-align:center}
 .globe{font-size:60px;margin:20px 0;animation:float 3s ease-in-out infinite}
@@ -67,7 +75,41 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
 
 .actions{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:20px 0 0;padding:0 4px}
 .actions .act-btn{width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-@media(max-width:480px){.actions{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){
+  .actions{grid-template-columns:repeat(2,1fr)}
+  h1{font-size:1.6rem}
+  .globe{font-size:50px}
+  .subtitle{font-size:.95rem}
+  .purposes{grid-template-columns:repeat(3,1fr);gap:10px}
+  .purp-card{padding:12px 8px}
+  .purp-emoji{font-size:30px}
+  .purp-title{font-size:12px}
+  .level-btn{padding:8px 14px;font-size:12px}
+  .flash-front,.flash-back{padding:20px}
+  .phrase-en{font-size:18px}
+  .phrase-ko{font-size:14px}
+  .modal-box{padding:30px 20px}
+  .modal-emoji{font-size:60px}
+  .modal-title{font-size:18px}
+  .modal-body{font-size:14px}
+  .stat-num{font-size:24px}
+  .top-nav{padding:15px 20px}
+  .nav-title{font-size:14px}
+  #streakCalendar{grid-template-columns:repeat(10,1fr)!important}
+  .act-btn{padding:10px 12px;font-size:13px}
+  .streak-section{padding:15px}
+  .back-btn{width:36px;height:36px;font-size:18px}
+  .nav-quiz-btn{padding:8px 14px;font-size:13px}
+}
+@media(max-width:360px){
+  .purposes{grid-template-columns:repeat(2,1fr)}
+  .actions{grid-template-columns:1fr}
+  .actions .act-btn{font-size:12px;padding:8px}
+}
+@media(hover:none) and (pointer:coarse){
+  .act-btn:hover{transform:none}
+  .btn:hover{transform:none}
+}
 .act-btn{padding:12px 22px;border-radius:50px;border:2px solid;background:transparent;cursor:pointer;font-size:14px;font-weight:600;transition:all .3s}
 .act-btn.easy{border-color:#4CAF50;color:#4CAF50}.act-btn.easy:hover{background:#4CAF50;color:#fff}
 .act-btn.hard{border-color:#FF9800;color:#FF9800}.act-btn.hard:hover{background:#FF9800;color:#fff}
@@ -137,6 +179,9 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
 <!-- LANDING SCREEN -->
 <div class="app-screen active" id="landing">
   <div class="landing">
+    <div style="position:absolute;top:20px;right:20px">
+      <button id="themeToggle" onclick="toggleTheme()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:inherit;padding:8px 14px;border-radius:50px;font-size:14px;cursor:pointer;font-weight:600">🌙 다크</button>
+    </div>
     <div class="globe">🌍⛳</div>
     <h1>Lingo 학습</h1>
     <p class="subtitle">여행 30일 전, 반복학습으로 외국어 구문을 완벽하게 익히세요~!</p>
@@ -212,6 +257,10 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
     <button class="act-btn hard" onclick="markHard()">🤔 어려움</button>
     <button class="act-btn easy" onclick="markEasy()">😊 완료</button>
     <button class="act-btn skip" onclick="nextCard()">⏭️ 넘기기</button>
+  </div>
+  <div class="actions slide-in" style="margin-top:8px">
+    <button class="act-btn skip" id="favBtn" onclick="toggleFav()" style="border-color:#FFD700;color:#FFD700">⭐ 즐겨찾기</button>
+    <button class="act-btn skip" onclick="goFavorites()" style="border-color:#FFC0CB;color:#FFC0CB">📚 즐겨찾기 목록</button>
   </div>
 </div>
 
@@ -349,12 +398,27 @@ const LS = {
   historyKey: 'lingo_history_v2',
   statsKey: 'lingo_stats_v2',
   activityKey: 'lingo_activity_v1',
+  favKey: 'lingo_favorites_v1',
+  themeKey: 'lingo_theme_v1',
   getLearned()  { try { return JSON.parse(localStorage.getItem(this.key)) || []; } catch(e){ return []; } },
   setLearned(v) { localStorage.setItem(this.key, JSON.stringify(v)); },
   addLearned(key) {
     const arr = this.getLearned();
     if (!arr.includes(key)) { arr.push(key); this.setLearned(arr); }
   },
+  getFavorites()  { try { return JSON.parse(localStorage.getItem(this.favKey)) || []; } catch(e){ return []; } },
+  setFavorites(v) { localStorage.setItem(this.favKey, JSON.stringify(v)); },
+  isFavorite(key) { return this.getFavorites().includes(key); },
+  toggleFavorite(key) {
+    const arr = this.getFavorites();
+    const idx = arr.indexOf(key);
+    if (idx >= 0) arr.splice(idx, 1);
+    else arr.push(key);
+    this.setFavorites(arr);
+    return idx < 0; // true if added, false if removed
+  },
+  getTheme() { return localStorage.getItem(this.themeKey) || 'dark'; },
+  setTheme(t) { localStorage.setItem(this.themeKey, t); },
   getHistory()  { try { return JSON.parse(localStorage.getItem(this.historyKey)) || []; } catch(e){ return []; } },
   addHistory(item) {
     const arr = this.getHistory();
@@ -413,6 +477,26 @@ function installApp() {
     installPrompt = null;
   });
 }
+
+// Theme toggle (dark/light)
+function toggleTheme() {
+  const cur = LS.getTheme();
+  const next = cur === 'dark' ? 'light' : 'dark';
+  LS.setTheme(next);
+  applyTheme(next);
+}
+function applyTheme(theme) {
+  const btn = document.getElementById('themeToggle');
+  if (theme === 'light') {
+    document.body.classList.add('light');
+    if (btn) btn.textContent = '☀️ 라이트';
+  } else {
+    document.body.classList.remove('light');
+    if (btn) btn.textContent = '🌙 다크';
+  }
+}
+// Apply saved theme on load
+applyTheme(LS.getTheme());
 
 // Register service worker with update detection
 if ('serviceWorker' in navigator) {
@@ -564,9 +648,60 @@ function showCard() {
   const key = getKey(c);
   if (LS.getLearned().includes(key)) { badge.classList.add('show'); }
   else { badge.classList.remove('show'); }
+  // Update fav button
+  updateFavBtn();
 }
 function flipCard() {
   document.getElementById('flashCard').classList.toggle('flipped');
+}
+
+function updateFavBtn() {
+  const c = state.cards[state.idx];
+  const btn = document.getElementById('favBtn');
+  if (!c || !btn) return;
+  const isFav = LS.isFavorite(getKey(c));
+  btn.textContent = isFav ? '★ 즐겨찾기' : '☆ 즐겨찾기';
+  btn.style.color = isFav ? '#FFD700' : 'rgba(255,255,255,.5)';
+  btn.style.borderColor = isFav ? '#FFD700' : 'rgba(255,255,255,.2)';
+}
+function toggleFav() {
+  const c = state.cards[state.idx];
+  if (!c) return;
+  const added = LS.toggleFavorite(getKey(c));
+  updateFavBtn();
+  showToast(added ? '⭐ 즐겨찾기에 추가' : '☆ 즐겨찾기에서 제거', 1500);
+}
+function goFavorites() {
+  const favs = LS.getFavorites();
+  if (favs.length === 0) {
+    showToast('즐겨찾기한 구문이 없어요 ⭐', 2000);
+    return;
+  }
+  // Build cards from favorites
+  const all = [];
+  const purpose = state.purpose || 'etc';
+  if (state.data && state.data[purpose]) {
+    Object.values(state.data[purpose]).forEach(arr => arr.forEach(p => {
+      if (favs.includes(getKey(p))) all.push(p);
+    }));
+  }
+  if (all.length === 0) {
+    showToast('즐겨찾기 구문을 찾을 수 없어요', 2000);
+    return;
+  }
+  state.cards = all;
+  state.idx = 0;
+  state.streak = 0;
+  showScreen('studyScreen');
+  showCard();
+  showToast('⭐ 즐겨찾기 ' + all.length + '개 학습 시작!', 2000);
+}
+function showToast(msg, ms) {
+  const t = document.createElement('div');
+  t.style.cssText = 'position:fixed;top:80px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.85);color:#fff;padding:10px 20px;border-radius:50px;font-size:13px;z-index:99999;backdrop-filter:blur(10px);box-shadow:0 4px 16px rgba(0,0,0,.3)';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => { if(t.parentNode) t.remove(); }, ms || 1500);
 }
 
 function getTargetText(item) {
