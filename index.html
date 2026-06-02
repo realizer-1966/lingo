@@ -232,16 +232,16 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
   </div>
   <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
   <div class="study-stats slide-in">
-    <div class="stat-box"><div class="stat-num" id="learnedCount">0</div><div class="stat-label">익힌 구문</div></div>
-    <div class="stat-box"><div class="stat-num" id="sessionCount">0</div><div class="stat-label">이번 세션</div></div>
-    <div class="stat-box"><div class="stat-num" id="streakCount">🔥0</div><div class="stat-label">연속 일일</div></div>
+    <div class="stat-box"><div class="stat-num" id="learnedCount">0</div><div class="stat-label" id="learnedLabel">익힌 구문</div></div>
+    <div class="stat-box"><div class="stat-num" id="sessionCount">0</div><div class="stat-label" id="sessionLabel">이번 세션</div></div>
+    <div class="stat-box"><div class="stat-num" id="streakCount">🔥0</div><div class="stat-label" id="streakLabel">연속 일일</div></div>
   </div>
   <div class="flash-stage slide-in">
     <div class="flash-card" id="flashCard" onclick="flipCard()">
       <div class="flash-front" id="cardFront">
         <span style="font-size:40px;margin-bottom:10px">🗣️</span>
         <div class="phrase-ko" id="phraseKo">여기까지 가려면 어떻게 가야 하나요?</div>
-        <span class="tap-hint">탭해서 뒤집기</span>
+        <span class="tap-hint" id="tapHint">탭해서 뒤집기</span>
         <span class="learned-badge" id="learnedBadge">✅ 익힘</span>
       </div>
       <div class="flash-back" id="cardBack">
@@ -681,6 +681,28 @@ const I18N = {
       currentStreak: '현재',
       less: '적음',
       more: '많음',
+      learned: '익힌 구문',
+      thisSession: '이번 세션',
+      streak1: '연속 일일',
+      tapToFlip: '탭해서 뒤집기',
+      tapToFront: '다시 탭해서 앞면',
+      // 카테고리
+      cat_etc: '기타',
+      cat_travel: '여행 회화',
+      cat_golf: '골프 용어',
+      cat_shop: '쇼핑',
+      cat_restaurant: '레스토랑',
+      cat_direction: '길 찾기',
+      cat_hotel: '호텔',
+      cat_airport: '공항',
+      cat_emergency: '응급상황',
+      // 레벨
+      lvl_beginner: '🟢 초급',
+      lvl_intermediate: '🟡 중급',
+      lvl_advanced: '🔴 고급',
+      lvlName_beginner: '초급',
+      lvlName_intermediate: '중급',
+      lvlName_advanced: '고급',
     },
     en: {
       appTitle: 'Lingo Study',
@@ -709,6 +731,26 @@ const I18N = {
       currentStreak: 'Current',
       less: 'Less',
       more: 'More',
+      learned: 'Learned',
+      thisSession: 'This Session',
+      streak1: 'Daily Streak',
+      tapToFlip: 'Tap to flip',
+      tapToFront: 'Tap to see front',
+      cat_etc: 'Etc',
+      cat_travel: 'Travel',
+      cat_golf: 'Golf',
+      cat_shop: 'Shopping',
+      cat_restaurant: 'Restaurant',
+      cat_direction: 'Direction',
+      cat_hotel: 'Hotel',
+      cat_airport: 'Airport',
+      cat_emergency: 'Emergency',
+      lvl_beginner: '🟢 Beginner',
+      lvl_intermediate: '🟡 Intermediate',
+      lvl_advanced: '🔴 Advanced',
+      lvlName_beginner: 'Beginner',
+      lvlName_intermediate: 'Intermediate',
+      lvlName_advanced: 'Advanced',
     },
     ja: {
       appTitle: 'Lingo 学習',
@@ -737,6 +779,26 @@ const I18N = {
       currentStreak: '現在',
       less: '少',
       more: '多',
+      learned: '学習済',
+      thisSession: '今回',
+      streak1: '連続日数',
+      tapToFlip: 'タップで裏返す',
+      tapToFront: 'タップで表面',
+      cat_etc: 'その他',
+      cat_travel: '旅行',
+      cat_golf: 'ゴルフ',
+      cat_shop: 'ショッピング',
+      cat_restaurant: 'レストラン',
+      cat_direction: '道案内',
+      cat_hotel: 'ホテル',
+      cat_airport: '空港',
+      cat_emergency: '緊急',
+      lvl_beginner: '🟢 初級',
+      lvl_intermediate: '🟡 中級',
+      lvl_advanced: '🔴 上級',
+      lvlName_beginner: '初級',
+      lvlName_intermediate: '中級',
+      lvlName_advanced: '上級',
     }
   },
   init() {
@@ -754,10 +816,48 @@ const I18N = {
   },
   apply() {
     document.documentElement.lang = this.lang;
+    // 1) data-i18n 속성 변환
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       el.textContent = this.t(key);
     });
+    // 2) 카테고리 카드 번역
+    const CAT_MAP = {etc:'cat_etc', travel:'cat_travel', golf:'cat_golf', shop:'cat_shop', restaurant:'cat_restaurant', direction:'cat_direction', hotel:'cat_hotel', airport:'cat_airport', emergency:'cat_emergency'};
+    document.querySelectorAll('.purp-card').forEach(el => {
+      const p = el.getAttribute('data-p');
+      if (p && CAT_MAP[p]) {
+        const titleEl = el.querySelector('.purp-title');
+        if (titleEl) titleEl.textContent = this.t(CAT_MAP[p]);
+      }
+    });
+    // 3) 레벨 버튼 번역
+    const LVL_MAP = {beginner:'lvl_beginner', intermediate:'lvl_intermediate', advanced:'lvl_advanced'};
+    document.querySelectorAll('.level-btn').forEach(el => {
+      const l = el.getAttribute('data-l');
+      if (l && LVL_MAP[l]) el.textContent = this.t(LVL_MAP[l]);
+    });
+    // 4) 학습 화면 라벨 번역
+    const labelEl = document.getElementById('learnedLabel');
+    if (labelEl) labelEl.textContent = this.t('learned');
+    const sessionEl = document.getElementById('sessionLabel');
+    if (sessionEl) sessionEl.textContent = this.t('thisSession');
+    const streakLblEl = document.getElementById('streakLabel');
+    if (streakLblEl) streakLblEl.textContent = this.t('streak1');
+    const tapHintEl = document.getElementById('tapHint');
+    if (tapHintEl) tapHintEl.textContent = this.t('tapToFlip');
+    // 5) 액션 버튼 텍스트 (id가 있는 경우)
+    const startBtn = document.getElementById('startBtn');
+    if (startBtn) {
+      const purp = document.querySelector('.purp-card.active');
+      const lvl = document.querySelector('.level-btn.active');
+      if (purp && lvl) {
+        const pKey = CAT_MAP[purp.getAttribute('data-p')];
+        const lKey = LVL_MAP[lvl.getAttribute('data-l')];
+        // 이름 변환 (이모지 제거한 버전)
+        const lName = this.t(pKey).replace(/^[🟢🟡🔴]\s*/, '');
+        startBtn.textContent = '🚀 ' + lName + ' ' + this.t('start').replace('🚀 ', '');
+      }
+    }
   }
 };
 I18N.init();
