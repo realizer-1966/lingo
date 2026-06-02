@@ -14,6 +14,8 @@ h1{font-size:1.5rem;margin-bottom:5px;background:linear-gradient(135deg,#6B5B95,
 .tab{padding:8px 16px;border-radius:50px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.05);color:rgba(255,255,255,.7);font-size:13px;cursor:pointer;transition:all .3s}
 .tab:hover{border-color:#FF6F61;color:#FF6F61}
 .tab.active{border-color:#FF6F61;background:rgba(255,111,97,.2);color:#FF6F61}
+.tab-home{margin-left:auto;border-color:rgba(111,97,255,.4);background:rgba(111,97,255,.15);color:rgba(111,97,255,1);font-weight:700}
+.tab-home:hover{background:rgba(111,97,255,.3);color:#fff;border-color:#6B5B95}
 .panel{display:none}
 .panel.active{display:block}
 .section{background:rgba(255,255,255,.06);border-radius:16px;padding:20px;margin-bottom:20px}
@@ -55,6 +57,7 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
   <button class="tab" onclick="showTab('p-generate',this)">🤖 AI 생성</button>
   <button class="tab" onclick="showTab('p-merge',this)">🔀 병합</button>
   <button class="tab" onclick="showTab('p-settings',this)">⚙️ 설정</button>
+  <button class="tab tab-home" onclick="location.href='index.html'">🏠 Lingo 앱</button>
 </div>
 
 <!-- PANEL: Chunks -->
@@ -199,7 +202,6 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
       <button class="btn btn-secondary" onclick="loadDefault()">📥 서버 원본</button>
       <button class="btn btn-secondary" onclick="clearAll()">🗑️ 청크 삭제</button>
       <button class="btn btn-secondary" onclick="showHelp()">❓ 도움말</button>
-      <button class="btn btn-primary" onclick="location.href='index.html'">🏠 Lingo 앱</button>
     </div>
   </div>
 </div>
