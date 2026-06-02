@@ -158,6 +158,12 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
   <button class="install-btn" onclick="installApp()">설치</button>
 </div>
 
+<!-- OFFLINE BANNER (hidden by default, shown when offline) -->
+<div class="install-banner" id="offlineBanner" style="background:linear-gradient(90deg,#FF9800,#F44336)">
+  <span class="install-text">📡 오프라인 모드 — 캐시된 데이터로 작동 중</span>
+  <button class="install-btn" onclick="checkOnline()">🔄 재시도</button>
+</div>
+
 <!-- CUSTOM MODAL -->
 <div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
   <div class="modal-box" onclick="event.stopPropagation()">
@@ -558,6 +564,32 @@ function showUpdateToast() {
   // Auto-dismiss after 30s
   setTimeout(() => { if(toast.parentNode) toast.remove(); }, 30000);
 }
+
+// ===== OFFLINE DETECTION (I1) =====
+function updateOnlineStatus() {
+  const banner = document.getElementById('offlineBanner');
+  if (!banner) return;
+  if (navigator.onLine) {
+    banner.classList.remove('show');
+    banner.style.display = 'none';
+  } else {
+    banner.classList.add('show');
+    banner.style.display = 'flex';
+  }
+}
+function checkOnline() {
+  // Manual retry - reload if online
+  if (navigator.onLine) {
+    location.reload();
+  } else {
+    showModal('📡','오프라인','아직 네트워크에 연결되지 않았어요.\nWiFi/데이터 연결 후 다시 시도해주세요.');
+  }
+}
+// Listen for online/offline events
+window.addEventListener('online', updateOnlineStatus);
+window.addEventListener('offline', updateOnlineStatus);
+// Initial check
+updateOnlineStatus();
 
 // ===== MODAL =====
 function showModal(emoji, title, body) {
