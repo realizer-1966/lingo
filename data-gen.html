@@ -109,11 +109,11 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
     </div>
 
     <label>모델명</label>
-    <input type="text" id="ollamaModel" placeholder="무료: google/gemma-4-26b-a4b-it:free" value="google/gemma-4-26b-a4b-it:free" onchange="saveOllamaModel()">
+    <input type="text" id="ollamaModel" placeholder="무료: moonshotai/kimi-k2.6:free" value="moonshotai/kimi-k2.6:free" onchange="saveOllamaModel()">
 
     <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:12px">
-      추천 무료 모델: <code style="color:#FF6F61">google/gemma-4-26b-a4b-it:free</code>, 
-      <code style="color:#FF6F61">nvidia/nemotron-3-super-120b-a12b:free</code>
+      추천 무료 모델: <code style="color:#FF6F61">moonshotai/kimi-k2.6:free</code>, 
+      <code style="color:#FF6F61">google/gemma-4-26b-a4b-it:free</code>
     </div>
 
     <div class="grid-3">
@@ -330,7 +330,7 @@ function saveOllamaModel(){ localStorage.setItem('lingo_ollama_model', document.
 
 async function generatePhrases(){
   const key = document.getElementById('apiKey').value.trim();
-  const model = document.getElementById('ollamaModel').value.trim() || 'google/gemma-4-26b-a4b-it:free';
+  const model = document.getElementById('ollamaModel').value.trim() || 'moonshotai/kimi-k2.6:free';
   if(!key){ openModal('⚠️ API Key 필요', 'OpenRouter API Key를 입력해주세요.\n\n1. https://openrouter.ai/keys 접속\n2. 이메일로 회원가입 (무료)\n3. Create Key 클릭\n4. 키를 복사해서 여기에 붙여넣기'); return; }
   const cat = document.getElementById('genCat').value;
   const lvl = document.getElementById('genLvl').value;
