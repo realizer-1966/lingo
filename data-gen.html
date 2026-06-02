@@ -22,12 +22,15 @@ label{display:block;margin-bottom:6px;font-size:13px;color:rgba(255,255,255,.7)}
 input,select,textarea{width:100%;padding:10px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.08);color:#fff;font-size:14px;margin-bottom:12px}
 input:focus,select:focus,textarea:focus{outline:none;border-color:#FF6F61}
 textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
-.btn{padding:10px 20px;border-radius:50px;border:none;font-size:13px;font-weight:700;cursor:pointer;transition:all .3s;margin-right:8px;margin-bottom:8px}
+.btn{padding:8px 14px;border-radius:50px;border:none;font-size:12px;font-weight:700;cursor:pointer;transition:all .3s}
 .btn-primary{background:linear-gradient(135deg,#FF6F61,#6B5B95);color:#fff}
 .btn-secondary{background:rgba(255,255,255,.15);color:#fff}
 .btn-danger{background:rgba(255,80,80,.3);color:#ff5050}
 .btn:hover{transform:scale(1.05)}
 .btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
+.btn-group{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:8px}
+.btn-group .btn{margin:0;width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:480px){.btn-group{grid-template-columns:repeat(2,1fr)}}
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
 .phrase-row{display:grid;grid-template-columns:1fr 1fr 1fr 1fr 40px;gap:8px;align-items:center;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.05)}
@@ -82,18 +85,22 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
         </select>
       </div>
     </div>
-    <button class="btn btn-primary" onclick="loadChunk()">📂 불러오기</button>
-    <button class="btn btn-secondary" onclick="newChunk()">➕ 새 청크</button>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="loadChunk()">📂 불러오기</button>
+      <button class="btn btn-secondary" onclick="newChunk()">➕ 새 청크</button>
+    </div>
   </div>
 
   <div class="section" id="chunkEditor" style="display:none">
     <div class="section-title">✏️ 구문 편집 — <span id="editingLabel"></span></div>
     <div id="phraseList"></div>
-    <button class="btn btn-primary" onclick="addPhraseRow()">➕ 구문 추가</button>
-    <button class="btn btn-secondary" onclick="saveChunk()">💾 저장</button>
-    <button class="btn btn-secondary" onclick="importChunk()">📁 JSON 가져오기</button>
-    <button class="btn btn-secondary" onclick="exportChunk()">📤 JSON 보내기</button>
-    <button class="btn btn-danger" onclick="deleteChunk()">🗑️ 삭제</button>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="addPhraseRow()">➕ 구문 추가</button>
+      <button class="btn btn-secondary" onclick="saveChunk()">💾 저장</button>
+      <button class="btn btn-secondary" onclick="importChunk()">📁 JSON 가져오기</button>
+      <button class="btn btn-secondary" onclick="exportChunk()">📤 JSON 보내기</button>
+      <button class="btn btn-danger" onclick="deleteChunk()">🗑️ 삭제</button>
+    </div>
   </div>
 </div>
 
@@ -148,15 +155,19 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
     <label>프롬프트</label>
     <textarea id="genPrompt">Generate {{count}} practical {{level}} Korean learning phrases for "{{category}}" scenario. Output JSON array: [{"en":"...","jp":"...","ko":"...","zh":"..."}]</textarea>
 
-    <button class="btn btn-primary" id="genBtn" onclick="generatePhrases()">✨ 생성 시작</button>
+    <div class="btn-group">
+      <button class="btn btn-primary" id="genBtn" onclick="generatePhrases()">✨ 생성 시작</button>
+    </div>
     <div id="genStatus" style="margin-top:10px;font-size:13px;color:rgba(255,255,255,.5)"></div>
   </div>
 
   <div class="section" id="genResult" style="display:none">
     <div class="section-title">📋 생성 결과</div>
     <div id="genPreview"></div>
-    <button class="btn btn-primary" onclick="acceptGenerated()">💾 청크에 저장</button>
-    <button class="btn btn-secondary" onclick="discardGenerated()">🗑️ 버리기</button>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="acceptGenerated()">💾 청크에 저장</button>
+      <button class="btn btn-secondary" onclick="discardGenerated()">🗑️ 버리기</button>
+    </div>
   </div>
 </div>
 
@@ -165,10 +176,12 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
   <div class="section">
     <div class="section-title">🔀 병합 &amp; 보내기</div>
     <p style="font-size:13px;color:rgba(255,255,255,.6);margin-bottom:15px">모든 청크를 phrases_ollama.json 형식으로 병합합니다.</p>
-    <button class="btn btn-primary" onclick="mergeAll()">🔀 전체 병합</button>
-    <button class="btn btn-secondary" onclick="previewMerge()">👁️ 미리보기</button>
-    <button class="btn btn-secondary" onclick="exportMerged()">📤 JSON 파일보내기</button>
-    <button class="btn btn-primary" onclick="deployToLingo()">🚀 Lingo 앱에 배포</button>
+    <div class="btn-group">
+      <button class="btn btn-primary" onclick="mergeAll()">🔀 전체 병합</button>
+      <button class="btn btn-secondary" onclick="previewMerge()">👁️ 미리보기</button>
+      <button class="btn btn-secondary" onclick="exportMerged()">📤 JSON 파일보내기</button>
+      <button class="btn btn-primary" onclick="deployToLingo()">🚀 Lingo 앱에 배포</button>
+    </div>
   </div>
 
   <div class="section" id="mergePreview" style="display:none">
@@ -182,10 +195,12 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
 <div class="panel" id="p-settings">
   <div class="section">
     <div class="section-title">⚙️ 설정 &amp; 도구</div>
-    <button class="btn btn-secondary" onclick="loadDefault()">📥 서버 원본 불러오기</button>
-    <button class="btn btn-secondary" onclick="clearAll()">🗑️ 모든 청크 삭제</button>
-    <button class="btn btn-secondary" onclick="showHelp()">❓ 도움말</button>
-    <button class="btn btn-primary" onclick="location.href='index.html'">🏠 Lingo 앱으로</button>
+    <div class="btn-group">
+      <button class="btn btn-secondary" onclick="loadDefault()">📥 서버 원본</button>
+      <button class="btn btn-secondary" onclick="clearAll()">🗑️ 청크 삭제</button>
+      <button class="btn btn-secondary" onclick="showHelp()">❓ 도움말</button>
+      <button class="btn btn-primary" onclick="location.href='index.html'">🏠 Lingo 앱</button>
+    </div>
   </div>
 </div>
 
