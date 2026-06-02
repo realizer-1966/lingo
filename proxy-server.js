@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 3000;
+const PORT = 3333;
 const HOST = '127.0.0.1';
 
 // MIME types for static files
