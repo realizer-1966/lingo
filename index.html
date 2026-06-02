@@ -382,9 +382,31 @@ function installApp() {
   });
 }
 
-// Register service worker
+// Register service worker with update detection
 if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('sw.js').catch(err => console.warn('SW注册失败', err));
+  navigator.serviceWorker.register('sw.js').then((reg) => {
+    // Listen for new SW waiting
+    reg.addEventListener('updatefound', () => {
+      const newSw = reg.installing;
+      if (!newSw) return;
+      newSw.addEventListener('statechange', () => {
+        if (newSw.state === 'installed' && navigator.serviceWorker.controller) {
+          // New SW installed, show update toast
+          showUpdateToast();
+        }
+      });
+    });
+  }).catch(err => console.warn('SW注册失败', err));
+}
+
+function showUpdateToast() {
+  const toast = document.createElement('div');
+  toast.id = 'swUpdateToast';
+  toast.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#FF6F61,#6B5B95);color:#fff;padding:12px 20px;border-radius:50px;font-size:13px;font-weight:600;z-index:99999;box-shadow:0 8px 24px rgba(0,0,0,.3);display:flex;align-items:center;gap:12px';
+  toast.innerHTML = '🔄 새 버전 사용 가능 <button onclick="location.reload()" style="background:#fff;color:#FF6F61;border:none;border-radius:50px;padding:6px 14px;font-weight:700;cursor:pointer;font-size:12px">새로고침</button>';
+  document.body.appendChild(toast);
+  // Auto-dismiss after 30s
+  setTimeout(() => { if(toast.parentNode) toast.remove(); }, 30000);
 }
 
 // ===== MODAL =====
@@ -527,9 +549,21 @@ function getKey(item) {
 function speak(rate) {
   const c = state.cards[state.idx];
   if (!c) return;
+  // TTS rate 안전 범위 검증 (0.1 ~ 10.0)
+  const safeRate = Math.max(0.1, Math.min(10.0, Number(rate) || 1.0));
+  // 진행 중인 TTS가 있으면 취소 (중복 재생 방지)
+  if (speechSynthesis.speaking) {
+    speechSynthesis.cancel();
+  }
   const u = new SpeechSynthesisUtterance(getTargetText(c));
   u.lang = TTS_LANG[state.lang] || 'en-US';
-  u.rate = rate;
+  u.rate = safeRate;
+  // 에러 핸들링
+  u.onerror = (e) => {
+    if (e.error !== 'canceled') {
+      console.warn('TTS error:', e.error);
+    }
+  };
   speechSynthesis.speak(u);
 }
 
