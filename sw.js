@@ -1,11 +1,13 @@
 // PWA Service Worker - Offline First Cache Strategy
-const CACHE_NAME = 'lingo-cache-v1';
+const CACHE_NAME = 'lingo-cache-v2';
 const URLS_TO_CACHE = [
-  './app.html',
+  './',
+  './index.html',
   './manifest.json',
   './phrases_ollama.json',
   './icons/icon-192.png',
-  './icons/icon-512.png'
+  './icons/icon-512.png',
+  './data-gen.html'
 ];
 
 // Install: cache static assets
