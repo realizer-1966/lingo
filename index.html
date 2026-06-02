@@ -289,6 +289,26 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
       <div style="font-size:50px">🌱</div>
       <div style="margin-top:10px">꾸준한 학습이 실력을 만든답니다!</div>
     </div>
+
+    <!-- Streak Calendar (E3) -->
+    <div class="streak-section" style="margin-top:30px;padding:20px;background:rgba(255,255,255,.04);border-radius:20px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px">
+        <div style="font-size:16px;font-weight:700">📅 최근 30일 학습</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.5)">🔥 현재 <span id="statCurrentStreak">0</span>일 연속</div>
+      </div>
+      <div id="streakCalendar" style="display:grid;grid-template-columns:repeat(15,1fr);gap:4px"></div>
+      <div style="display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:12px;font-size:11px;color:rgba(255,255,255,.4)">
+        <span>적음</span>
+        <div style="display:flex;gap:3px">
+          <div style="width:12px;height:12px;background:rgba(255,255,255,.08);border-radius:2px"></div>
+          <div style="width:12px;height:12px;background:rgba(111,97,255,.3);border-radius:2px"></div>
+          <div style="width:12px;height:12px;background:rgba(111,97,255,.55);border-radius:2px"></div>
+          <div style="width:12px;height:12px;background:rgba(111,97,255,.8);border-radius:2px"></div>
+          <div style="width:12px;height:12px;background:#FF6F61;border-radius:2px"></div>
+        </div>
+        <span>많음</span>
+      </div>
+    </div>
   </div>
   <div class="actions">
     <button class="act-btn skip" onclick="clearAllData()">🗑️ 데이터 초기화</button>
@@ -328,6 +348,7 @@ const LS = {
   key: 'lingo_learned_v2',
   historyKey: 'lingo_history_v2',
   statsKey: 'lingo_stats_v2',
+  activityKey: 'lingo_activity_v1',
   getLearned()  { try { return JSON.parse(localStorage.getItem(this.key)) || []; } catch(e){ return []; } },
   setLearned(v) { localStorage.setItem(this.key, JSON.stringify(v)); },
   addLearned(key) {
@@ -340,6 +361,17 @@ const LS = {
     arr.unshift(item);
     if (arr.length > 50) arr.length = 50;
     localStorage.setItem(this.historyKey, JSON.stringify(arr));
+  },
+  // Activity tracking for streak calendar
+  getActivity() { try { return JSON.parse(localStorage.getItem(this.activityKey)) || {}; } catch(e){ return {}; } },
+  addActivity() {
+    const today = new Date().toISOString().slice(0,10); // YYYY-MM-DD
+    const a = this.getActivity();
+    a[today] = (a[today] || 0) + 1;
+    // Keep only last 60 days
+    const cutoff = new Date(Date.now() - 60*86400000).toISOString().slice(0,10);
+    Object.keys(a).forEach(k => { if(k < cutoff) delete a[k]; });
+    localStorage.setItem(this.activityKey, JSON.stringify(a));
   },
   getStats() {
     try {
@@ -656,6 +688,8 @@ function markEasy() {
   const key = getKey(c);
   if (!state.learned.includes(key)) state.learned.push(key);
   LS.addLearned(key);
+  LS.addActivity();
+  LS.updateStreak();
   state.streak++;
   document.getElementById('learnedCount').textContent = LS.getLearned().length;
   document.getElementById('streakCount').textContent = '🔥' + state.streak;
@@ -846,6 +880,47 @@ function renderStats() {
   document.getElementById('statTotalLearned').textContent = s.totalLearned || LS.getLearned().length;
   document.getElementById('statMaxStreak').textContent = s.maxStreak || 0;
   document.getElementById('statQuizCount').textContent = s.quizCount || LS.getHistory().length;
+  renderStreakCalendar();
+}
+
+function renderStreakCalendar() {
+  const cal = document.getElementById('streakCalendar');
+  if (!cal) return;
+  const activity = LS.getActivity();
+  const days = 30;
+  // Build last 30 days (oldest first → newest last, left to right)
+  const today = new Date();
+  const dates = [];
+  for (let i = days - 1; i >= 0; i--) {
+    const d = new Date(today);
+    d.setDate(d.getDate() - i);
+    dates.push(d.toISOString().slice(0, 10));
+  }
+  // Determine max value for scaling
+  const max = Math.max(1, ...dates.map(d => activity[d] || 0));
+  // Render 30 cells (2 rows × 15 cols)
+  const colors = [
+    'rgba(255,255,255,.08)',     // 0
+    'rgba(111,97,255,.3)',        // 1
+    'rgba(111,97,255,.55)',       // 2
+    'rgba(111,97,255,.8)',        // 3
+    '#FF6F61'                      // 4+
+  ];
+  let html = '';
+  dates.forEach((d, idx) => {
+    const count = activity[d] || 0;
+    // Scale: 0=없음, 1=적음, ..., 4+=많음
+    const tier = count === 0 ? 0 : count >= max * 0.75 ? 4 : count >= max * 0.5 ? 3 : count >= max * 0.25 ? 2 : 1;
+    const isToday = idx === dates.length - 1;
+    const border = isToday ? 'box-shadow:0 0 0 2px #FF6F61' : '';
+    const title = d + (count > 0 ? ' (' + count + '회)' : ' (학습 없음)');
+    html += '<div title="' + title + '" style="aspect-ratio:1;background:' + colors[tier] + ';border-radius:4px;cursor:pointer;transition:transform .2s;' + border + '" onmouseover="this.style.transform=\'scale(1.3)\'" onmouseout="this.style.transform=\'scale(1)\'"></div>';
+  });
+  cal.innerHTML = html;
+  // Update current streak
+  const stats = LS.getStats();
+  const cs = document.getElementById('statCurrentStreak');
+  if (cs) cs.textContent = stats.streakDays || 0;
 }
 
 function clearAllData() {
@@ -873,6 +948,8 @@ function saveScoreToServer() {
   };
   // Save to localStorage history
   LS.addHistory({...data, date: new Date().toLocaleString('ko-KR')});
+  LS.addActivity();
+  LS.updateStreak();
   // Update stats
   const stats = LS.getStats();
   stats.quizCount = (stats.quizCount || 0) + 1;
