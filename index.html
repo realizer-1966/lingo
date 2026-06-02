@@ -175,7 +175,8 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
     <h1 data-i18n="appTitle">Lingo 학습</h1>
     <p class="subtitle" data-i18n="appSubtitle">여행 30일 전, 반복학습으로 외국어 구문을 완벽하게 익히세요~!</p>
 
-    <div style="position:absolute;top:20px;right:20px;display:flex;gap:6px">
+    <div style="position:absolute;top:20px;right:20px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end;max-width:60%">
+      <button id="sfxToggle" onclick="toggleSFX()" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:inherit;padding:6px 10px;border-radius:50px;font-size:12px;cursor:pointer">🔊</button>
       <button onclick="I18N.setLang('ko')" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:inherit;padding:6px 10px;border-radius:50px;font-size:12px;cursor:pointer">한국어</button>
       <button onclick="I18N.setLang('en')" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:inherit;padding:6px 10px;border-radius:50px;font-size:12px;cursor:pointer">EN</button>
       <button onclick="I18N.setLang('ja')" style="background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:inherit;padding:6px 10px;border-radius:50px;font-size:12px;cursor:pointer">日本語</button>
@@ -769,6 +770,22 @@ const SFX = {
   wrong()   { this._tone(220, 0.15, 0.18); setTimeout(() => this._tone(180, 0.2, 0.18), 150); },
   finish()  { this._tone(523, 0.1, 0.18); setTimeout(() => this._tone(659, 0.1, 0.18), 100); setTimeout(() => this._tone(784, 0.1, 0.18), 200); setTimeout(() => this._tone(1047, 0.2, 0.18), 300); },
 };
+
+// H2: SFX 토글 + 버튼 상태 업데이트
+function toggleSFX() {
+  const enabled = SFX.toggle();
+  updateSFXBtn();
+  // ON으로 켜질 때만 확인음 재생
+  if (enabled) SFX.easy();
+}
+function updateSFXBtn() {
+  const btn = document.getElementById('sfxToggle');
+  if (!btn) return;
+  btn.textContent = SFX.enabled ? '🔊' : '🔇';
+  btn.title = SFX.enabled ? '효과음 켜짐 (클릭하여 끄기)' : '효과음 꺼짐 (클릭하여 켜기)';
+  btn.style.opacity = SFX.enabled ? '1' : '0.5';
+}
+updateSFXBtn();
 
 // ===== LANDING EVENTS =====
 function updateStartBtn() {

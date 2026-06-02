@@ -5,14 +5,54 @@
 ## 주요 기능
 
 - **플래시카드 학습** — 카테고리/난이도별 구문 학습, 카드 탭으로 뜻 보기
+- **SRS 간격 반복** — SM-2 알고리즘 (😵/🤔/🙂/😊 4단계 평가), 자동 복습 일정
 - **TTS (Web Speech API)** — 원어민 발음 재생, 재생 속도 조절 (0.4x, 0.7x, 1.0x)
 - **STT (음성인식)** — 발음 평가, 정답/오답 피드백, 언어별 정규화
 - **4지선다 퀴즈** — 자동 출제, 결과 화면, 점수 저장
 - **AI 구문 생성** — OpenRouter API 연동, 5단계 모델 자동 fallback
 - **진도 저장** — localStorage에 학습한 구문·퀴즈 기록·통계 저장
+- **스트릭 캘린더** — 최근 30일 학습 히트맵, 연속 학습일 추적
+- **주간 학습 차트** — 7일 막대 그래프, 총/평균 학습량
+- **다국어 UI** — 한국어/English/日本語 즉시 전환
+- **효과음** — 카드/퀴즈 상호작용음 (Web Audio API, 토글 가능)
 - **오프라인 동작** — Service Worker v4 스마트 캐싱, 네트워크 없이 사용 가능
 - **PWA 설치** — manifest.json + 아이콘으로 홈 화면에 앱처럼 추가
 - **데이터 편집** — data-gen.html에서 청크 단위 편집, AI로 새 구문 생성, 병합·배포
+
+## SRS (간격 반복 학습)
+
+`lingo_srs_v1` localStorage 키에 카드별 학습 이력 저장:
+
+```javascript
+{
+  "여권::I lost my passport.": {
+    "interval": 3,        // 현재 간격 (일)
+    "easeFactor": 2.5,    // 난이도 계수 (1.3~3.0)
+    "nextReview": "2026-06-05",  // 다음 복습일
+    "lastReview": "2026-06-02",
+    "reviewCount": 1
+  }
+}
+```
+
+**평가 → 간격 변화**:
+| 평가 | 다음 간격 |
+|---|---|
+| 😵 모르겠어요 (0) | 리셋 (1일) + easeFactor -0.2 |
+| 🤔 어려움 (1) | 1.2배 + easeFactor -0.15 |
+| 🙂 쉬움 (2) | easeFactor 배 + easeFactor -0.05 |
+| 😊 완벽 (3) | easeFactor 배 + easeFactor +0.1 |
+
+## 다국어 UI (i18n)
+
+`lingo_ui_lang` localStorage 키에 언어 저장 (`ko` / `en` / `ja`). 22개 UI 문자열 번역.
+
+## 효과음
+
+Web Audio API로 생성된 톤 (오디오 파일 없음):
+- 카드 뒤집기, SRS 평가 (4가지), 퀴즈 정답/오답, 세션 완료
+- 랜딩 상단 `🔊/🔇` 버튼으로 토글
+- `lingo_sfx` localStorage 키에 영구 저장
 
 ## 지원 콘텐츠
 
