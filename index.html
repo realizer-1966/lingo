@@ -845,19 +845,8 @@ const I18N = {
     if (streakLblEl) streakLblEl.textContent = this.t('streak1');
     const tapHintEl = document.getElementById('tapHint');
     if (tapHintEl) tapHintEl.textContent = this.t('tapToFlip');
-    // 5) 액션 버튼 텍스트 (id가 있는 경우)
-    const startBtn = document.getElementById('startBtn');
-    if (startBtn) {
-      const purp = document.querySelector('.purp-card.active');
-      const lvl = document.querySelector('.level-btn.active');
-      if (purp && lvl) {
-        const pKey = CAT_MAP[purp.getAttribute('data-p')];
-        const lKey = LVL_MAP[lvl.getAttribute('data-l')];
-        // 이름 변환 (이모지 제거한 버전)
-        const lName = this.t(pKey).replace(/^[🟢🟡🔴]\s*/, '');
-        startBtn.textContent = '🚀 ' + lName + ' ' + this.t('start').replace('🚀 ', '');
-      }
-    }
+    // 5) 시작 버튼 - updateStartBtn()이 현재 선택된 카테고리/레벨로 동적 생성
+    if (typeof updateStartBtn === 'function') updateStartBtn();
   }
 };
 I18N.init();
@@ -923,7 +912,17 @@ updateSFXBtn();
 function updateStartBtn() {
   const btn = document.getElementById('startBtn');
   if (!btn) return;
-  btn.textContent = '🚀 ' + (LVL_EMOJI[selectedLevel]||'') + ' ' + (LVL_NAME[selectedLevel]||'') + ' ' + (CAT_NAMES[selected]||'학습') + ' 학습 시작!';
+  // Use i18n keys for category and level names
+  const catKey = {etc:'cat_etc', travel:'cat_travel', golf:'cat_golf', shop:'cat_shop', restaurant:'cat_restaurant', direction:'cat_direction', hotel:'cat_hotel', airport:'cat_airport', emergency:'cat_emergency'}[selected] || 'cat_etc';
+  const lvlKey = {beginner:'lvlName_beginner', intermediate:'lvlName_intermediate', advanced:'lvlName_advanced'}[selectedLevel] || 'lvlName_beginner';
+  const catName = (I18N.t(catKey) || '').replace(/^[🟢🟡🔴]\s*/, '');
+  const lvlName = I18N.t(lvlKey);
+  // "🚀 {lvl} {category} 학습 시작!" / "🚀 {lvl} {category} Start!" / "🚀 {lvl} {category} 学習開始!"
+  // Use I18N-aware start text
+  const startText = I18N.t('start');
+  const emojiPrefix = startText.match(/^🚀/) ? '🚀' : '🚀';
+  const trimmedStart = startText.replace(/^🚀\s*/, '');
+  btn.textContent = emojiPrefix + ' ' + lvlName + ' ' + catName + ' ' + trimmedStart;
 }
 
 document.querySelectorAll('#levelSelect .level-btn').forEach(btn => {
