@@ -345,7 +345,6 @@ function saveOllamaModel(){ localStorage.setItem('lingo_ollama_model', document.
 
 async function generatePhrases(){
   const key = document.getElementById('apiKey').value.trim();
-  const model = document.getElementById('ollamaModel').value.trim() || 'nvidia/nemotron-3-super-120b-a12b:free';
   if(!key){ openModal('⚠️ API Key 필요', 'OpenRouter API Key를 입력해주세요.\n\n1. https://openrouter.ai/keys 접속\n2. 이메일로 회원가입 (무료)\n3. Create Key 클릭\n4. 키를 복사해서 여기에 붙여넣기'); return; }
   const cat = document.getElementById('genCat').value;
   const lvl = document.getElementById('genLvl').value;
@@ -353,44 +352,86 @@ async function generatePhrases(){
   let prompt = document.getElementById('genPrompt').value;
   prompt = prompt.replace(/{{category}}/g, cat).replace(/{{level}}/g, lvl).replace(/{{count}}/g, cnt);
 
+  // 모델 fallback 순서: 현재 모델 → 무료 모델 목록
+  const primaryModel = document.getElementById('ollamaModel').value.trim() || 'nvidia/nemotron-3-super-120b-a12b:free';
+  const fallbackModels = [
+    'nvidia/nemotron-3-super-120b-a12b:free',
+    'meta-llama/llama-3.3-70b-instruct:free',
+    'nvidia/nemotron-3-nano-30b-a3b:free',
+    'openai/gpt-oss-120b:free',
+    'z-ai/glm-4.5-air:free'
+  ];
+  // 중복 제거 (primary가 이미 fallback에 있을 수 있음)
+  const modelQueue = [primaryModel, ...fallbackModels.filter(m => m !== primaryModel)];
+
   const btn = document.getElementById('genBtn');
   const st = document.getElementById('genStatus');
-  btn.disabled = true; st.textContent = '⏳ 생성 중...';
+  btn.disabled = true; gen = null;
 
-  try{
-    const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': 'Bearer ' + key,
-        'Content-Type': 'application/json',
-        'HTTP-Referer': 'https://realizer-1966.github.io/lingo/',
-        'X-Title': 'Lingo Data Gen'
-      },
-      body: JSON.stringify({model: model, messages: [{role: 'user', content: prompt}], temperature: 0.7})
-    });
-    if(!res.ok){ 
-      const err = await res.text(); 
-      throw new Error('API 오류 ' + res.status + ': ' + err); 
+  let lastError = '';
+  for (let mi = 0; mi < modelQueue.length; mi++) {
+    const model = modelQueue[mi];
+    st.textContent = '⏳ [' + (mi+1) + '/' + modelQueue.length + '] ' + model.split('/').pop() + ' 생성 중...';
+
+    try {
+      const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + key,
+          'Content-Type': 'application/json',
+          'HTTP-Referer': 'https://realizer-1966.github.io/lingo/',
+          'X-Title': 'Lingo Data Gen'
+        },
+        body: JSON.stringify({model: model, messages: [{role: 'user', content: prompt}], temperature: 0.7})
+      });
+      if(!res.ok){
+        const err = await res.text();
+        lastError = '[' + model + '] ' + res.status + ': ' + err;
+        // 429/5xx면 다음 모델로, 그 외는 즉시 중단
+        if(res.status === 429 || res.status >= 500){
+          st.textContent = '⏭️ ' + model.split('/').pop() + ' rate-limited, 다음 모델 시도...';
+          await new Promise(r => setTimeout(r, 500));
+          continue;
+        }
+        throw new Error(lastError);
+      }
+      const data = await res.json();
+      const content = data.choices[0].message.content;
+      const m = content.match(/```json\s*([\s\S]*?)\s*```/) || content.match(/```\s*([\s\S]*?)\s*```/);
+      const js = m ? m[1] : content;
+      gen = JSON.parse(js);
+      if(!Array.isArray(gen)) throw new Error('응답이 배열이 아닙니다');
+
+      // 성공한 모델을 기본값으로 저장
+      document.getElementById('ollamaModel').value = model;
+      saveOllamaModel();
+
+      let html = '<div style="max-height:300px;overflow-y:auto">';
+      gen.forEach((p, i) => {
+        html += '<div style="padding:8px;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px"><b>' + (i+1) + '.</b> ' + (p.en || '') + ' | ' + (p.jp || '') + ' | ' + (p.ko || '') + ' | ' + (p.zh || '') + '</div>';
+      });
+      html += '</div>';
+      document.getElementById('genPreview').innerHTML = html;
+      document.getElementById('genResult').style.display = 'block';
+      st.textContent = '✅ ' + gen.length + '개 생성 완료 (' + model.split('/').pop() + ')';
+      btn.disabled = false;
+      return;
+    } catch(e) {
+      lastError = e.message;
+      // JSON 파싱 실패 등은 다음 모델 시도 안함
+      if(!String(e.message).includes('API 오류') || !String(e.message).match(/429|5\d\d/)){
+        // 그 외 에러는 즉시 중단
+        st.textContent = '❌ 실패: ' + e.message;
+        openModal('❌ 생성 실패', e.message);
+        btn.disabled = false;
+        return;
+      }
     }
-    const data = await res.json();
-    const content = data.choices[0].message.content;
-    const m = content.match(/```json\s*([\s\S]*?)\s*```/) || content.match(/```\s*([\s\S]*?)\s*```/);
-    const js = m ? m[1] : content;
-    gen = JSON.parse(js);
-    if(!Array.isArray(gen)) throw new Error('응답이 배열이 아닙니다');
-
-    let html = '<div style="max-height:300px;overflow-y:auto">';
-    gen.forEach((p, i) => {
-      html += '<div style="padding:8px;border-bottom:1px solid rgba(255,255,255,.05);font-size:13px"><b>' + (i+1) + '.</b> ' + (p.en || '') + ' | ' + (p.jp || '') + ' | ' + (p.ko || '') + ' | ' + (p.zh || '') + '</div>';
-    });
-    html += '</div>';
-    document.getElementById('genPreview').innerHTML = html;
-    document.getElementById('genResult').style.display = 'block';
-    st.textContent = '✅ ' + gen.length + '개 생성 완료';
-  }catch(e){
-    st.textContent = '❌ 실패: ' + e.message;
-    openModal('❌ 생성 실패', e.message);
-  }finally{ btn.disabled = false; }
+  }
+  // 모든 모델 실패
+  st.textContent = '❌ 모든 모델 실패';
+  openModal('❌ 모든 모델 실패', '5개 모델 모두 rate limit 또는 오류입니다.\n\n' + lastError + '\n\n잠시 후 다시 시도하거나, https://openrouter.ai/keys 에서 유료 키를 사용하세요.');
+  btn.disabled = false;
 }
 
 function acceptGenerated(){
