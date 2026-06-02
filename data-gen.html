@@ -101,17 +101,15 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
 <div class="panel" id="p-generate">
   <div class="section">
     <div class="section-title">🤖 AI 구문 생성</div>
-    <label>Ollama Cloud Base URL</label>
-    <input type="text" id="ollamaUrl" placeholder="https://ollama.com 또는 http://localhost:11434" value="https://ollama.com" onchange="saveOllamaUrl()">
-
-    <label>Ollama Cloud API Key</label>
-    <input type="password" id="apiKey" placeholder="ollama-..." onchange="saveApiKey()">
-    <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:-8px;margin-bottom:12px">
-      키는 localStorage에만 저장됩니다. <a href="https://ollama.com" target="_blank" style="color:#FF6F61">Ollama Cloud ↗</a>
-    </div>
+    <label>Base URL (프록시)</label>
+    <input type="text" id="ollamaUrl" value="http://127.0.0.1:3000" readonly style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.5)">
 
     <label>모델명</label>
-    <input type="text" id="ollamaModel" placeholder="llama3.1, gemma4:31b-cloud, mistral..." value="gemma4:31b-cloud" onchange="saveOllamaModel()">
+    <input type="text" id="ollamaModel" placeholder="llama3.1, gemma4:31b-cloud..." value="gemma4:31b-cloud" onchange="saveOllamaModel()">
+
+    <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:12px">
+      ⚠️ 프록시 서버 필요: <code style="color:#FF6F61">export OLLAMA_API_KEY=키값 && node proxy-server.js</code>
+    </div>
 
     <div class="grid-3">
       <div>
@@ -327,9 +325,7 @@ function saveOllamaModel(){ localStorage.setItem('lingo_ollama_model', document.
 
 async function generatePhrases(){
   const baseUrl = document.getElementById('ollamaUrl').value.trim().replace(/\/$/, '');
-  const key = document.getElementById('apiKey').value.trim();
-  const model = document.getElementById('ollamaModel').value.trim() || 'llama3.1';
-  if(!key){ openModal('⚠️ API Key 필요', 'Ollama Cloud API Key를 입력해주세요.'); return; }
+  const model = document.getElementById('ollamaModel').value.trim() || 'gemma4:31b-cloud';
   const cat = document.getElementById('genCat').value;
   const lvl = document.getElementById('genLvl').value;
   const cnt = parseInt(document.getElementById('genCount').value) || 10;
@@ -341,9 +337,10 @@ async function generatePhrases(){
   btn.disabled = true; st.textContent = '⏳ 생성 중...';
 
   try{
-    const res = await fetch(baseUrl + '/v1/chat/completions', {
+    // 프록시 서버를 통해 Ollama API 호출
+    const res = await fetch(baseUrl + '/api/generate', {
       method: 'POST',
-      headers: {'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json'},
+      headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({model: model, messages: [{role: 'user', content: prompt}], temperature: 0.7})
     });
     if(!res.ok){ const err = await res.text(); throw new Error('API 오류: ' + err); }
