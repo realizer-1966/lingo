@@ -1035,9 +1035,38 @@ function speak(rate) {
   if (speechSynthesis.speaking) {
     speechSynthesis.cancel();
   }
+  // K1: 모바일 환경에서 음성 목록이 비동기 로드될 수 있으므로 대기
+  let voices = speechSynthesis.getVoices();
+  if (voices.length === 0) {
+    // 음성 목록이 아직 로드 안 됨 (특히 모바일 Safari/Chrome)
+    speechSynthesis.addEventListener('voiceschanged', function once() {
+      speechSynthesis.removeEventListener('voiceschanged', once);
+      voices = speechSynthesis.getVoices();
+      _speakUtterance(c, safeRate, voices);
+    });
+    // 안전 타임아웃: 500ms 후에도 음성 없으면 그냥 진행
+    setTimeout(() => {
+      if (speechSynthesis.speaking) return;
+      _speakUtterance(c, safeRate, speechSynthesis.getVoices());
+    }, 500);
+    return;
+  }
+  _speakUtterance(c, safeRate, voices);
+}
+
+function _speakUtterance(c, safeRate, voices) {
   const u = new SpeechSynthesisUtterance(getTargetText(c));
   u.lang = TTS_LANG[state.lang] || 'en-US';
   u.rate = safeRate;
+  // 모바일 환경에서 해당 언어의 음성 선택 (가능한 경우)
+  if (voices && voices.length > 0) {
+    const targetLang = TTS_LANG[state.lang] || 'en-US';
+    const matchVoice = voices.find(v => v.lang === targetLang) ||
+                       voices.find(v => v.lang.startsWith(targetLang.split('-')[0]));
+    if (matchVoice) u.voice = matchVoice;
+  }
+  // iOS Safari 등 모바일은 사용자가 명시적으로 페이지 상호작용한 후에만 TTS 가능
+  // 이미 speak()는 onclick 등 사용자 인터랙션에서 호출되므로 OK
   // 에러 핸들링
   u.onerror = (e) => {
     if (e.error !== 'canceled') {

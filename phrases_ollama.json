@@ -2674,10 +2674,10 @@
         "zh": "我对厨房有个特殊要求，麻烦转达一下。"
       },
       {
-        "en": "The texture of this dish is very unique and intriguing.",
-        "jp": "この料理は食感がとても独特で興味深いです。",
-        "ko": "이 요리는 텍스처가 아주 독특해서 흥미로워요.",
-        "zh": "这道菜的口感非常独特，很有意思。"
+        "en": "May I see the wine list?",
+        "jp": "ワインリストを見てもいいですか？",
+        "ko": "와인 리스트를 볼 수 있을까요?",
+        "zh": "可以看一下酒单吗？"
       },
       {
         "en": "I believe there's an item on the bill that I didn't order.",
@@ -2686,28 +2686,28 @@
         "zh": "账单里好像包含了我没点的一项。"
       },
       {
-        "en": "The atmosphere is so cozy; it's the perfect place for an important conversation.",
-        "jp": "雰囲気が心地よくて、重要な話し合いをするのに最適な場所ですね。",
-        "ko": "분위기가 아늑해서 중요한 대화를 나누기에 최적의 장소네요.",
-        "zh": "氛围很温馨，非常适合进行重要的谈话。"
+        "en": "Is there a vegan option?",
+        "jp": "ビーガン料理はありますか？",
+        "ko": "비건 옵션이 있나요?",
+        "zh": "有纯素食的选择吗？"
       },
       {
-        "en": "The wine has a balanced body, pairing beautifully with the meat dish.",
-        "jp": "ワインのボディ感が適度で、肉料理との調和が良いです。",
-        "ko": "와인의 바디감이 적당해서 육류 요리와 조화가 좋습니다.",
-        "zh": "这款酒的酒体适中，与肉类料理非常协调。"
+        "en": "I'm allergic to shellfish.",
+        "jp": "貝類にアレルギーがあります。",
+        "ko": "조개류 알레르기가 있어요.",
+        "zh": "我对贝类过敏。"
       },
       {
-        "en": "The service is so attentive that I feel truly pampered.",
-        "jp": "サービスがとても細やかで、もてなされていると感じます。",
-        "ko": "서비스가 매우 세심해서 대접받는 기분이 듭니다.",
-        "zh": "服务非常周到，让人感觉受到了极大的款待。"
+        "en": "Could you make it less spicy?",
+        "jp": "辛さを控えめにできますか？",
+        "ko": "덜 맵게 해주실 수 있나요?",
+        "zh": "能做得不那么辣吗？"
       },
       {
-        "en": "The dessert provided a perfect conclusion to the meal.",
-        "jp": "デザートまで完璧な締めくくりでした。",
-        "ko": "디저트까지 완벽한 마무리였습니다.",
-        "zh": "直到甜点，整个收尾都非常完美。"
+        "en": "What's today's special?",
+        "jp": "今日のおすすめは何ですか？",
+        "ko": "오늘의 특별 메뉴는 무엇인가요?",
+        "zh": "今天的特色菜是什么？"
       },
       {
         "en": "The garnish complements the main ingredient perfectly.",
@@ -3114,16 +3114,16 @@
         "zh": "整体氛围很温馨，逛起来很舒服。"
       },
       {
-        "en": "The biggest strength of this product is its exceptional durability.",
-        "jp": "この商品の最大の強みは、耐久性に優れている点です。",
-        "ko": "이 제품의 최대 강점은 내구성이 뛰어나다는 점입니다.",
-        "zh": "这款产品最大的优势在于耐用性极强。"
+        "en": "Would you recommend this brand?",
+        "jp": "このブランドはおすすめですか？",
+        "ko": "이 브랜드 추천하시나요?",
+        "zh": "你推荐这个品牌吗？"
       },
       {
-        "en": "The detailed finishing is very meticulous.",
-        "jp": "細部の仕上げが非常に丁寧ですね。",
-        "ko": "디테일한 마감 처리가 아주 꼼꼼하네요.",
-        "zh": "细节处理得非常精致。"
+        "en": "I prefer eco-friendly products.",
+        "jp": "環境に優しい製品が好きです。",
+        "ko": "친환경 제품을 선호합니다.",
+        "zh": "我更喜欢环保产品。"
       },
       {
         "en": "Many new arrivals reflecting recent trends have come in.",
@@ -3132,16 +3132,16 @@
         "zh": "进了很多符合近期流行趋势的新品。"
       },
       {
-        "en": "The sizing is ambiguous, so I'd like to try it on before deciding.",
-        "jp": "サイズ感が微妙なので、試着して決めたいです。",
-        "ko": "사이즈가 애매해서 직접 입어보고 결정하고 싶어요.",
-        "zh": "尺寸有点尴尬，我想试穿后再决定。"
+        "en": "Can I reserve this item?",
+        "jp": "この商品を予約できますか？",
+        "ko": "이 물건 예약할 수 있나요?",
+        "zh": "我可以预订这个商品吗？"
       },
       {
-        "en": "The packaging is thorough, so I don't have to worry about damage.",
-        "jp": "梱包が丁寧なので、破損の心配はなさそうです。",
-        "ko": "포장 상태가 꼼꼼해서 파손 걱정은 안 해도 되겠어요.",
-        "zh": "包装很严实，不用担心损坏。"
+        "en": "I'm looking for a unique souvenir.",
+        "jp": "ユニークな記念品を探しています。",
+        "ko": "독특한 기념품을 찾고 있습니다.",
+        "zh": "我在找独特的纪念品。"
       },
       {
         "en": "I love this brand because its minimalist aesthetic really stands out.",
@@ -3150,10 +3150,10 @@
         "zh": "我喜欢这个品牌，极简主义风格很突出。"
       },
       {
-        "en": "The fabric is so thin that it might be a bit sheer.",
-        "jp": "生地が薄すぎるので、少し透けるかもしれません。",
-        "ko": "원단이 너무 얇아서 비침이 좀 있을 것 같아요.",
-        "zh": "面料太薄了，可能会有点透。"
+        "en": "My budget is around fifty dollars.",
+        "jp": "予算は50ドルくらいです。",
+        "ko": "예산은 50달러 정도입니다.",
+        "zh": "我的预算是50美元左右。"
       },
       {
         "en": "This is a perfect item to use as a statement piece.",
@@ -3578,16 +3578,16 @@
         "zh": "推球路线比想象中要曲得多。"
       },
       {
-        "en": "The swing path is too steep, resulting in a high trajectory.",
-        "jp": "スイング軌道が急すぎるため、弾道が高くなっています。",
-        "ko": "스윙 궤도가 너무 가팔라서 탄도가 높아요.",
-        "zh": "挥杆轨迹太陡了，导致球道很高。"
+        "en": "May I join your group?",
+        "jp": "一緒に回ってもいいですか？",
+        "ko": "함께 라운딩해도 될까요?",
+        "zh": "我可以加入你们这一组吗？"
       },
       {
-        "en": "The turf condition is poor, making the lie unstable.",
-        "jp": "芝の状態が悪く、ライが不安定です。",
-        "ko": "잔디 상태가 좋지 않아 라이가 불안정합니다.",
-        "zh": "草况不好，球位很不稳定。"
+        "en": "I'll keep the score.",
+        "jp": "スコアを記録します。",
+        "ko": "점수를 기록할게요.",
+        "zh": "我来记分。"
       },
       {
         "en": "It's crucial to relax and release the club smoothly.",
@@ -3614,16 +3614,16 @@
         "zh": "考虑到风向，请打一个低平球。"
       },
       {
-        "en": "The weight transfer wasn't executed properly.",
-        "jp": "体重移動が適切に行われていませんでした。",
-        "ko": "체중 이동이 제대로 이루어지지 않았어요.",
-        "zh": "重心转移没有到位。"
+        "en": "How much does a round cost?",
+        "jp": "1ラウンドの料金はいくらですか？",
+        "ko": "1라운드 비용은 얼마인가요?",
+        "zh": "打一轮要多少钱？"
       },
       {
-        "en": "The placement of hazards on this course is very challenging.",
-        "jp": "このコースはハザードの配置が非常に厄介です。",
-        "ko": "이 코스는 해저드 배치가 매우 까다롭습니다.",
-        "zh": "这个球场的障碍物布置非常刁钻。"
+        "en": "Can I rent clubs here?",
+        "jp": "クラブをレンタルできますか？",
+        "ko": "클럽을 빌릴 수 있나요?",
+        "zh": "这里可以租球杆吗？"
       },
       {
         "en": "That was a perfect strike; the feel was incredible.",
@@ -3644,10 +3644,10 @@
         "zh": "上杆顶点需要稍微停顿一下。"
       },
       {
-        "en": "The green speed is fast, making distance control difficult.",
-        "jp": "グリーンスピードが速く、距離感が掴みにくいですね。",
-        "ko": "그린 스피드가 빨라서 거리 조절이 쉽지 않네요.",
-        "zh": "果岭速度很快，距离控制很难。"
+        "en": "Where can I buy golf balls?",
+        "jp": "ゴルフボールはどこで買えますか？",
+        "ko": "골프공은 어디서 살 수 있나요?",
+        "zh": "在哪里可以买到高尔夫球？"
       },
       {
         "en": "Develop the habit of holding your finish position until the end.",
@@ -4084,16 +4084,16 @@
         "zh": "这座城市的夜景真是绝美。"
       },
       {
-        "en": "I feel a mixture of excitement and apprehension about being in an unfamiliar place.",
-        "jp": "見知らぬ土地への期待と不安が入り混じった気分です。",
-        "ko": "낯선 곳에서의 설렘과 두려움이 공존하는 기분이에요.",
-        "zh": "身处陌生之地，心中既兴奋又忐忑。"
+        "en": "Could you recommend a local restaurant?",
+        "jp": "地元のレストランを教えていただけますか？",
+        "ko": "현지 맛집을 추천해 주실 수 있나요?",
+        "zh": "您能推荐一家当地餐厅吗？"
       },
       {
-        "en": "I used a travel card to save on currency exchange fees.",
-        "jp": "両替手数料を節約するために、トラベルカードを利用しました。",
-        "ko": "환전 수수료를 아끼기 위해 트래블 카드를 이용했어요.",
-        "zh": "为了节省换汇手续费，我使用了旅行卡。"
+        "en": "What's the best way to get around?",
+        "jp": "移動の最適な方法は何ですか？",
+        "ko": "가장 좋은 이동 방법은 무엇인가요?",
+        "zh": "最好的出行方式是什么？"
       },
       {
         "en": "The market tour, which offered a glimpse into the lives of the locals, was impressive.",
@@ -4102,10 +4102,10 @@
         "zh": "能窥见当地人生活轨迹的市场之旅令人印象深刻。"
       },
       {
-        "en": "I was disappointed because the service quality of the hotel I booked was below expectations.",
-        "jp": "予約したホテルのサービスの質が期待以下で、がっかりしました。",
-        "ko": "예약한 호텔의 서비스 품질이 기대 이하라서 실망했어요.",
-        "zh": "预订的酒店服务质量低于预期，挺失望的。"
+        "en": "Is this area safe at night?",
+        "jp": "この辺りは夜でも安全ですか？",
+        "ko": "이 지역은 밤에도 안전한가요?",
+        "zh": "这个地区晚上安全吗？"
       },
       {
         "en": "You should familiarize yourself with the procedures in case your passport is lost.",
