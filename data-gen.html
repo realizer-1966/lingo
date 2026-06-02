@@ -101,14 +101,19 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
 <div class="panel" id="p-generate">
   <div class="section">
     <div class="section-title">🤖 AI 구문 생성</div>
-    <label>Base URL (프록시)</label>
-    <input type="text" id="ollamaUrl" value="http://127.0.0.1:3333" readonly style="background:rgba(255,255,255,.05);color:rgba(255,255,255,.5)">
+    <label>OpenRouter API Key</label>
+    <input type="password" id="apiKey" placeholder="sk-or-v1-..." onchange="saveApiKey()">
+    <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:-8px;margin-bottom:12px">
+      키는 브라우저에만 저장됩니다. 
+      <a href="https://openrouter.ai/keys" target="_blank" style="color:#FF6F61">무료 발급 ↗</a>
+    </div>
 
     <label>모델명</label>
-    <input type="text" id="ollamaModel" placeholder="llama3.1, gemma4:31b-cloud..." value="gemma4:31b-cloud" onchange="saveOllamaModel()">
+    <input type="text" id="ollamaModel" placeholder="무료: google/gemma-2-9b-it:free" value="google/gemma-2-9b-it:free" onchange="saveOllamaModel()">
 
     <div style="font-size:11px;color:rgba(255,255,255,.4);margin-bottom:12px">
-      ⚠️ 프록시 서버 필요: <code style="color:#FF6F61">export OLLAMA_API_KEY=키값 && node proxy-server.js</code>
+      추천 무료 모델: <code style="color:#FF6F61">google/gemma-2-9b-it:free</code>, 
+      <code style="color:#FF6F61">meta-llama/llama-3.1-8b-instruct:free</code>
     </div>
 
     <div class="grid-3">
@@ -324,8 +329,9 @@ function saveOllamaUrl(){ localStorage.setItem('lingo_ollama_url', document.getE
 function saveOllamaModel(){ localStorage.setItem('lingo_ollama_model', document.getElementById('ollamaModel').value); }
 
 async function generatePhrases(){
-  const baseUrl = document.getElementById('ollamaUrl').value.trim().replace(/\/$/, '');
-  const model = document.getElementById('ollamaModel').value.trim() || 'gemma4:31b-cloud';
+  const key = document.getElementById('apiKey').value.trim();
+  const model = document.getElementById('ollamaModel').value.trim() || 'google/gemma-2-9b-it:free';
+  if(!key){ openModal('⚠️ API Key 필요', 'OpenRouter API Key를 입력해주세요.\n\n1. https://openrouter.ai/keys 접속\n2. 이메일로 회원가입 (무료)\n3. Create Key 클릭\n4. 키를 복사해서 여기에 붙여넣기'); return; }
   const cat = document.getElementById('genCat').value;
   const lvl = document.getElementById('genLvl').value;
   const cnt = parseInt(document.getElementById('genCount').value) || 10;
@@ -337,13 +343,20 @@ async function generatePhrases(){
   btn.disabled = true; st.textContent = '⏳ 생성 중...';
 
   try{
-    // 프록시 서버를 통해 Ollama API 호출
-    const res = await fetch(baseUrl + '/api/generate', {
+    const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
-      headers: {'Content-Type': 'application/json'},
+      headers: {
+        'Authorization': 'Bearer ' + key,
+        'Content-Type': 'application/json',
+        'HTTP-Referer': 'https://realizer-1966.github.io/lingo/',
+        'X-Title': 'Lingo Data Gen'
+      },
       body: JSON.stringify({model: model, messages: [{role: 'user', content: prompt}], temperature: 0.7})
     });
-    if(!res.ok){ const err = await res.text(); throw new Error('API 오류: ' + err); }
+    if(!res.ok){ 
+      const err = await res.text(); 
+      throw new Error('API 오류 ' + res.status + ': ' + err); 
+    }
     const data = await res.json();
     const content = data.choices[0].message.content;
     const m = content.match(/```json\s*([\s\S]*?)\s*```/) || content.match(/```\s*([\s\S]*?)\s*```/);
