@@ -953,20 +953,11 @@ function updateSFXBtn() {
 updateSFXBtn();
 
 // ===== LANDING EVENTS =====
+// 단순화: 시작 버튼은 항상 "🚀 START" 고정 (다국어 무관)
 function updateStartBtn() {
   const btn = document.getElementById('startBtn');
   if (!btn) return;
-  // Use i18n keys for category and level names
-  const catKey = {etc:'cat_etc', travel:'cat_travel', golf:'cat_golf', shop:'cat_shop', restaurant:'cat_restaurant', direction:'cat_direction', hotel:'cat_hotel', airport:'cat_airport', emergency:'cat_emergency'}[selected] || 'cat_etc';
-  const lvlKey = {beginner:'lvlName_beginner', intermediate:'lvlName_intermediate', advanced:'lvlName_advanced'}[selectedLevel] || 'lvlName_beginner';
-  const catName = (I18N.t(catKey) || '').replace(/^[🟢🟡🔴]\s*/, '');
-  const lvlName = I18N.t(lvlKey);
-  // "🚀 {lvl} {category} 학습 시작!" / "🚀 {lvl} {category} Start!" / "🚀 {lvl} {category} 学習開始!"
-  // Use I18N-aware start text
-  const startText = I18N.t('start');
-  const emojiPrefix = startText.match(/^🚀/) ? '🚀' : '🚀';
-  const trimmedStart = startText.replace(/^🚀\s*/, '');
-  btn.textContent = emojiPrefix + ' ' + lvlName + ' ' + catName + ' ' + trimmedStart;
+  btn.textContent = '🚀 START';
 }
 
 document.querySelectorAll('#levelSelect .level-btn').forEach(btn => {
