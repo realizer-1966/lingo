@@ -165,7 +165,7 @@ workspace/
 ├── icons/                  ← PWA 아이콘 (192, 512)
 ├── index.html              ← 메인 학습 앱 (1561줄, 72KB)
 ├── data-gen.html           ← 구문 생성/관리 도구 (546줄, 25KB)
-├── sw.js                   ← Service Worker v4 (3-tier 캐시)
+├── sw.js                   ← Service Worker v5 (3-tier 캐시)
 ├── manifest.json           ← PWA 매니페스트
 ├── phrases_ollama.json     ← 학습 데이터 (675개 구문)
 ├── README.md               ← 이 문서
@@ -181,10 +181,14 @@ workspace/
 | **버튼 단순화** | 6/3 | 6개 → 3개 버튼 (발음/STT/다음) |
 | **아이콘 재설계** | 6/3 | 블루/퍼플 그라데이션 (46% 감소) |
 | **시작 버튼 고정** | 6/3 | "🚀 START" HTML 하드코딩 (깜빡림 0) |
+| **TTS 속도 0.9x** | 6/3 | '🗣️ 발음 듣기' TTS 속도 0.7x → 0.9x |
 
 ## GitHub 커밋 히스토리
 
 ```
+fcc0a53 chore: update TTS speed from 0.7 to 0.9
+507a053 fix: STT auto-next 확인 버튼 클릭 시 nextCard() 실행
+85ff76e docs: update README with latest features (K4, STT auto-next, simplified buttons)
 2ee45bc refactor: remove '🐢 천천히' button
 6b3bf14 feat: STT auto-next + simplified button layout
 a3a8393 refactor: update manifest & sw.js for PWA installability
@@ -195,7 +199,7 @@ a3a8393 refactor: update manifest & sw.js for PWA installability
 ...
 ```
 
-總: **41개 커밋**, **8,021줄 삽입**, **1,008줄 삭제**
+總: **50개 커밋**, **8,022줄 삽입**, **1,009줄 삭제**
 
 ## 라이선스
 
