@@ -1,5 +1,5 @@
 // PWA Service Worker - Offline First with Smart Strategies
-const CACHE_VERSION = 'v4';
+const CACHE_VERSION = 'v5';
 const STATIC_CACHE = `lingo-static-${CACHE_VERSION}`;
 const DATA_CACHE = `lingo-data-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `lingo-runtime-${CACHE_VERSION}`;
@@ -11,6 +11,11 @@ const STATIC_URLS = [
   './manifest.json',
   './icons/icon-192.png',
   './icons/icon-512.png',
+  './icons/icon-1024.png',
+  './icons/apple-touch-icon.png',
+  './icons/favicon-32.png',
+  './icons/favicon-16.png',
+  './icons/favicon.ico',
 ];
 
 // Data files use network-first (always try fresh, fallback to cache)
