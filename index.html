@@ -377,8 +377,9 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
 <script>
 // ===== GLOBALS =====
 let PHRASES = null;
-let selected = 'etc';
-let selectedLevel = 'beginner';
+// K4: 선택 상태를 localStorage에 영구 저장 (새로고침 후에도 유지)
+let selected = localStorage.getItem('lingo_selected_purpose') || 'etc';
+let selectedLevel = localStorage.getItem('lingo_selected_level') || 'beginner';
 const API_SERVER = '';  // Static PWA - no backend needed
 
 const CAT_NAMES = {etc:'기타',travel:'여행',golf:'골프',shop:'쇼핑',restaurant:'레스토랑',direction:'길찾기',hotel:'호텔',airport:'공항',emergency:'응급상황'};
@@ -879,6 +880,20 @@ const I18N = {
 I18N.init();
 // Ensure start button is rendered in current language on page load
 if (typeof updateStartBtn === 'function') updateStartBtn();
+// K4: 저장된 선택값을 UI에 반영 (active 클래스)
+function applySelectedUI() {
+  // 레벨 버튼
+  document.querySelectorAll('#levelSelect .level-btn').forEach(b => {
+    if (b.dataset.l === selectedLevel) b.classList.add('active');
+    else b.classList.remove('active');
+  });
+  // 카테고리 카드
+  document.querySelectorAll('#purposes .purp-card').forEach(c => {
+    if (c.dataset.p === selected) c.classList.add('active');
+    else c.classList.remove('active');
+  });
+}
+applySelectedUI();
 
 // ===== SOUND (G3: Sound Effects) =====
 const SFX = {
@@ -959,6 +974,7 @@ document.querySelectorAll('#levelSelect .level-btn').forEach(btn => {
     document.querySelectorAll('#levelSelect .level-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     selectedLevel = btn.dataset.l;
+    localStorage.setItem('lingo_selected_level', selectedLevel);
     updateStartBtn();
   });
 });
@@ -969,6 +985,7 @@ document.querySelectorAll('#purposes .purp-card').forEach(card => {
     document.querySelectorAll('#purposes .purp-card').forEach(c => c.classList.remove('active'));
     card.classList.add('active');
     selected = card.dataset.p;
+    localStorage.setItem('lingo_selected_purpose', selected);
     updateStartBtn();
   });
 });
