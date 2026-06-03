@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B4FF"/>
+      <stop offset="100%" stop-color="#2962FF"/>
+    </linearGradient>
+    <linearGradient id="subGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#6B21A8"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main speech bubble (blue) -->
+  <path d="M512 320 C250 320 120 450 120 600 C120 730 250 850 380 850 L380 840 L360 820 L200 820 C120 820 60 760 60 680 C60 520 150 350 512 350 Z" fill="url(#mainGrad)"/>
+  
+  <!-- L letter -->
+  <text x="190" y="620" font-family="Arial, sans-serif" font-size="200" font-weight="700" fill="#FFFFFF" text-anchor="middle">L</text>
+  
+  <!-- Sub speech bubble (purple) -->
+  <path d="M760 380 C600 380 500 450 500 600 C500 720 600 820 700 820 L700 810 L680 790 L550 790 C500 790 470 760 470 720 C470 630 540 520 760 520 Z" fill="url(#subGrad)"/>
+  
+  <!-- Three dots -->
+  <circle cx="550" cy="680" r="15" fill="#FFFFFF"/>
+  <circle cx="600" cy="680" r="15" fill="#FFFFFF"/>
+  <circle cx="650" cy="680" r="15" fill="#FFFFFF"/>
+  
+  <!-- Soft drop shadow -->
+  <path d="M512 320 C250 320 120 450 120 600 C120 730 250 850 380 850 L380 840 L360 820 L200 820 C120 820 60 760 60 680 C60 520 150 350 512 350 Z" fill="#000000" fill-opacity="0.1" transform="translate(0,40) scale(1.02,1.02)"/>
+</svg>
