@@ -590,11 +590,11 @@ function showModal(emoji, title, body, onConfirm) {
   document.getElementById('modalEmoji').textContent = emoji;
   document.getElementById('modalTitle').textContent = title;
   let content = body;
-  if (typeof onConfirm === 'function') {
+  if (onConfirm === true || typeof onConfirm === 'function') {
     content += '<div style="margin-top:20px"><button class="btn" style="background:#FF6F61;color:white;border:none;padding:10px 20px;border-radius:8px;cursor:pointer" onclick="nextCard() && closeModal()">✅ 확인</button></div>';
   }
   bodyDiv.innerHTML = content;
-  overlay.onclick = onConfirm ? null : closeModal;
+  overlay.onclick = onConfirm === true ? null : closeModal;
   overlay.classList.add('show');
 }
 function closeModal() {
