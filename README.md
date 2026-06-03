@@ -10,7 +10,7 @@
 ### 학습
 - **플래시카드 학습** — 카테고리/난이도별 구문 학습, 카드 탭으로 뜻 보기
 - **SRS 간격 반복** — SM-2 알고리즘 (😵/🤔/🙂/😊 4단계 평가), 자동 복습 일정
-- **TTS (Web Speech API)** — 원어민 발음 재생, 재생 속도 조절 (0.4x, 0.7x, 1.0x)
+- **TTS (Web Speech API)** — 원어민 발음 재생, 재생 속도 조절
 - **STT (음성인식)** — 발음 평가, 정답/오답 피드백, 언어별 정규화
 - **4지선다 퀴즈** — 자동 출제, 결과 화면, 점수 저장
 
@@ -90,20 +90,22 @@ Web Audio API로 생성된 톤 (오디오 파일 없음):
 - 오프라인 폴백 → `./index.html`
 - 메시지 채널 (`SKIP_WAITING`, `CLEAR_CACHE`)
 
-## localStorage 키
+## localStorage 키 (13개)
 
 | 키 | 용도 |
 |---|---|
-| `lingo_learned_v2` | 학습한 구문 키 배열 |
-| `lingo_history_v2` | 퀴즈 점수 이력 |
-| `lingo_stats_v2` | 누적 통계 (총 학습, 최대 streak, 퀴즈 수) |
-| `lingo_activity_v1` | 일별 학습 횟수 (60일) |
-| `lingo_srs_v1` | SRS 카드별 학습 이력 |
-| `lingo_phrases_v1` | 병합된 phrases (Data Gen에서 저장) |
-| `lingo_ui_lang` | UI 언어 (ko/en/ja) |
+| `lingo_learned_v2` | 학습한 구문 키 |
+| `lingo_history_v2` | 퀴즈 이력 |
+| `lingo_stats_v2` | 누적 통계 |
+| `lingo_activity_v1` | 일별 학습 (60일) |
+| `lingo_srs_v1` | SRS 데이터 |
+| `lingo_phrases_v1` | 병합된 phrases |
+| `lingo_ui_lang` | UI 언어 |
 | `lingo_sfx` | 효과음 on/off |
-| `lingo_ollama_url` | OpenRouter base URL |
+| `lingo_ollama_url` | OpenRouter URL |
 | `lingo_ollama_model` | AI 모델명 |
+| `lingo_selected_purpose` | 선택된 카테고리 |
+| `lingo_selected_level` | 선택된 레벨 |
 | `$OLLAMA_API_KEY` | OpenRouter API 키 |
 
 ## 지원 콘텐츠
@@ -161,14 +163,39 @@ python3 -m http.server 8000
 ```
 workspace/
 ├── icons/                  ← PWA 아이콘 (192, 512)
-├── index.html              ← 메인 학습 앱 (1520줄, 65KB)
-├── data-gen.html           ← 구문 생성/관리 도구 (547줄, 25KB)
+├── index.html              ← 메인 학습 앱 (1561줄, 72KB)
+├── data-gen.html           ← 구문 생성/관리 도구 (546줄, 25KB)
+├── sw.js                   ← Service Worker v4 (3-tier 캐시)
 ├── manifest.json           ← PWA 매니페스트
 ├── phrases_ollama.json     ← 학습 데이터 (675개 구문)
-├── sw.js                   ← Service Worker v4 (3-tier 캐시)
 ├── README.md               ← 이 문서
 └── TESTING.md              ← 테스트 시나리오 매뉴얼
 ```
+
+## 최신 기능 (2026-06-03 기준)
+
+| 기능 | 날짜 | 설명 |
+|---|---|---|
+| **K4** | 6/3 | 선택 상태 영구 저장 (`lingo_selected_*`) |
+| **STT auto-next** | 6/3 | 내 발음 체크 후 "✅ 확인" 버튼 → 자동 다음 |
+| **버튼 단순화** | 6/3 | 6개 → 3개 버튼 (발음/STT/다음) |
+| **아이콘 재설계** | 6/3 | 블루/퍼플 그라데이션 (46% 감소) |
+| **시작 버튼 고정** | 6/3 | "🚀 START" HTML 하드코딩 (깜빡림 0) |
+
+## GitHub 커밋 히스토리
+
+```
+2ee45bc refactor: remove '🐢 천천히' button
+6b3bf14 feat: STT auto-next + simplified button layout
+a3a8393 refactor: update manifest & sw.js for PWA installability
+178af09 perf: Lingo PWA icon redesign
+3bd9436 fix: hardcode '🚀 START' in HTML for zero-flicker load
+3a4f86c simplify: start button always shows '🚀 START' (language-agnostic)
+0188275 fix: K4 persist category/level selection across refresh
+...
+```
+
+總: **41개 커밋**, **8,021줄 삽입**, **1,008줄 삭제**
 
 ## 라이선스
 
