@@ -591,7 +591,7 @@ function showModal(emoji, title, body, onConfirm) {
   document.getElementById('modalTitle').textContent = title;
   let content = body;
   if (onConfirm === true || typeof onConfirm === 'function') {
-    content += '<div style="margin-top:20px"><button class="btn" style="background:#FF6F61;color:white;border:none;padding:10px 20px;border-radius:8px;cursor:pointer" onclick="nextCard() && closeModal()">✅ 확인</button></div>';
+    content += '<div style="margin-top:20px"><button class="btn" style="background:#FF6F61;color:white;border:none;padding:10px 20px;border-radius:8px;cursor:pointer" onclick="closeModal(); nextCard()">✅ 확인</button></div>';
   }
   bodyDiv.innerHTML = content;
   overlay.onclick = onConfirm === true ? null : closeModal;
