@@ -254,15 +254,7 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
     <button class="act-btn" onclick="speak(0.7)" style="border-color:#6B5B95;color:#6B5B95">🗣️ 발음 듣기</button>
     <button class="act-btn" onclick="speak(0.4)" style="border-color:#9C8BC0;color:#9C8BC0">🐢 천천히</button>
     <button class="act-btn" onclick="testSTT()" style="border-color:#FF6F61;color:#FF6F61">🎙️ 내 발음 체크</button>
-  </div>
-  <div class="actions slide-in">
-    <button class="act-btn hard" onclick="rateSRS(0)" style="border-color:#FF5252;color:#FF5252">😵 모르겠어요</button>
-    <button class="act-btn hard" onclick="rateSRS(1)">🤔 어려움</button>
-    <button class="act-btn" onclick="rateSRS(2)" style="border-color:#9C8BC0;color:#9C8BC0">🙂 쉬움</button>
-  </div>
-  <div class="actions slide-in" style="margin-top:8px">
-    <button class="act-btn easy" onclick="rateSRS(3)">😊 완벽</button>
-    <button class="act-btn skip" onclick="nextCard()">⏭️ 넘기기</button>
+    <button class="act-btn" onclick="nextCard()" style="border-color:#4CAF50;color:#4CAF50">✅ 다음</button>
   </div>
 </div>
 
@@ -593,12 +585,17 @@ window.addEventListener('offline', updateOnlineStatus);
 updateOnlineStatus();
 
 // ===== MODAL =====
-function showModal(emoji, title, body) {
+function showModal(emoji, title, body, onConfirm) {
   const overlay = document.getElementById('modalOverlay');
+  const bodyDiv = document.getElementById('modalBody');
   document.getElementById('modalEmoji').textContent = emoji;
   document.getElementById('modalTitle').textContent = title;
-  document.getElementById('modalBody').innerHTML = body;
-  overlay.onclick = closeModal;
+  let content = body;
+  if (typeof onConfirm === 'function') {
+    content += '<div style="margin-top:20px"><button class="btn" style="background:#FF6F61;color:white;border:none;padding:10px 20px;border-radius:8px;cursor:pointer" onclick="nextCard() && closeModal()">✅ 확인</button></div>';
+  }
+  bodyDiv.innerHTML = content;
+  overlay.onclick = onConfirm ? null : closeModal;
   overlay.classList.add('show');
 }
 function closeModal() {
@@ -1126,14 +1123,14 @@ function testSTT() {
     let extra = '';
     if (state.lang !== 'en') {
       extra = state.lang === 'jp'
-        ? '<br><small style="color:rgba(255,255,255,.5)">일본어는 발음 따라 히ラ가나/カタカナ/한자로 인식될 수 있어요</small>'
+        ? '<br><small style="color:rgba(255,255,255,.5)">일본어는 발음 따라 히라가나/카타카나/한자로 인식될 수 있어요</small>'
         : '<br><small style="color:rgba(255,255,255,.5)">중국어는 발음 따라 한자/병음으로 인식될 수 있어요</small>';
     }
     
     if (match) {
-      showModal('🎊','축하해요!','<b>완벽해요!</b><br><br>✅ ' + target + '<br><br>계속 이어서 가보세요! 🌟');
+      showModal('🎊','축하해요!','<b>완벽해요!</b><br><br>✅ ' + target + '<br><br>계속 이어서 가보세요! 🌟', true);
     } else {
-      showModal('💪','다시 해보세요!','🎤 내 발음: <b>' + raw + '</b><br><br>✅ 정답: <b>' + target + '</b>' + extra);
+      showModal('💪','다시 해보세요!','🎤 내 발음: <b>' + raw + '</b><br><br>✅ 정답: <b>' + target + '</b>' + extra, true);
     }
     if (btn) { btn.textContent = '🎙️ 내 발음 체크'; btn.style.background = 'transparent'; }
     rec = null;
