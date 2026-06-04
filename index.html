@@ -148,6 +148,42 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
 
 .learned-badge{background:rgba(76,175,80,.2);color:#4CAF50;border:1px solid #4CAF50;padding:2px 8px;border-radius:50px;font-size:11px;position:absolute;top:10px;right:10px;display:none}
 .learned-badge.show{display:block}
+
+/* ===== Live Translate (M1) ===== */
+.live-sel{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:inherit;padding:6px 10px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit}
+.live-icon-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);color:inherit;width:32px;height:32px;border-radius:50%;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.live-icon-btn:hover{background:rgba(255,255,255,.18)}
+.live-status{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:50px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:13px;width:fit-content;margin:8px auto}
+.live-dot{width:10px;height:10px;border-radius:50%;background:#888;display:inline-block;transition:background .2s}
+.live-status.idle .live-dot{background:#888}
+.live-status.listening .live-dot{background:#FF6F61;animation:pulse 1.2s infinite}
+.live-status.translating .live-dot{background:#FFA500;animation:pulse .6s infinite}
+.live-status.speaking .live-dot{background:#4CAF50;animation:pulse 1.2s infinite}
+.live-status.error .live-dot{background:#f44336}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.live-mic{width:88px;height:88px;border-radius:50%;border:3px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;font-family:inherit}
+.live-mic:hover{transform:scale(1.05);border-color:rgba(255,111,97,.6)}
+.live-mic.active{background:rgba(255,111,97,.25);border-color:#FF6F61;animation:pulse 1.5s infinite}
+.live-mode{background:rgba(107,91,149,.18);border:1px solid rgba(107,91,149,.4);color:inherit;padding:6px 14px;border-radius:50px;font-size:12px;cursor:pointer;font-family:inherit}
+.live-chip{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:inherit;padding:6px 12px;border-radius:50px;font-size:12px;cursor:pointer;font-family:inherit}
+.live-chip:hover{background:rgba(255,255,255,.14)}
+.live-chip:disabled{opacity:.4;cursor:not-allowed}
+.live-log{display:flex;flex-direction:column;gap:8px;margin-top:16px;max-height:50vh;overflow-y:auto;padding:8px;background:rgba(0,0,0,.2);border-radius:12px;min-height:120px}
+.live-msg{display:flex;flex-direction:column;max-width:85%;padding:10px 14px;border-radius:14px;font-size:14px;line-height:1.4;animation:slide-in .3s ease}
+.live-msg.src{align-self:flex-end;background:rgba(255,111,97,.18);border:1px solid rgba(255,111,97,.4);border-bottom-right-radius:4px}
+.live-msg.tgt{align-self:flex-start;background:rgba(107,91,149,.18);border:1px solid rgba(107,91,149,.4);border-bottom-left-radius:4px}
+.live-msg.err{align-self:center;background:rgba(244,67,54,.15);border:1px solid rgba(244,67,54,.4);color:#ff8a80;font-size:13px}
+.live-msg .live-label{font-size:10px;opacity:.6;margin-bottom:3px;letter-spacing:.5px}
+.live-msg .live-text{margin-bottom:4px}
+.live-msg .live-actions{display:flex;gap:6px;margin-top:4px}
+.live-msg button{background:transparent;border:1px solid rgba(255,255,255,.2);color:inherit;padding:2px 8px;border-radius:50px;font-size:11px;cursor:pointer;font-family:inherit}
+.live-msg button:hover{background:rgba(255,255,255,.1)}
+.live-empty{color:rgba(255,255,255,.4);text-align:center;padding:30px 10px;font-size:13px}
+@keyframes slide-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:480px){
+  .live-mic{width:72px;height:72px}
+  .live-mic span{font-size:30px!important}
+}
 </style>
 </head>
 <body>
@@ -221,12 +257,12 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
       <button class="act-btn skip" data-i18n="stats" onclick="showScreen('statsScreen')" style="font-size:13px">🏆 통계</button>
     </div>
 
-    <!-- Live Translate 진입 카드 (외부 서비스로 이동) -->
-    <a href="#" onclick="openLiveTranslate(event)" data-i18n-title="liveDesc" title="실시간 음성 번역 (Gemini Live API)" style="display:flex;align-items:center;gap:12px;margin-top:24px;padding:14px 18px;border-radius:16px;background:linear-gradient(135deg,rgba(107,91,149,.25),rgba(255,111,97,.18));border:1px solid rgba(107,91,149,.45);text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(107,91,149,.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+    <!-- Live Translate 진입 카드 -->
+    <a href="#" onclick="showScreen('liveScreen')" data-i18n-title="liveModeTip" title="탭해서 모드 전환" style="display:flex;align-items:center;gap:12px;margin-top:24px;padding:14px 18px;border-radius:16px;background:linear-gradient(135deg,rgba(107,91,149,.25),rgba(255,111,97,.18));border:1px solid rgba(107,91,149,.45);text-decoration:none;color:inherit;transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 20px rgba(107,91,149,.3)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
       <div style="font-size:32px;line-height:1">🗣️</div>
       <div style="flex:1;text-align:left">
         <div data-i18n="liveTitle" style="font-weight:700;font-size:1.05rem;margin-bottom:2px">Live Translate</div>
-        <div data-i18n="liveShortDesc" style="font-size:12px;opacity:.75">97개 언어 실시간 음성 번역 · Gemini Live API</div>
+        <div style="font-size:12px;opacity:.75" data-i18n="liveCardSub">음성 → 음성 실시간 번역 · Web Speech + AI</div>
       </div>
       <div style="font-size:20px;opacity:.6">→</div>
     </a>
@@ -324,26 +360,73 @@ h1{font-size:2rem;margin-bottom:10px;background:linear-gradient(135deg,#FF6F61,#
   </div>
 </div>
 
-<!-- LIVE TRANSLATE SCREEN (embedded live-translator) -->
+<!-- LIVE TRANSLATE SCREEN (pure PWA: Web Speech API + OpenRouter) -->
 <div class="app-screen" id="liveScreen">
   <div class="top-nav">
     <div class="back-btn" onclick="goHome()">←</div>
     <div class="nav-title" id="liveTitle">🗣️ Live Translate</div>
     <div></div>
   </div>
-  <div style="margin:8px 0 12px;padding:12px;border-radius:12px;background:rgba(107,91,149,.15);border:1px solid rgba(107,91,149,.4);font-size:13px;line-height:1.5;color:rgba(255,255,255,.85)">
-    <div data-i18n="liveDesc" style="font-weight:700;margin-bottom:4px">실시간 음성 번역 (Gemini Live API)</div>
-    <div data-i18n="liveHint" style="font-size:12px;opacity:.85">아래 화면에서 마이크 권한을 허용하고 🎙️ Start Audio 를 누르세요. 발화하면 즉시 번역 음성이 재생됩니다.</div>
+
+  <!-- Language selectors -->
+  <div style="display:flex;gap:8px;align-items:center;justify-content:center;margin:8px 0 12px;flex-wrap:wrap">
+    <div style="display:flex;align-items:center;gap:6px">
+      <span style="font-size:12px;opacity:.7" data-i18n="liveFrom">From</span>
+      <select id="liveSrcSel" class="live-sel" onchange="Live.setLang()">
+        <option value="ko">한국어</option>
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+        <option value="zh">中文</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
+    <button id="liveSwapBtn" class="live-icon-btn" onclick="Live.swap()" title="Swap" aria-label="Swap">⇄</button>
+    <div style="display:flex;align-items:center;gap:6px">
+      <span style="font-size:12px;opacity:.7" data-i18n="liveTo">To</span>
+      <select id="liveTgtSel" class="live-sel" onchange="Live.setLang()">
+        <option value="en">English</option>
+        <option value="ko">한국어</option>
+        <option value="ja">日本語</option>
+        <option value="zh">中文</option>
+        <option value="es">Español</option>
+        <option value="fr">Français</option>
+        <option value="de">Deutsch</option>
+      </select>
+    </div>
   </div>
-  <iframe
-    id="liveFrame"
-    src="about:blank"
-    data-live-url="https://YOUR-LIVE-TRANSLATOR-URL.run.app"
-    style="width:100%;height:calc(100vh - 180px);min-height:480px;border:1px solid rgba(255,255,255,.15);border-radius:12px;background:#0e0e10"
-    allow="microphone;autoplay"
-    title="Live Translator">
-  </iframe>
+
+  <!-- Status -->
+  <div id="liveStatus" class="live-status idle">
+    <span class="live-dot"></span>
+    <span id="liveStatusText" data-i18n="liveStatusIdle">대기 중</span>
+  </div>
+
+  <!-- Main mic control -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin:16px 0">
+    <button id="liveMicBtn" class="live-mic" onclick="Live.toggleMic()" aria-label="Microphone">
+      <span style="font-size:36px">🎙️</span>
+    </button>
+    <button id="liveModeBtn" class="live-mode" onclick="Live.toggleMode()" data-i18n-title="liveModeTip" title="탭해서 모드 전환">
+      <span data-i18n="liveModeHold">🎤 Hold to Talk</span>
+    </button>
+  </div>
+
+  <!-- Test buttons (no mic) -->
+  <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:8px 0 12px">
+    <button class="live-chip" data-i18n="liveTestHello" onclick="Live.test('Hello, how are you?')">🧪 Hello</button>
+    <button class="live-chip" data-i18n="liveTestThx" onclick="Live.test('Thank you very much.')">🧪 Thanks</button>
+    <button class="live-chip" data-i18n="liveTestLost" onclick="Live.test('I am lost, can you help me?')">🧪 Lost</button>
+  </div>
+
+  <!-- Conversation log -->
+  <div id="liveLog" class="live-log" aria-live="polite">
+    <div class="live-empty" data-i18n="liveEmpty" id="liveEmpty">아직 대화가 없어요. 🎙️ 버튼을 눌러 시작하세요.</div>
+  </div>
+
   <div class="actions" style="margin-top:12px">
+    <button class="act-btn skip" data-i18n="liveClear" onclick="Live.clearLog()">🗑️ 지우기</button>
     <button class="act-btn skip" data-i18n="home" onclick="goHome()">🏠 홈으로</button>
   </div>
 </div>
@@ -681,27 +764,435 @@ function goHome() {
 }
 function goStudy() { showScreen('studyScreen'); showCard(); }
 
-function openLiveTranslate(e) {
-  if (e) e.preventDefault();
-  const frame = document.getElementById('liveFrame');
-  // Lazy-load the iframe URL the first time the screen is opened, so GitHub
-  // Pages doesn't pre-connect to the upstream service on initial load.
-  if (frame && !frame.dataset.loaded) {
-    const url = frame.dataset.liveUrl;
-    if (url && url !== 'about:blank' && !url.includes('YOUR-LIVE-TRANSLATOR-URL')) {
-      frame.src = url;
-    } else {
-      frame.dataset.loaded = 'pending';
-      const note = document.createElement('div');
-      note.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;padding:20px;text-align:center;color:rgba(255,255,255,.7);font-size:14px;line-height:1.6;background:#0e0e10;border-radius:12px';
-      note.innerHTML = '🛠️ <b style="color:#FF6F61">Live Translate URL 미설정</b><br><span style="opacity:.8">index.html 의 <code>liveFrame data-live-url</code> 을<br>Cloud Run 배포 URL 로 교체하세요.</span><br><br><a href="https://github.com/kazunori279/live-translator#deployment-to-cloud-run" target="_blank" rel="noopener" style="color:#6B5B95;text-decoration:underline">Cloud Run 배포 가이드 ↗</a>';
-      frame.parentNode.style.position = 'relative';
-      frame.parentNode.appendChild(note);
+// ===== LIVE TRANSLATE (M1: Web Speech API + OpenRouter) =====
+const Live = (() => {
+  // ---- config ----
+  const TTS_LANG = {ko:'ko-KR', en:'en-US', ja:'ja-JP', zh:'zh-CN', es:'es-ES', fr:'fr-FR', de:'de-DE'};
+  const LANG_NAME = {ko:'한국어', en:'English', ja:'日本語', zh:'中文', es:'Español', fr:'Français', de:'Deutsch'};
+  // OpenRouter fallback chain (same pattern as data-gen.html)
+  const OR_FALLBACK = [
+    'nvidia/nemotron-3-super-120b-a12b:free',
+    'meta-llama/llama-3.3-70b-instruct:free',
+    'nvidia/nemotron-3-nano-30b-a3b:free',
+    'openai/gpt-oss-120b:free',
+    'z-ai/glm-4.5-air:free',
+  ];
+  const STORAGE_KEY = 'lingo_live_v1';
+  const OR_URL_KEY = 'lingo_ollama_url';   // reuse Lingo's existing key
+  const OR_MODEL_KEY = 'lingo_ollama_model';
+
+  // ---- state ----
+  let recognition = null;
+  let isMicOn = false;
+  let mode = 'hold';                       // 'hold' | 'continuous'
+  let ttsUtter = null;
+  let isSpeaking = false;
+  let isTranslating = false;
+  let pendingRestart = false;
+
+  // ---- i18n status messages (live, not in I18N) ----
+  const STATUS = {
+    idle:        {ko:'대기 중',                  en:'Idle',                        ja:'待機中',                  zh:'待机中',                es:'Inactivo',         fr:'Inactif',          de:'Bereit'},
+    listening:   {ko:'🎤 듣는 중...',             en:'🎤 Listening...',             ja:'🎤 聞いています...',        zh:'🎤 正在听...',         es:'🎤 Escuchando...',   fr:'🎤 Écoute...',       de:'🎤 Hört zu...'},
+    translating: {ko:'🔄 번역 중...',             en:'🔄 Translating...',           ja:'🔄 翻訳中...',            zh:'🔄 翻译中...',         es:'🔄 Traduciendo...', fr:'🔄 Traduction...',   de:'🔄 Übersetze...'},
+    speaking:    {ko:'🔊 재생 중',                 en:'🔊 Speaking',                  ja:'🔊 再生中',                zh:'🔊 播放中',            es:'🔊 Reproduciendo',  fr:'🔊 Lecture',         de:'🔊 Sprachausgabe'},
+    error:       {ko:'⚠️ 오류',                  en:'⚠️ Error',                     ja:'⚠️ エラー',                zh:'⚠️ 错误',              es:'⚠️ Error',          fr:'⚠️ Erreur',          de:'⚠️ Fehler'},
+    denied:      {ko:'마이크 권한이 필요해요',     en:'Microphone permission required', ja:'マイク権限が必要です',     zh:'需要麦克风权限',        es:'Permiso de micrófono requerido', fr:'Autorisation micro requise', de:'Mikrofon-Berechtigung erforderlich'},
+  };
+
+  // ---- helpers ----
+  const $ = (id) => document.getElementById(id);
+  const setStatus = (kind) => {
+    const el = $('liveStatus');
+    if (!el) return;
+    el.className = 'live-status ' + kind;
+    const lang = (I18N && I18N.lang) || 'ko';
+    const text = (STATUS[kind] && STATUS[kind][lang]) || (STATUS[kind] && STATUS[kind].en) || kind;
+    const te = $('liveStatusText');
+    if (te) te.textContent = text;
+  };
+
+  const getStored = (key, fallback='') => {
+    try { return localStorage.getItem(key) || fallback; } catch { return fallback; }
+  };
+  const setStored = (key, val) => {
+    try { localStorage.setItem(key, val); } catch {}
+  };
+
+  const escapeHtml = (s) => String(s).replace(/[&<>"']/g, c => ({
+    '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&#39;'
+  }[c]));
+
+  // ---- speech synthesis (TTS) ----
+  const speak = (text, lang) => {
+    if (!('speechSynthesis' in window)) return;
+    try { speechSynthesis.cancel(); } catch {}
+    if (!text) return;
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.lang = TTS_LANG[lang] || 'en-US';
+    utter.rate = 0.95;
+    utter.pitch = 1.0;
+    utter.onstart = () => { isSpeaking = true; setStatus('speaking'); };
+    utter.onend = utter.onerror = () => {
+      isSpeaking = false;
+      ttsUtter = null;
+      // Continuous mode: resume listening after TTS done
+      if (mode === 'continuous' && isMicOn) {
+        setStatus('listening');
+        tryStartRecognition();
+      } else {
+        setStatus(isMicOn ? 'listening' : 'idle');
+      }
+    };
+    ttsUtter = utter;
+    try { speechSynthesis.speak(utter); } catch (e) { console.warn('TTS fail', e); }
+  };
+
+  const stopTTS = () => {
+    if (!('speechSynthesis' in window)) return;
+    try { speechSynthesis.cancel(); } catch {}
+    isSpeaking = false;
+    ttsUtter = null;
+  };
+
+  // ---- speech recognition (STT) ----
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const hasSTT = !!SR;
+
+  const buildRecognition = (lang) => {
+    if (!SR) return null;
+    const r = new SR();
+    r.lang = TTS_LANG[lang] || 'en-US';
+    r.continuous = (mode === 'continuous');
+    r.interimResults = true;
+    r.maxAlternatives = 1;
+
+    let finalText = '';
+
+    r.onresult = (e) => {
+      let interim = '';
+      finalText = '';
+      for (let i = e.resultIndex; i < e.results.length; i++) {
+        const res = e.results[i];
+        if (res.isFinal) finalText += res[0].transcript;
+        else interim += res[0].transcript;
+      }
+      const text = (finalText || interim).trim();
+      if (text && isMicOn) {
+        // live status feedback
+        $('liveMicBtn').dataset.text = text.slice(0, 60);
+      }
+    };
+
+    r.onerror = (e) => {
+      console.warn('SR error', e.error);
+      if (e.error === 'not-allowed' || e.error === 'service-not-allowed') {
+        setStatus('error');
+        addMessage('err', STATUS.denied[I18N.lang] || STATUS.denied.en);
+        isMicOn = false;
+        updateMicBtn();
+        return;
+      }
+      if (e.error === 'no-speech' && isMicOn && mode === 'continuous') {
+        // benign: just restart
+        return;
+      }
+    };
+
+    r.onend = () => {
+      // Auto-restart in continuous mode; submit final text in hold mode
+      if (mode === 'continuous' && isMicOn && !isSpeaking && !isTranslating) {
+        if (finalText) handleUserSpeech(finalText.trim());
+        setTimeout(() => {
+          if (isMicOn && !isSpeaking && !isTranslating) tryStartRecognition();
+        }, 100);
+      } else {
+        // hold mode: if we got final text, translate it
+        if (finalText) handleUserSpeech(finalText.trim());
+      }
+    };
+
+    return r;
+  };
+
+  const tryStartRecognition = () => {
+    if (!SR) {
+      addMessage('err', (I18N.lang === 'ko' ? '이 브라우저는 음성 인식을 지원하지 않아요. Chrome 또는 Edge를 사용하세요.' : 'Speech recognition not supported. Use Chrome or Edge.'));
+      return false;
     }
-    frame.dataset.loaded = '1';
-  }
-  showScreen('liveScreen');
-}
+    if (isSpeaking || isTranslating) {
+      pendingRestart = true;
+      return false;
+    }
+    if (recognition) {
+      try { recognition.stop(); } catch {}
+    }
+    recognition = buildRecognition($('liveSrcSel').value);
+    if (!recognition) return false;
+    try {
+      recognition.start();
+      setStatus('listening');
+      return true;
+    } catch (e) {
+      console.warn('SR start failed', e);
+      return false;
+    }
+  };
+
+  // ---- translation via OpenRouter ----
+  const translate = async (text, src, tgt) => {
+    const key = getStored('lingo_ollama_key', getStored('$OLLAMA_API_KEY', ''));
+    const url = getStored(OR_URL_KEY, 'https://openrouter.ai/api/v1/chat/completions');
+    const primaryModel = getStored(OR_MODEL_KEY, OR_FALLBACK[0]);
+
+    if (!key) {
+      addMessage('err', (I18N.lang === 'ko'
+        ? 'OpenRouter API 키가 설정되지 않았어요. data-gen.html 또는 설정에서 등록하세요.'
+        : 'OpenRouter API key not set. Configure it in data-gen.html or settings.'));
+      return null;
+    }
+
+    const sysPrompt = `You are a concise translator. Translate the user's text from ${LANG_NAME[src]||src} to ${LANG_NAME[tgt]||tgt}. Output ONLY the translation, no quotes, no explanation, no preamble. Preserve tone and politeness.`;
+
+    const modelsToTry = [primaryModel, ...OR_FALLBACK.filter(m => m !== primaryModel)];
+
+    for (const model of modelsToTry) {
+      try {
+        const r = await fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + key,
+            'HTTP-Referer': location.origin,
+            'X-Title': 'Lingo Live Translate',
+          },
+          body: JSON.stringify({
+            model,
+            messages: [
+              {role: 'system', content: sysPrompt},
+              {role: 'user', content: text},
+            ],
+            max_tokens: 500,
+            temperature: 0.2,
+          }),
+        });
+        if (!r.ok) {
+          console.warn(`Model ${model} failed: HTTP ${r.status}`);
+          continue;
+        }
+        const data = await r.json();
+        const translated = data?.choices?.[0]?.message?.content?.trim();
+        if (translated) {
+          // Save working model for next time
+          if (model !== primaryModel) setStored(OR_MODEL_KEY, model);
+          return translated;
+        }
+      } catch (e) {
+        console.warn(`Model ${model} threw`, e);
+        continue;
+      }
+    }
+    return null;
+  };
+
+  // ---- main flow: user speech -> translate -> speak ----
+  const handleUserSpeech = async (text) => {
+    if (!text || isTranslating) return;
+    const src = $('liveSrcSel').value;
+    const tgt = $('liveTgtSel').value;
+    if (src === tgt) {
+      addMessage('err', (I18N.lang === 'ko' ? '소스와 타겟 언어가 같아요.' : 'Source and target languages are the same.'));
+      return;
+    }
+    addMessage('src', text, LANG_NAME[src] || src);
+    isTranslating = true;
+    setStatus('translating');
+    stopTTS();
+    if (recognition) { try { recognition.stop(); } catch {} }
+
+    const translated = await translate(text, src, tgt);
+    isTranslating = false;
+
+    if (translated) {
+      addMessage('tgt', translated, LANG_NAME[tgt] || tgt, /*speakable=*/true, tgt);
+      speak(translated, tgt);
+    } else {
+      addMessage('err', (I18N.lang === 'ko' ? '번역에 실패했어요. OpenRouter 키/네트워크를 확인하세요.' : 'Translation failed. Check OpenRouter key/network.'));
+      setStatus(isMicOn ? 'listening' : 'idle');
+    }
+  };
+
+  // ---- log UI ----
+  const addMessage = (kind, text, langLabel='', speakable=false, speakLang='') => {
+    const log = $('liveLog');
+    if (!log) return;
+    const empty = $('liveEmpty');
+    if (empty) empty.remove();
+
+    const div = document.createElement('div');
+    div.className = 'live-msg ' + kind;
+    const label = kind === 'src' ? 'YOU' : kind === 'tgt' ? (langLabel || 'TRANSLATION') : '';
+    div.innerHTML = (label ? `<span class="live-label">${escapeHtml(label)}</span>` : '')
+      + `<span class="live-text">${escapeHtml(text)}</span>`
+      + (speakable
+          ? `<div class="live-actions"><button onclick="Live.replay('${escapeHtml(text).replace(/'/g, "\\'")}','${speakLang}')">🔊 다시</button><button onclick="Live.copyMsg(this)">📋 복사</button></div>`
+          : '');
+    log.appendChild(div);
+    log.scrollTop = log.scrollHeight;
+  };
+
+  const updateMicBtn = () => {
+    const btn = $('liveMicBtn');
+    if (btn) btn.classList.toggle('active', isMicOn);
+  };
+
+  // ---- public API ----
+  return {
+    toggleMic() {
+      if (isMicOn) {
+        // turn off
+        isMicOn = false;
+        stopTTS();
+        if (recognition) { try { recognition.stop(); } catch {} }
+        updateMicBtn();
+        setStatus('idle');
+      } else {
+        // turn on
+        isMicOn = true;
+        updateMicBtn();
+        if (mode === 'continuous') {
+          tryStartRecognition();
+        } else {
+          // hold mode: also start SR briefly; the real PTT is mousedown
+          setStatus('idle');
+        }
+        addMessage('src', (I18N.lang === 'ko' ? '🎤 마이크 켜짐 — ' : '🎤 Mic on — ')
+          + (mode === 'hold' ? (I18N.lang === 'ko' ? '버튼을 꾹 눌러 말하세요' : 'press and hold to talk') : ''));
+      }
+    },
+
+    // hold-to-talk: called from mousedown/mouseup on the mic button in hold mode
+    pttStart() {
+      if (mode !== 'hold' || !isMicOn) return;
+      if (isTranslating || isSpeaking) return;
+      tryStartRecognition();
+    },
+    pttEnd() {
+      if (mode !== 'hold') return;
+      if (recognition) {
+        try { recognition.stop(); } catch {}
+      }
+    },
+
+    toggleMode() {
+      mode = (mode === 'hold') ? 'continuous' : 'hold';
+      const lbl = $('liveModeBtn');
+      if (lbl) {
+        lbl.innerHTML = mode === 'hold'
+          ? '<span data-i18n="liveModeHold">🎤 Hold to Talk</span>'
+          : '<span data-i18n="liveModeCont">🎙️ Continuous</span>';
+      }
+      setStored(STORAGE_KEY, JSON.stringify({mode, src: $('liveSrcSel').value, tgt: $('liveTgtSel').value}));
+      if (isMicOn) {
+        if (recognition) { try { recognition.stop(); } catch {} }
+        if (mode === 'continuous') tryStartRecognition();
+      }
+    },
+
+    setLang() {
+      const src = $('liveSrcSel').value;
+      const tgt = $('liveTgtSel').value;
+      setStored(STORAGE_KEY, JSON.stringify({mode, src, tgt}));
+      if (isMicOn && recognition) {
+        try { recognition.stop(); } catch {}
+        if (mode === 'continuous') {
+          setTimeout(() => tryStartRecognition(), 100);
+        }
+      }
+    },
+
+    swap() {
+      const s = $('liveSrcSel');
+      const t = $('liveTgtSel');
+      const tmp = s.value; s.value = t.value; t.value = tmp;
+      this.setLang();
+    },
+
+    test(text) {
+      // no-mic test path
+      const src = $('liveSrcSel').value;
+      const tgt = $('liveTgtSel').value;
+      if (src === tgt) {
+        addMessage('err', (I18N.lang === 'ko' ? '소스와 타겟 언어가 같아요.' : 'Source and target are the same.'));
+        return;
+      }
+      handleUserSpeech(text);
+    },
+
+    replay(text, lang) {
+      speak(text, lang);
+    },
+
+    copyMsg(btn) {
+      const text = btn.parentElement.parentElement.querySelector('.live-text').textContent;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          const orig = btn.textContent;
+          btn.textContent = '✓';
+          setTimeout(() => btn.textContent = orig, 1000);
+        });
+      }
+    },
+
+    clearLog() {
+      const log = $('liveLog');
+      if (!log) return;
+      log.innerHTML = '<div class="live-empty" data-i18n="liveEmpty" id="liveEmpty">' + (I18N.lang === 'ko' ? '대화 로그를 지웠어요.' : 'Log cleared.') + '</div>';
+    },
+
+    init() {
+      // restore state
+      try {
+        const saved = JSON.parse(getStored(STORAGE_KEY, '{}'));
+        if (saved.src) $('liveSrcSel').value = saved.src;
+        if (saved.tgt) $('liveTgtSel').value = saved.tgt;
+        if (saved.mode === 'continuous' || saved.mode === 'hold') mode = saved.mode;
+      } catch {}
+      const mb = $('liveModeBtn');
+      if (mb) {
+        mb.innerHTML = mode === 'hold'
+          ? '<span data-i18n="liveModeHold">🎤 Hold to Talk</span>'
+          : '<span data-i18n="liveModeCont">🎙️ Continuous</span>';
+      }
+      // attach PTT mousedown/mouseup on mic btn
+      const micBtn = $('liveMicBtn');
+      if (micBtn) {
+        micBtn.addEventListener('mousedown', (e) => { if (mode === 'hold') this.pttStart(); });
+        micBtn.addEventListener('mouseup',   (e) => { if (mode === 'hold') this.pttEnd(); });
+        micBtn.addEventListener('mouseleave',(e) => { if (mode === 'hold') this.pttEnd(); });
+        micBtn.addEventListener('touchstart',(e) => { if (mode === 'hold') {e.preventDefault(); this.pttStart();} }, {passive:false});
+        micBtn.addEventListener('touchend',  (e) => { if (mode === 'hold') this.pttEnd(); });
+        // spacebar PTT
+        document.addEventListener('keydown', (e) => {
+          if (e.code === 'Space' && mode === 'hold' && isMicOn && !e.repeat) {
+            e.preventDefault(); this.pttStart();
+          }
+        });
+        document.addEventListener('keyup', (e) => {
+          if (e.code === 'Space' && mode === 'hold') {
+            e.preventDefault(); this.pttEnd();
+          }
+        });
+      }
+      if (!hasSTT) {
+        const lang = (I18N && I18N.lang) || 'ko';
+        addMessage('err', lang === 'ko'
+          ? '⚠️ 이 브라우저는 음성 인식을 지원하지 않아요. 🧪 테스트 버튼으로 번역은 시도할 수 있어요.'
+          : '⚠️ Speech recognition not supported. Use 🧪 test buttons to try translation.');
+      }
+    },
+  };
+})();
 
 // ===== I18N (G2: Multilingual UI) =====
 const I18N = {
@@ -763,9 +1254,14 @@ const I18N = {
       lvlName_advanced: '고급',
       // Live Translate (M1: 통합)
       liveTitle: 'Live Translate',
-      liveShortDesc: '97개 언어 실시간 음성 번역 · Gemini Live API',
-      liveDesc: '실시간 음성 번역 (Gemini Live API)',
-      liveHint: '아래 화면에서 마이크 권한을 허용하고 🎙️ Start Audio 를 누르세요. 발화하면 즉시 번역 음성이 재생됩니다.',
+      liveFrom: '원본',
+      liveTo: '번역',
+      liveCardSub: '음성 → 음성 실시간 번역 · Web Speech + AI',
+      liveModeHold: '🎤 꾹 눌러 말하기',
+      liveModeCont: '🎙️ 연속 모드',
+      liveModeTip: '탭해서 모드 전환',
+      liveEmpty: '아직 대화가 없어요. 🎙️ 버튼을 눌러 시작하세요.',
+      liveClear: '🗑️ 지우기',
     },
     en: {
       appTitle: 'Lingo Study',
@@ -821,9 +1317,14 @@ const I18N = {
       lvlName_advanced: 'Advanced',
       // Live Translate (M1: integration)
       liveTitle: 'Live Translate',
-      liveShortDesc: 'Real-time voice translation in 97 languages · Gemini Live API',
-      liveDesc: 'Real-time voice translation (Gemini Live API)',
-      liveHint: 'Allow microphone access in the screen below, then tap 🎙️ Start Audio. Speak to hear instant translation.',
+      liveFrom: 'From',
+      liveTo: 'To',
+      liveCardSub: 'Voice-to-voice real-time translation · Web Speech + AI',
+      liveModeHold: '🎤 Hold to Talk',
+      liveModeCont: '🎙️ Continuous',
+      liveModeTip: 'Tap to switch mode',
+      liveEmpty: 'No conversation yet. Tap 🎙️ to start.',
+      liveClear: '🗑️ Clear',
     },
     ja: {
       appTitle: 'Lingo 学習',
@@ -879,9 +1380,14 @@ const I18N = {
       lvlName_advanced: '上級',
       // Live Translate (M1: 統合)
       liveTitle: 'Live Translate',
-      liveShortDesc: '97言語リアルタイム音声翻訳 · Gemini Live API',
-      liveDesc: 'リアルタイム音声翻訳 (Gemini Live API)',
-      liveHint: '下の画面でマイクへのアクセスを許可し、🎙️ Start Audio をタップしてください。話すとすぐに翻訳が再生されます。',
+      liveFrom: '元',
+      liveTo: '訳',
+      liveCardSub: '音声→音声リアルタイム翻訳 · Web Speech + AI',
+      liveModeHold: '🎤 押して話す',
+      liveModeCont: '🎙️ 連続',
+      liveModeTip: 'タップでモード切替',
+      liveEmpty: 'まだ会話がありません。🎙️ を押して開始。',
+      liveClear: '🗑️ クリア',
     }
   },
   init() {
@@ -945,11 +1451,21 @@ const I18N = {
     // 6) Live Translate 화면 제목 (data-i18n 미사용)
     const liveTitleEl = document.getElementById('liveTitle');
     if (liveTitleEl) liveTitleEl.textContent = '🗣️ ' + this.t('liveTitle');
+    // 6-1) Live Translate 상태 인디케이터 텍스트
+    if (typeof Live !== 'undefined' && Live.setStatus) {
+      const cur = document.getElementById('liveStatus');
+      if (cur) {
+        const kind = (cur.className.match(/live-status (\w+)/) || [])[1] || 'idle';
+        Live.setStatus(kind);
+      }
+    }
   }
 };
 I18N.init();
 // Ensure start button is rendered in current language on page load
 if (typeof updateStartBtn === 'function') updateStartBtn();
+// Live Translate 초기화
+if (typeof Live !== 'undefined' && Live.init) Live.init();
 // K4: 저장된 선택값을 UI에 반영 (active 클래스)
 function applySelectedUI() {
   // 레벨 버튼

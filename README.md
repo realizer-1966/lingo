@@ -177,7 +177,7 @@ workspace/
 
 | 기능 | 날짜 | 설명 |
 |---|---|---|
-| **M1** | 6/4 | Live Translate 통합 — 랜딩에 🗣️ 카드, iframe 임베드 (lazy-load, 다국어 UI) |
+| **M1 PWA** | 6/4 | Live Translate — Web Speech API + OpenRouter, GitHub Pages 단독 작동, Cloud Run 불필요 |
 | **K4** | 6/3 | 선택 상태 영구 저장 (`lingo_selected_*`) |
 | **STT auto-next** | 6/3 | 내 발음 체크 후 "✅ 확인" 버튼 → 자동 다음 |
 | **버튼 단순화** | 6/3 | 6개 → 3개 버튼 (발음/STT/다음) |
@@ -187,22 +187,33 @@ workspace/
 
 ## Live Translate 통합 (M1)
 
-랜딩 페이지의 **🗣️ Live Translate** 카드를 탭하면 [kazunori279/live-translator](https://github.com/kazunori279/live-translator)(Apache-2.0)가 iframe으로 임베드된다. **Lingo 자체는 정적 PWA로 GitHub Pages에서 서빙**되고, live-translator는 별도 Cloud Run에 배포한 뒤 그 URL을 `index.html`의 `#liveFrame[data-live-url]`에 박으면 된다.
+랜딩 페이지의 **🗣️ Live Translate** 카드를 탭하면 PWA 안에서 **음성→음성 실시간 번역**이 동작한다.
 
-**설정 방법**:
-1. [kazunori279/live-translator](https://github.com/kazunori279/live-translator#deployment-to-cloud-run) 가이드대로 Cloud Run 배포
-2. `index.html`의 iframe 찾기:
-   ```html
-   <iframe id="liveFrame" data-live-url="https://YOUR-LIVE-TRANSLATOR-URL.run.app" ...></iframe>
-   ```
-3. `data-live-url` 을 Cloud Run URL로 교체
-4. `git push` → GitHub Pages 자동 재배포
+### 아키텍처
+- **Web Speech API** (STT/TTS) — 브라우저 내장, 추가 인프라 0
+- **OpenRouter API** — Lingo의 AI 구문 생성에서 이미 검증된 패턴 재사용 (5단계 모델 fallback)
+- **state 동기화**: `lingo_live_v1` localStorage (모드, 언어쌍)
+- **설정 재사용**: `lingo_ollama_url` / `lingo_ollama_key` / `lingo_ollama_model`
 
-**특징**:
-- 🚀 **Lazy-load**: 첫 진입 시점에만 iframe src 설정 (초기 로드 부담 0)
-- 🌐 **다국어**: 3개국어(ko/en/ja) UI 번역
-- 🎤 **마이크 권한**: `allow="microphone;autoplay"` 속성 사용
-- 🛡️ **로컬 작동**: `data-live-url` 미설정 시 "URL 미설정" 안내 표시 (앱 깨지지 않음)
+### 기능
+- 🎤 **2개 모드**: 꾹 눌러 말하기 (Hold-to-Talk) / 연속 모드 (Continuous)
+- 🌍 **7개 언어**: ko, en, ja, zh, es, fr, de (Web Speech API가 지원)
+- 🧪 **테스트 버튼**: 마이크 없이 사전 정의 문장으로 즉시 번역 테스트
+- 💬 **대화 로그**: 입력/번역 메시지 버블, 🔊 다시 / 📋 복사 액션
+- 📊 **상태 인디케이터**: 대기 → 듣는 중 → 번역 중 → 재생 중 (4단계 색상)
+
+### 한계 (Web Speech API 제약)
+- 음성 인식은 **Chrome / Edge** 권장 (Safari 일부 지원, Firefox 미지원)
+- 음성 인식 = 클라이언트 사이드, **OpenRouter** = API 키 필요
+- `data-gen.html` 또는 `lingo_ollama_*` localStorage 키로 키 등록
+
+### 설정 (선택)
+```js
+// 브라우저 devtools console:
+localStorage.setItem('lingo_ollama_key', 'sk-or-v1-...');
+localStorage.setItem('lingo_ollama_url', 'https://openrouter.ai/api/v1/chat/completions');
+localStorage.setItem('lingo_ollama_model', 'nvidia/nemotron-3-super-120b-a12b:free');
+```
 
 ## GitHub 커밋 히스토리
 

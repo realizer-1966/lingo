@@ -112,7 +112,8 @@ workspace/
 | **L4** | TTS 속도 0.7→0.9x | 자연스러운 속도 |
 | **L5** | STT closeModal() 순서 수정 | 모달 닫힘 후 카드 전환 |
 | **chore** | 레거시 아이콘 정리 + manifest 버그 수정 | PWA 빌드 안전성 ↑ |
-| **M1** | Live Translate 통합 (iframe 임베드) | 정적 PWA + 백엔드 라이브러리 동시 노출 |
+| **M1 (1차)** | Live Translate 통합 (iframe + Cloud Run) | (복잡, 이후 폐기) |
+| **M1 (2차)** | Live Translate — PWA로 직접 구현 (Web Speech + OpenRouter) | GitHub Pages 단독 작동, 인프라 0 |
 
 ---
 
@@ -166,17 +167,10 @@ workspace/
 
 MIT License — Lingo 자체 코드 (자유롭게 사용, 수정, 배포 가능)
 
-### 외부 라이선스 표시 (Live Translate 통합)
+### Live Translate 통합 방식 (M1)
 
-이 PWA는 [kazunori279/live-translator](https://github.com/kazunori279/live-translator)를
-iframe으로 임베드하여 실시간 음성 번역 기능을 제공한다.
+`live-translator`를 임베드하지 않고, PWA 안에서 직접 구현:
+- **Web Speech API** (STT/TTS) — 브라우저 내장 API
+- **OpenRouter API** — 이미 Lingo의 AI 구문 생성에서 사용 중인 패턴 (5단계 fallback)
 
-- **Upstream**: <https://github.com/kazunori279/live-translator>
-- **License**: Apache-2.0
-- **Copyright**: kazunori279 (Google)
-- **수정 여부**: 없음 (원본 그대로 Cloud Run에 배포 후 iframe으로 로드)
-- **설정 방법**: `index.html`의 `#liveFrame[data-live-url]` 을 본인 Cloud Run URL로 교체
-
-원작자의 가이드(<https://github.com/kazunori279/live-translator#deployment-to-cloud-run>)를
-따라 별도 배포하며, 본 저장소에는 live-translator 코드가 포함되지 않는다
-(`.gitignore` 참조).
+따라서 외부 라이선스/배포 의존성 없음. 모든 기능이 GitHub Pages 정적 호스팅에서 동작.
