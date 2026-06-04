@@ -1,6 +1,7 @@
-# Lingo 학습 — 여행 & 골프 구문 학습 PWA
+# Lingo 학습 — 여행 & 골프 구문 학습 PWA + Live Translate
 
-여행·골프 등 실전에서 바로 써먹는 영어 구문을 4개국어(영어/일본어/한국어/중국어)로 학습하는 오프라인 우선 PWA. 백엔드 없이 정적 파일만으로 동작하며, 홈 화면에 설치해서 플래시카드/퀴즈/음성학습을 즉시 사용할 수 있다.
+여행·골프 등 실전에서 바로 써먹는 영어 구문을 4개국어(영어/일본어/한국어/중국어)로 학습하는 오프라인 우선 PWA. 백엔드 없이 정적 파일만으로 동작하며, 홈 화면에 설치해서 플래시카드/퀴즈/음성학습을 즉시 사용할 수 있다.  
+**M1부터 Live Translate(실시간 음성 번역) 통합** — 랜딩 카드를 탭하면 Gemini Live API 기반 97개 언어 번역기(`live-translator`)가 iframe으로 임베드된다.
 
 🌐 **배포**: <https://realizer-1966.github.io/lingo/>
 🛠️ **저장소**: <https://github.com/realizer-1966/lingo>
@@ -172,16 +173,36 @@ workspace/
 └── TESTING.md              ← 테스트 시나리오 매뉴얼
 ```
 
-## 최신 기능 (2026-06-03 기준)
+## 최신 기능 (2026-06-04 기준)
 
 | 기능 | 날짜 | 설명 |
 |---|---|---|
+| **M1** | 6/4 | Live Translate 통합 — 랜딩에 🗣️ 카드, iframe 임베드 (lazy-load, 다국어 UI) |
 | **K4** | 6/3 | 선택 상태 영구 저장 (`lingo_selected_*`) |
 | **STT auto-next** | 6/3 | 내 발음 체크 후 "✅ 확인" 버튼 → 자동 다음 |
 | **버튼 단순화** | 6/3 | 6개 → 3개 버튼 (발음/STT/다음) |
 | **아이콘 재설계** | 6/3 | 블루/퍼플 그라데이션 (46% 감소) |
 | **시작 버튼 고정** | 6/3 | "🚀 START" HTML 하드코딩 (깜빡림 0) |
 | **TTS 속도 0.9x** | 6/3 | '🗣️ 발음 듣기' TTS 속도 0.7x → 0.9x |
+
+## Live Translate 통합 (M1)
+
+랜딩 페이지의 **🗣️ Live Translate** 카드를 탭하면 [kazunori279/live-translator](https://github.com/kazunori279/live-translator)(Apache-2.0)가 iframe으로 임베드된다. **Lingo 자체는 정적 PWA로 GitHub Pages에서 서빙**되고, live-translator는 별도 Cloud Run에 배포한 뒤 그 URL을 `index.html`의 `#liveFrame[data-live-url]`에 박으면 된다.
+
+**설정 방법**:
+1. [kazunori279/live-translator](https://github.com/kazunori279/live-translator#deployment-to-cloud-run) 가이드대로 Cloud Run 배포
+2. `index.html`의 iframe 찾기:
+   ```html
+   <iframe id="liveFrame" data-live-url="https://YOUR-LIVE-TRANSLATOR-URL.run.app" ...></iframe>
+   ```
+3. `data-live-url` 을 Cloud Run URL로 교체
+4. `git push` → GitHub Pages 자동 재배포
+
+**특징**:
+- 🚀 **Lazy-load**: 첫 진입 시점에만 iframe src 설정 (초기 로드 부담 0)
+- 🌐 **다국어**: 3개국어(ko/en/ja) UI 번역
+- 🎤 **마이크 권한**: `allow="microphone;autoplay"` 속성 사용
+- 🛡️ **로컬 작동**: `data-live-url` 미설정 시 "URL 미설정" 안내 표시 (앱 깨지지 않음)
 
 ## GitHub 커밋 히스토리
 

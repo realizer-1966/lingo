@@ -1,0 +1,4 @@
+# Local reference copy of live-translator (NOT part of Lingo repo)
+# Live Translate integration is iframe-based; the upstream lives at
+# https://github.com/kazunori279/live-translator (Apache-2.0)
+live-translator/
