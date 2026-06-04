@@ -1,0 +1,3 @@
+# Local clone of live-translator (created by deploy.sh)
+# The CI workflow also clones it under ./live-translator
+live-translator/
