@@ -1011,7 +1011,7 @@ const Live = (() => {
 
     if (translated) {
       addMessage('tgt', translated, LANG_NAME[tgt] || tgt, /*speakable=*/true, tgt);
-      speak(translated, tgt);
+      speakText(translated, tgt);
     } else {
       addMessage('err', (I18N.lang === 'ko' ? '번역에 실패했어요. Ollama 키/네트워크를 확인하세요.' : 'Translation failed. Check Ollama key/network.'));
       setStatus(isMicOn ? 'listening' : 'idle');
@@ -1126,7 +1126,7 @@ const Live = (() => {
     },
 
     replay(text, lang) {
-      speak(text, lang);
+      speakText(text, lang);
     },
 
     copyMsg(btn) {
@@ -1616,20 +1616,29 @@ function getKey(item) {
   return item.ko + '::' + getTargetText(item);
 }
 
-function speak(rate) {
+function speakCurrentCard(rate) {
   const c = state.cards[state.idx];
   if (!c) return;
-  // TTS rate 안전 범위 검증 (0.1 ~ 10.0)
-  const safeRate = Math.max(0.1, Math.min(10.0, Number(rate) || 1.0));
-  // 진행 중인 TTS가 있으면 취소 (중복 재생 방지)
+  const text = getTargetText(c);
+  const lang = state.lang === 'jp' ? 'ja' : state.lang; // Mapping for TTS
+  speakText(text, lang, rate);
+}
+
+function speakText(text, lang = 'en', rate = 1.0) {
+  if (!text) return;
   if (speechSynthesis.speaking) {
     speechSynthesis.cancel();
   }
-  // K1: 모바일 환경에서 음성 목록이 비동기 로드될 수 있으므로 대기
-  let voices = speechSynthesis.getVoices();
-  if (voices.length === 0) {
-    // 음성 목록이 아직 로드 안 됨 (특히 모바일 Safari/Chrome)
-    speechSynthesis.addEventListener('voiceschanged', function once() {
+  const utter = new SpeechSynthesisUtterance(text);
+  const ttsLangMap = {en:'en-US', ja:'ja-JP', jp:'ja-JP', zh:'zh-CN', ko:'ko-KR'};
+  utter.lang = ttsLangMap[lang] || 'en-US';
+  utter.rate = Math.max(0.1, Math.min(2.0, rate));
+  try {
+    speechSynthesis.speak(utter);
+  } catch (e) {
+    console.error('TTS Error:', e);
+  }
+}
       speechSynthesis.removeEventListener('voiceschanged', once);
       voices = speechSynthesis.getVoices();
       _speakUtterance(c, safeRate, voices);
