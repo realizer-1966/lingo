@@ -769,13 +769,9 @@ const Live = (() => {
   // ---- config ----
   const TTS_LANG = {ko:'ko-KR', en:'en-US', ja:'ja-JP', zh:'zh-CN', es:'es-ES', fr:'fr-FR', de:'de-DE'};
   const LANG_NAME = {ko:'한국어', en:'English', ja:'日本語', zh:'中文', es:'Español', fr:'Français', de:'Deutsch'};
-  // OpenRouter fallback chain (same pattern as data-gen.html)
+  // Ollama Cloud fallback chain
   const OR_FALLBACK = [
-    'nvidia/nemotron-3-super-120b-a12b:free',
-    'meta-llama/llama-3.3-70b-instruct:free',
-    'nvidia/nemotron-3-nano-30b-a3b:free',
-    'openai/gpt-oss-120b:free',
-    'z-ai/glm-4.5-air:free',
+    'gemma4:31b-cloud',
   ];
   const STORAGE_KEY = 'lingo_live_v1';
   const OR_URL_KEY = 'lingo_ollama_url';   // reuse Lingo's existing key
@@ -942,13 +938,13 @@ const Live = (() => {
   // ---- translation via OpenRouter ----
   const translate = async (text, src, tgt) => {
     const key = getStored('lingo_ollama_key', getStored('$OLLAMA_API_KEY', ''));
-    const url = getStored(OR_URL_KEY, 'https://openrouter.ai/api/v1/chat/completions');
+    const url = getStored(OR_URL_KEY, 'https://ollama.com/v1/chat/completions');
     const primaryModel = getStored(OR_MODEL_KEY, OR_FALLBACK[0]);
 
     if (!key) {
       addMessage('err', (I18N.lang === 'ko'
-        ? 'OpenRouter API 키가 설정되지 않았어요. data-gen.html 또는 설정에서 등록하세요.'
-        : 'OpenRouter API key not set. Configure it in data-gen.html or settings.'));
+        ? 'Ollama API 키가 설정되지 않았어요. data-gen.html 또는 설정에서 등록하세요.'
+        : 'Ollama API key not set. Configure it in data-gen.html or settings.'));
       return null;
     }
 
@@ -1017,7 +1013,7 @@ const Live = (() => {
       addMessage('tgt', translated, LANG_NAME[tgt] || tgt, /*speakable=*/true, tgt);
       speak(translated, tgt);
     } else {
-      addMessage('err', (I18N.lang === 'ko' ? '번역에 실패했어요. OpenRouter 키/네트워크를 확인하세요.' : 'Translation failed. Check OpenRouter key/network.'));
+      addMessage('err', (I18N.lang === 'ko' ? '번역에 실패했어요. Ollama 키/네트워크를 확인하세요.' : 'Translation failed. Check Ollama key/network.'));
       setStatus(isMicOn ? 'listening' : 'idle');
     }
   };
