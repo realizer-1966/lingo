@@ -60,9 +60,9 @@ function getCacheStrategy(url) {
   if (DATA_URLS.some((u) => url.endsWith(u.replace('./', '/')))) {
     return 'network-first';
   }
-  // HTML: stale-while-revalidate (fast load, update in background)
+  // HTML: network-first (always try fresh for app logic, fallback to cache)
   if (url.endsWith('.html') || url.endsWith('/')) {
-    return 'stale-while-revalidate';
+    return 'network-first';
   }
   // Static assets: cache-first
   if (url.includes('/icons/') || url.includes('.png') || url.includes('.svg') || url.includes('manifest.json')) {
