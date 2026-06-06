@@ -1643,10 +1643,24 @@ function speakText(text, lang = 'en', rate = 1.0) {
   const ttsLangMap = {en:'en-US', ja:'ja-JP', jp:'ja-JP', zh:'zh-CN', ko:'ko-KR'};
   utter.lang = ttsLangMap[lang] || 'en-US';
   utter.rate = Math.max(0.1, Math.min(2.0, rate));
-  try {
+  
+  // 모바일에서 voices가 준비될 때까지 대기 후 재생
+  const voices = speechSynthesis.getVoices();
+  if (voices.length === 0) {
+    speechSynthesis.addEventListener('voiceschanged', () => {
+      const v = speechSynthesis.getVoices();
+      const targetLang = ttsLangMap[lang] || 'en-US';
+      const matchVoice = v.find(vv => vv.lang === targetLang) || v.find(vv => vv.lang.startsWith(targetLang.split('-')[0]));
+      if (matchVoice) utter.voice = matchVoice;
+      speechSynthesis.speak(utter);
+    }, {once: true});
+    // 폴백: voiceschanged 이벤트가 안 뜨면 그냥 시도
+    setTimeout(() => { if (!speechSynthesis.speaking) speechSynthesis.speak(utter); }, 300);
+  } else {
+    const targetLang = ttsLangMap[lang] || 'en-US';
+    const matchVoice = voices.find(v => v.lang === targetLang) || voices.find(v => v.lang.startsWith(targetLang.split('-')[0]));
+    if (matchVoice) utter.voice = matchVoice;
     speechSynthesis.speak(utter);
-  } catch (e) {
-    console.error('TTS Error:', e);
   }
 }
 
