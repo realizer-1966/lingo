@@ -118,6 +118,12 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
       <a href="https://openrouter.ai/keys" target="_blank" style="color:#FF6F61">무료 발급 ↗</a>
     </div>
 
+    <label>API 엔드포인트</label>
+    <input type="text" id="ollamaUrl" placeholder="https://openrouter.ai/api/v1/chat/completions" onchange="saveOllamaUrl()">
+    <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:-8px;margin-bottom:12px">
+      기본값: <code style="color:#FF6F61">https://openrouter.ai/api/v1/chat/completions</code>
+    </div>
+
     <label>모델명</label>
     <input type="text" id="ollamaModel" placeholder="무료: nvidia/nemotron-3-super-120b-a12b:free" value="nvidia/nemotron-3-super-120b-a12b:free" onchange="saveOllamaModel()">
 
@@ -222,7 +228,9 @@ textarea{min-height:80px;font-family:monospace;font-size:12px;resize:vertical}
 
 <script>
 const CHUNK_PREFIX = 'lingo_chunk_';
-const API_K = '$OLLAMA_API_KEY';
+const API_K = 'lingo_openrouter_key';
+const URL_K = 'lingo_openrouter_url';
+const MODEL_K = 'lingo_openrouter_model';
 const CATS = {etc:'기타',travel:'여행',golf:'골프',shop:'쇼핑',restaurant:'레스토랑',direction:'길찾기',hotel:'호텔',airport:'공항',emergency:'응급'};
 const LVLS = {beginner:'초급',intermediate:'중급',advanced:'고급'};
 let cur = null;
@@ -231,9 +239,9 @@ let gen = [];
 function init(){
   const k = localStorage.getItem(API_K);
   if(k) document.getElementById('apiKey').value = k;
-  const u = localStorage.getItem('lingo_ollama_url');
+  const u = localStorage.getItem(URL_K);
   if(u) document.getElementById('ollamaUrl').value = u;
-  const m = localStorage.getItem('lingo_ollama_model');
+  const m = localStorage.getItem(MODEL_K);
   if(m) document.getElementById('ollamaModel').value = m;
   updateStatus();
 }
@@ -342,8 +350,8 @@ function exportChunk(){
 // ===== AI GENERATE =====
 function saveApiKey(){ localStorage.setItem(API_K, document.getElementById('apiKey').value); }
 
-function saveOllamaUrl(){ localStorage.setItem('lingo_ollama_url', document.getElementById('ollamaUrl').value); }
-function saveOllamaModel(){ localStorage.setItem('lingo_ollama_model', document.getElementById('ollamaModel').value); }
+function saveOllamaUrl(){ localStorage.setItem(URL_K, document.getElementById('ollamaUrl').value); }
+function saveOllamaModel(){ localStorage.setItem(MODEL_K, document.getElementById('ollamaModel').value); }
 
 async function generatePhrases(){
   const key = document.getElementById('apiKey').value.trim();

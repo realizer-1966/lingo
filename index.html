@@ -769,13 +769,18 @@ const Live = (() => {
   // ---- config ----
   const TTS_LANG = {ko:'ko-KR', en:'en-US', ja:'ja-JP', zh:'zh-CN', es:'es-ES', fr:'fr-FR', de:'de-DE'};
   const LANG_NAME = {ko:'한국어', en:'English', ja:'日本語', zh:'中文', es:'Español', fr:'Français', de:'Deutsch'};
-  // Ollama Cloud fallback chain
+  // OpenRouter fallback chain (free models rotate due to rate limits)
   const OR_FALLBACK = [
-    'gemma4:31b-cloud',
+    'google/gemma-2-9b-it:free',
+    'meta-llama/llama-3.1-8b-instruct:free',
+    'microsoft/phi-3-mini-128k-instruct:free',
+    'qwen/qwen-2.5-7b-instruct:free',
+    'huggingfaceh4/zephyr-7b-beta:free',
   ];
   const STORAGE_KEY = 'lingo_live_v1';
-  const OR_URL_KEY = 'lingo_ollama_url';   // reuse Lingo's existing key
-  const OR_MODEL_KEY = 'lingo_ollama_model';
+  const OR_URL_KEY = 'lingo_openrouter_url';
+  const OR_MODEL_KEY = 'lingo_openrouter_model';
+  const OR_KEY_KEY = 'lingo_openrouter_key';
 
   // ---- state ----
   let recognition = null;
@@ -937,14 +942,14 @@ const Live = (() => {
 
   // ---- translation via OpenRouter ----
   const translate = async (text, src, tgt) => {
-    const key = getStored('lingo_ollama_key', getStored('$OLLAMA_API_KEY', ''));
-    const url = getStored(OR_URL_KEY, 'https://ollama.com/v1/chat/completions');
+    const key = getStored(OR_KEY_KEY, '');
+    const url = getStored(OR_URL_KEY, 'https://openrouter.ai/api/v1/chat/completions');
     const primaryModel = getStored(OR_MODEL_KEY, OR_FALLBACK[0]);
 
     if (!key) {
       addMessage('err', (I18N.lang === 'ko'
-        ? 'Ollama API 키가 설정되지 않았어요. data-gen.html 또는 설정에서 등록하세요.'
-        : 'Ollama API key not set. Configure it in data-gen.html or settings.'));
+        ? 'OpenRouter API 키가 설정되지 않았어요. data-gen.html 또는 설정에서 등록하세요.'
+        : 'OpenRouter API key not set. Configure it in data-gen.html or settings.'));
       return null;
     }
 
@@ -1013,7 +1018,7 @@ const Live = (() => {
       addMessage('tgt', translated, LANG_NAME[tgt] || tgt, /*speakable=*/true, tgt);
       speakText(translated, tgt);
     } else {
-      addMessage('err', (I18N.lang === 'ko' ? '번역에 실패했어요. Ollama 키/네트워크를 확인하세요.' : 'Translation failed. Check Ollama key/network.'));
+      addMessage('err', (I18N.lang === 'ko' ? '번역에 실패했어요. OpenRouter 키/네트워크를 확인하세요.' : 'Translation failed. Check OpenRouter key/network.'));
       setStatus(isMicOn ? 'listening' : 'idle');
     }
   };
@@ -1252,7 +1257,7 @@ const I18N = {
       liveTitle: 'Live Translate',
       liveFrom: '원본',
       liveTo: '번역',
-      liveCardSub: '음성 → 음성 실시간 번역 · Web Speech + Ollama',
+      liveCardSub: '음성 → 음성 실시간 번역 · Web Speech + OpenRouter',
       liveModeHold: '🎤 꾹 눌러 말하기',
       liveModeCont: '🎙️ 연속 모드',
       liveModeTip: '탭해서 모드 전환',
@@ -1315,7 +1320,7 @@ const I18N = {
       liveTitle: 'Live Translate',
       liveFrom: 'From',
       liveTo: 'To',
-      liveCardSub: 'Voice-to-voice real-time translation · Web Speech + Ollama',
+      liveCardSub: 'Voice-to-voice real-time translation · Web Speech + OpenRouter',
       liveModeHold: '🎤 Hold to Talk',
       liveModeCont: '🎙️ Continuous',
       liveModeTip: 'Tap to switch mode',
@@ -1378,7 +1383,7 @@ const I18N = {
       liveTitle: 'Live Translate',
       liveFrom: '元',
       liveTo: '訳',
-      liveCardSub: '音声→音声リアルタイム翻訳 · Web Speech + Ollama',
+      liveCardSub: '音声→音声リアルタイム翻訳 · Web Speech + OpenRouter',
       liveModeHold: '🎤 押して話す',
       liveModeCont: '🎙️ 連続',
       liveModeTip: 'タップでモード切替',
@@ -1624,6 +1629,11 @@ function speakCurrentCard(rate) {
   speakText(text, lang, rate);
 }
 
+// Alias for button handlers
+function speak(rate) {
+  speakCurrentCard(rate);
+}
+
 function speakText(text, lang = 'en', rate = 1.0) {
   if (!text) return;
   if (speechSynthesis.speaking) {
@@ -1638,41 +1648,6 @@ function speakText(text, lang = 'en', rate = 1.0) {
   } catch (e) {
     console.error('TTS Error:', e);
   }
-}
-      speechSynthesis.removeEventListener('voiceschanged', once);
-      voices = speechSynthesis.getVoices();
-      _speakUtterance(c, safeRate, voices);
-    });
-    // 안전 타임아웃: 500ms 후에도 음성 없으면 그냥 진행
-    setTimeout(() => {
-      if (speechSynthesis.speaking) return;
-      _speakUtterance(c, safeRate, speechSynthesis.getVoices());
-    }, 500);
-    return;
-  }
-  _speakUtterance(c, safeRate, voices);
-}
-
-function _speakUtterance(c, safeRate, voices) {
-  const u = new SpeechSynthesisUtterance(getTargetText(c));
-  u.lang = TTS_LANG[state.lang] || 'en-US';
-  u.rate = safeRate;
-  // 모바일 환경에서 해당 언어의 음성 선택 (가능한 경우)
-  if (voices && voices.length > 0) {
-    const targetLang = TTS_LANG[state.lang] || 'en-US';
-    const matchVoice = voices.find(v => v.lang === targetLang) ||
-                       voices.find(v => v.lang.startsWith(targetLang.split('-')[0]));
-    if (matchVoice) u.voice = matchVoice;
-  }
-  // iOS Safari 등 모바일은 사용자가 명시적으로 페이지 상호작용한 후에만 TTS 가능
-  // 이미 speak()는 onclick 등 사용자 인터랙션에서 호출되므로 OK
-  // 에러 핸들링
-  u.onerror = (e) => {
-    if (e.error !== 'canceled') {
-      console.warn('TTS error:', e.error);
-    }
-  };
-  speechSynthesis.speak(u);
 }
 
 // ===== STT =====
@@ -2141,5 +2116,20 @@ function downloadScores() {
 loadData();
 renderHistory();
 renderStats();
-</script>\n<script>\n  if ('serviceWorker' in navigator) {\n    navigator.serviceWorker.register('sw.js').then(reg => {\n      reg.addEventListener('updatefound', () => {\n        const newWorker = reg.installing;\n        newWorker.addEventListener('statechange', () => {\n          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {\n            window.location.reload();\n          }\n        });\n      });\n    });\n  }\n</script>\n</body>
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').then(reg => {
+      reg.addEventListener('updatefound', () => {
+        const newWorker = reg.installing;
+        newWorker.addEventListener('statechange', () => {
+          if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+            window.location.reload();
+          }
+        });
+      });
+    });
+  }
+</script>
+</body>
 </html>
