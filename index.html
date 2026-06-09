@@ -1711,6 +1711,12 @@ function testSTT() {
     }
     
     if (match) {
+      const key = getKey(c);
+      if (!state.learned.includes(key)) state.learned.push(key);
+      LS.addLearned(key);
+      LS.updateSRS(key, 2); // 발음 성공 시 '보통' 수준으로 처리
+      LS.addActivity();
+      renderStats();
       showModal('🎊','축하해요!','<b>완벽해요!</b><br><br>✅ ' + target + '<br><br>계속 이어서 가보세요! 🌟', true);
     } else {
       showModal('💪','다시 해보세요!','🎤 내 발음: <b>' + raw + '</b><br><br>✅ 정답: <b>' + target + '</b>' + extra, true);
